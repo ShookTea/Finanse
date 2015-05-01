@@ -15,6 +15,18 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
     }
     
+    public static void addJIF(JInternalFrame jif) {
+        frame.desktop.add(jif);
+        jif.setVisible(true);
+    }
+    
+    public static void updateAll() {
+        for (JInternalFrame jif : frame.desktop.getAllFrames()) {
+            if (jif instanceof UpdateI) {
+                ((UpdateI)jif).updateData();
+            }
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,4 +169,3 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveFile;
     // End of variables declaration//GEN-END:variables
 }
-
