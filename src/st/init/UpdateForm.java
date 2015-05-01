@@ -64,6 +64,11 @@ public class UpdateForm extends javax.swing.JFrame {
         install.setText("Zainstaluj");
 
         cancel.setText("Anuluj");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
 
         confirm.setText("Czy chcesz zainstalować aktualizację?");
 
@@ -120,6 +125,10 @@ public class UpdateForm extends javax.swing.JFrame {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         Update.startApp();
     }//GEN-LAST:event_formWindowClosing
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        Update.startApp();
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments
