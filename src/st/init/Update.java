@@ -45,9 +45,7 @@ public class Update implements Runnable {
         Properties props = new Properties();
         props.load(Update.class.getResourceAsStream("/st/init/init.cfg"));
         cfg = props.getProperty("cfg", "");
-        jar = props.getProperty("jar", "");
         version = props.getProperty("version", "");
-        history = props.getProperty("history", "");
         start = props.getProperty("start", "");
     }
     
@@ -118,11 +116,9 @@ public class Update implements Runnable {
     private static String[] args;
     
     private static String cfg;
-    private static String jar;
     private static String jarOnline;
     private static String version;
     private static String versionOnline;
-    private static String history;
     private static String historyOnline;
     private static String start;
 }
