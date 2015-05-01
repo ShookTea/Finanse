@@ -1,6 +1,8 @@
 package st.init;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Properties;
 
 /**
@@ -10,8 +12,16 @@ import java.util.Properties;
  */
 public class Update {
     public static void main(String[] args) throws IOException {
+        uf = new UpdateForm();
+        uf.setVisible(true);
         initCfg();
-        new UpdateForm().setVisible(true);
+        try {
+            System.out.println(isUpdateOnline());
+        } catch (IOException ex) {
+            //Brak połączenia z internetem: pobranie aktualizacji niemożliwe
+            //Uruchom program normalnie
+            uf.dispose();
+        }
     }
     
     private static void initCfg() throws IOException {
@@ -24,9 +34,26 @@ public class Update {
         start = props.getProperty("start");
     }
     
+    private static boolean isUpdateOnline() throws IOException {
+        URL url = new URL(cfg);
+        InputStream is = url.openStream();
+        Properties online = new Properties();
+        online.load(is);
+        jarOnline = online.getProperty("jar");
+        versionOnline = online.getProperty("version");
+        historyOnline = online.getProperty("history");
+        is.close();
+        return versionOnline.equalsIgnoreCase(version);
+    }
+    
+    private static UpdateForm uf;
+    
     public static String cfg;
     public static String jar;
+    public static String jarOnline;
     public static String version;
+    public static String versionOnline;
     public static String history;
+    public static String historyOnline;
     public static String start;
 }
