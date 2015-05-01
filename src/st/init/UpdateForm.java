@@ -62,6 +62,11 @@ public class UpdateForm extends javax.swing.JFrame {
         version.setText("Sprawdzanie aktualizacji");
 
         install.setText("Zainstaluj");
+        install.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                installActionPerformed(evt);
+            }
+        });
 
         cancel.setText("Anuluj");
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -130,6 +135,19 @@ public class UpdateForm extends javax.swing.JFrame {
         Update.startApp();
     }//GEN-LAST:event_cancelActionPerformed
 
+    private void installActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_installActionPerformed
+        install.setEnabled(false);
+        cancel.setEnabled(false);
+        version.setText("Aktualizacja w tle...");
+        Update.initUpdate();
+    }//GEN-LAST:event_installActionPerformed
+
+    public void updateBar(int actual, int max) {
+       progress.setMaximum(max);
+       progress.setValue(actual);
+       progress.repaint();
+    }
+    
     /**
      * @param args the command line arguments
      */
