@@ -11,6 +11,7 @@ import java.util.Properties;
 public class Update {
     public static void main(String[] args) throws IOException {
         initCfg();
+        new UpdateForm().setVisible(true);
     }
     
     private static void initCfg() throws IOException {
