@@ -153,6 +153,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Stw&#xf3;rz tabel&#x119;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

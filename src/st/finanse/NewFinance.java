@@ -1,6 +1,8 @@
 package st.finanse;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
+import st.finanse.proj.Project;
 
 /**
  *
@@ -62,6 +64,11 @@ public class NewFinance extends javax.swing.JInternalFrame {
         value.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.##"))));
 
         create.setText("Stwórz tabelę");
+        create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,6 +127,19 @@ public class NewFinance extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
+        int y = Integer.parseInt("20" + year.getValue());
+        int m = month.getSelectedIndex();
+        BigDecimal cash;
+        if (valueNew.isSelected()) {
+            cash = new BigDecimal(value.getValue().toString());
+        }
+        else {
+            cash = new BigDecimal("0.0");
+        }
+        Project.project.createFinance(m, y, cash);
+    }//GEN-LAST:event_createActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
