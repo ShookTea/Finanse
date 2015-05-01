@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.UIManager;
 
 /**
  * Klasa startowa dla operacji autoupdate. Wyszukuje aktualizację. Jeżeli aktualizacja
@@ -13,7 +14,10 @@ import java.util.logging.Logger;
  * @author ShookTea
  */
 public class Update {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
+        UIManager.setLookAndFeel(UIManager.getInstalledLookAndFeels()[1].getClassName()); //NimbusLAF
+        
+        
         Update.args = args;
         uf = new UpdateForm();
         uf.setVisible(true);
