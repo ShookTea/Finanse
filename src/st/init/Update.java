@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Klasa startowa dla operacji autoupdate. Wyszukuje aktualizację. Jeżeli aktualizacja
@@ -12,6 +14,7 @@ import java.util.Properties;
  */
 public class Update {
     public static void main(String[] args) throws IOException {
+        Update.args = args;
         uf = new UpdateForm();
         uf.setVisible(true);
         initCfg();
@@ -21,6 +24,7 @@ public class Update {
             //Brak połączenia z internetem: pobranie aktualizacji niemożliwe
             //Uruchom program normalnie
             uf.dispose();
+            startApp();
         }
     }
     
@@ -46,7 +50,20 @@ public class Update {
         return versionOnline.equalsIgnoreCase(version);
     }
     
+    private static void startApp() {
+        try {
+            Object ob = Class.forName(start).newInstance();
+            if (ob instanceof StartI) {
+                ((StartI)ob).start(args);
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex1) {
+            Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex1);
+            System.exit(1);
+        }
+    }
+    
     private static UpdateForm uf;
+    public static String[] args;
     
     public static String cfg;
     public static String jar;
