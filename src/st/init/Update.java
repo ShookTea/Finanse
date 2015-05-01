@@ -76,14 +76,14 @@ public class Update {
     
     private static UpdateForm uf;
     private static boolean started = false;
-    public static String[] args;
+    private static String[] args;
     
-    public static String cfg;
-    public static String jar;
-    public static String jarOnline;
-    public static String version;
-    public static String versionOnline;
-    public static String history;
-    public static String historyOnline;
-    public static String start;
+    private static String cfg;
+    private static String jar;
+    private static String jarOnline;
+    private static String version;
+    private static String versionOnline;
+    private static String history;
+    private static String historyOnline;
+    private static String start;
 }
