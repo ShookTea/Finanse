@@ -19,7 +19,13 @@ public class Update {
         uf.setVisible(true);
         initCfg();
         try {
-            System.out.println(isUpdateOnline());
+            if (isUpdateOnline()) {
+                uf.showUpdateInfo(version, versionOnline, historyOnline);
+            }
+            else {
+                uf.dispose();
+                startApp();
+            }
         } catch (IOException ex) {
             //Brak połączenia z internetem: pobranie aktualizacji niemożliwe
             //Uruchom program normalnie
@@ -31,11 +37,11 @@ public class Update {
     private static void initCfg() throws IOException {
         Properties props = new Properties();
         props.load(Update.class.getResourceAsStream("/st/init/init.cfg"));
-        cfg = props.getProperty("cfg");
-        jar = props.getProperty("jar");
-        version = props.getProperty("version");
-        history = props.getProperty("history");
-        start = props.getProperty("start");
+        cfg = props.getProperty("cfg", "");
+        jar = props.getProperty("jar", "");
+        version = props.getProperty("version", "");
+        history = props.getProperty("history", "");
+        start = props.getProperty("start", "");
     }
     
     private static boolean isUpdateOnline() throws IOException {
@@ -43,11 +49,11 @@ public class Update {
         InputStream is = url.openStream();
         Properties online = new Properties();
         online.load(is);
-        jarOnline = online.getProperty("jar");
-        versionOnline = online.getProperty("version");
-        historyOnline = online.getProperty("history");
+        jarOnline = online.getProperty("jar", "");
+        versionOnline = online.getProperty("version", "");
+        historyOnline = online.getProperty("history", "");
         is.close();
-        return versionOnline.equalsIgnoreCase(version);
+        return versionOnline.equals(version);
     }
     
     private static void startApp() {

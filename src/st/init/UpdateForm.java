@@ -7,7 +7,7 @@ package st.init;
 
 /**
  *
- * @author Emilka
+ * @author ShookTea
  */
 public class UpdateForm extends javax.swing.JFrame {
 
@@ -16,6 +16,19 @@ public class UpdateForm extends javax.swing.JFrame {
      */
     public UpdateForm() {
         initComponents();
+        confirm.setVisible(false);
+        cancel.setEnabled(false);
+        install.setEnabled(false);
+    }
+    
+    public void showUpdateInfo(String verOff, String verOn, String his) {
+        progress.setIndeterminate(false);
+        version.setText("Znaleziono nową wersję " + verOn);
+        history.setText(his);
+        confirm.setText("Czy chcesz zaktualizować program? Obecna wersja: " + verOff + ", wersja najnowsza: " + verOn);
+        confirm.setVisible(true);
+        cancel.setEnabled(true);
+        install.setEnabled(true);
     }
 
     /**
@@ -27,15 +40,25 @@ public class UpdateForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
+        progress = new javax.swing.JProgressBar();
+        version = new javax.swing.JLabel();
+        history = new javax.swing.JLabel();
+        install = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
+        confirm = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Sprawdzanie aktualizacji");
 
-        jProgressBar1.setIndeterminate(true);
+        progress.setIndeterminate(true);
 
-        jLabel1.setText("Sprawdzanie aktualizacji");
+        version.setText("Sprawdzanie aktualizacji");
+
+        install.setText("Zainstaluj");
+
+        cancel.setText("Anuluj");
+
+        confirm.setText("Czy chcesz zainstalować aktualizację?");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -44,20 +67,35 @@ public class UpdateForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(version)
+                            .addComponent(history)
+                            .addComponent(confirm)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(install)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cancel)))
+                        .addGap(0, 199, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(version)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(255, Short.MAX_VALUE))
+                .addComponent(progress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(history)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(confirm)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(install)
+                    .addComponent(cancel))
+                .addContainerGap())
         );
 
         pack();
@@ -99,7 +137,11 @@ public class UpdateForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JProgressBar jProgressBar1;
+    private javax.swing.JButton cancel;
+    private javax.swing.JLabel confirm;
+    private javax.swing.JLabel history;
+    private javax.swing.JButton install;
+    private javax.swing.JProgressBar progress;
+    private javax.swing.JLabel version;
     // End of variables declaration//GEN-END:variables
 }
