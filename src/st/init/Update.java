@@ -23,13 +23,11 @@ public class Update {
                 uf.showUpdateInfo(version, versionOnline, historyOnline);
             }
             else {
-                uf.dispose();
                 startApp();
             }
         } catch (IOException ex) {
             //Brak połączenia z internetem: pobranie aktualizacji niemożliwe
             //Uruchom program normalnie
-            uf.dispose();
             startApp();
         }
     }
@@ -56,19 +54,24 @@ public class Update {
         return !versionOnline.equals(version);
     }
     
-    private static void startApp() {
-        try {
-            Object ob = Class.forName(start).newInstance();
-            if (ob instanceof StartI) {
-                ((StartI)ob).start(args);
+    public static void startApp() {
+        if (!started) {
+            uf.dispose();
+            try {
+                Object ob = Class.forName(start).newInstance();
+                if (ob instanceof StartI) {
+                    ((StartI)ob).start(args);
+                }
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex1) {
+                Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex1);
+                System.exit(1);
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex1) {
-            Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex1);
-            System.exit(1);
+            started = true;
         }
     }
     
     private static UpdateForm uf;
+    private static boolean started = false;
     public static String[] args;
     
     public static String cfg;

@@ -51,6 +51,11 @@ public class UpdateForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Sprawdzanie aktualizacji");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         progress.setIndeterminate(true);
 
@@ -111,6 +116,10 @@ public class UpdateForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        Update.startApp();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
