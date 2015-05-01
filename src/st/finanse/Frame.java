@@ -98,6 +98,11 @@ public class Frame extends javax.swing.JFrame {
         finanse.add(allFinanse);
 
         newFinanse.setText("Nowa tabela");
+        newFinanse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newFinanseActionPerformed(evt);
+            }
+        });
         finanse.add(newFinanse);
 
         jMenuBar1.add(finanse);
@@ -117,6 +122,10 @@ public class Frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void newFinanseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFinanseActionPerformed
+        addJIF(new NewFinance());
+    }//GEN-LAST:event_newFinanseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
