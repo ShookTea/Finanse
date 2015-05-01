@@ -53,7 +53,7 @@ public class Update {
         versionOnline = online.getProperty("version", "");
         historyOnline = online.getProperty("history", "");
         is.close();
-        return versionOnline.equals(version);
+        return !versionOnline.equals(version);
     }
     
     private static void startApp() {

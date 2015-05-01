@@ -27,17 +27,18 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="progress" max="32767" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="progress" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="version" min="-2" max="-2" attributes="0"/>
-                          <Component id="history" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="confirm" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="install" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cancel" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="199" max="32767" attributes="0"/>
                   </Group>
@@ -54,8 +55,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="progress" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="history" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="81" max="32767" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="109" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="confirm" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -78,8 +81,6 @@
         <Property name="text" type="java.lang.String" value="Sprawdzanie aktualizacji"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="history">
-    </Component>
     <Component class="javax.swing.JButton" name="install">
       <Properties>
         <Property name="text" type="java.lang.String" value="Zainstaluj"/>
@@ -93,6 +94,26 @@
     <Component class="javax.swing.JLabel" name="confirm">
       <Properties>
         <Property name="text" type="java.lang.String" value="Czy chcesz zainstalowa&#x107; aktualizacj&#x119;?"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JEditorPane" name="history">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="contentType" type="java.lang.String" value="text/html" noResource="true"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Lista zmian:"/>
       </Properties>
     </Component>
   </SubComponents>
