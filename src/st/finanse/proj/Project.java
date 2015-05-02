@@ -32,5 +32,9 @@ public class Project {
         return ret;
     }
     
+    public Finance getFinance(int i) {
+        return finances.get(i);
+    }
+    
     private final ArrayList<Finance> finances;
 }

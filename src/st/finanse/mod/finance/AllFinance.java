@@ -1,6 +1,7 @@
 package st.finanse.mod.finance;
 
 import st.finanse.UpdateI;
+import st.finanse.gui.Frame;
 import st.finanse.proj.Project;
 
 /**
@@ -47,6 +48,11 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
                 return canEdit [columnIndex];
             }
         });
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -62,6 +68,14 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        int r = jTable1.rowAtPoint(evt.getPoint());
+        int c = jTable1.columnAtPoint(evt.getPoint());
+        if (c == 3) { //Pokazuj tabelę
+            Frame.addJIF(new FinanceTab(Project.project.getFinance(r)));
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
