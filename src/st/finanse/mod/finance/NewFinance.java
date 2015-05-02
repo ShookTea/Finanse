@@ -140,9 +140,10 @@ public class NewFinance extends javax.swing.JInternalFrame {
         else {
             cash = new BigDecimal("0.0");
         }
-        Project.project.createFinance(m, y, cash);
-        Frame.updateAll();
+        Finance f = Project.project.createFinance(m, y, cash);
+        Frame.addJIF(new FinanceTab(f));
         this.dispose();
+        Frame.updateAll();
     }//GEN-LAST:event_createActionPerformed
 
 

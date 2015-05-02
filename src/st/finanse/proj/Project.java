@@ -15,8 +15,10 @@ public class Project {
         finances = new ArrayList();
     }
     
-    public void createFinance(int month, int year, BigDecimal start) {
-        finances.add(new Finance(month, year, start));
+    public Finance createFinance(int month, int year, BigDecimal start) {
+        Finance f = new Finance(month, year, start);
+        finances.add(f);
+        return f;
     }
     
     public Object[][] createFinanceModel() {
