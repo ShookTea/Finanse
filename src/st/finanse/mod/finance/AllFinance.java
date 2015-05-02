@@ -96,6 +96,7 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
                 false, false, false, false
             };
 
+            @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }

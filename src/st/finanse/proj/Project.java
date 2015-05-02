@@ -62,9 +62,9 @@ public class Project {
     
     public Finance getLastClosedFinance() {
         Finance ret = null;
-        for (int i = 0; i < finances.size(); i++) {
-            if (finances.get(i).isClosed()) {
-                ret = finances.get(i);
+        for (Finance finance : finances) {
+            if (finance.isClosed()) {
+                ret = finance;
             }
         }
         return ret;
