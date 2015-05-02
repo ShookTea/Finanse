@@ -3,8 +3,10 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import javax.swing.ButtonModel;
 import javax.swing.JOptionPane;
 import st.finanse.Month;
+import st.finanse.UpdateI;
 import st.finanse.gui.Frame;
 import st.finanse.proj.Project;
 
@@ -12,16 +14,12 @@ import st.finanse.proj.Project;
  *
  * @author ShookTea
  */
-public class NewFinance extends javax.swing.JInternalFrame {
+public class NewFinance extends javax.swing.JInternalFrame implements UpdateI {
 
     /** Creates new form NewFinance */
     public NewFinance() {
         initComponents();
-        Calendar c = Calendar.getInstance();
-        int y = c.get(Calendar.YEAR);
-        y = Integer.parseInt(("" + y).substring(2));
-        year.setValue(y);
-        month.setSelectedIndex(c.get(Calendar.MONTH));
+        updateData();
     }
 
     /** This method is called from within the constructor to
@@ -188,4 +186,37 @@ public class NewFinance extends javax.swing.JInternalFrame {
     private javax.swing.JRadioButton valueNew;
     private javax.swing.JSpinner year;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateData() {
+        Finance f = Project.project.getLastClosedFinance();
+        int y, m;
+        ButtonModel model;
+        if (f == null) {
+            Calendar c = Calendar.getInstance();
+            y = c.get(Calendar.YEAR);
+            m = c.get(Calendar.MONTH);
+            model = valueNew.getModel();
+        }
+        else {
+            int[] t = Month.getAfter(f.getYear(), f.getMonth());
+            y = t[0];
+            m = t[1];
+            model = valueFromMonth.getModel();
+        }
+        y = Integer.parseInt(("" + y).substring(2));
+        year.setValue(y);
+        month.setSelectedIndex(m);
+        valueGroup.setSelected(model, true);
+        
+        if (valueGroup.isSelected(valueFromMonth.getModel())) {
+            value.setEditable(false);
+            value.setText("");
+            value.setBackground(Color.LIGHT_GRAY);
+        }
+        else {
+            value.setEditable(true);
+            value.setBackground(Color.WHITE);
+        }
+    }
 }
