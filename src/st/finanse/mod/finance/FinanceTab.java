@@ -1,5 +1,6 @@
 package st.finanse.mod.finance;
 
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import st.finanse.Month;
@@ -43,7 +44,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         value = new javax.swing.JFormattedTextField();
         add = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        bilans = new javax.swing.JLabel();
+        bilance = new javax.swing.JLabel();
         actual = new javax.swing.JLabel();
         adds = new javax.swing.JLabel();
         substracts = new javax.swing.JLabel();
@@ -116,7 +117,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
             }
         });
 
-        bilans.setText("Bilans:");
+        bilance.setText("Bilans:");
 
         actual.setText("Aktualna kwota:");
 
@@ -125,8 +126,18 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         substracts.setText("Straty:");
 
         close.setText("Zamknij miesiąc");
+        close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeActionPerformed(evt);
+            }
+        });
 
         closeAndCreate.setText("Zamknij miesiąc i utwórz nowy");
+        closeAndCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                closeAndCreateActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,7 +170,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                         .addComponent(event))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bilans)
+                            .addComponent(bilance)
                             .addComponent(actual))
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,7 +213,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                     .addComponent(actual))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bilans)
+                    .addComponent(bilance)
                     .addComponent(substracts)
                     .addComponent(closeAndCreate))
                 .addContainerGap())
@@ -219,12 +230,22 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         day.requestFocus();
     }//GEN-LAST:event_addActionPerformed
 
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+        f.close();
+        Frame.updateAll();
+    }//GEN-LAST:event_closeActionPerformed
+
+    private void closeAndCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeAndCreateActionPerformed
+        f.close();
+        Frame.updateAll();
+    }//GEN-LAST:event_closeAndCreateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actual;
     private javax.swing.JButton add;
     private javax.swing.JLabel adds;
-    private javax.swing.JLabel bilans;
+    private javax.swing.JLabel bilance;
     private javax.swing.JButton close;
     private javax.swing.JButton closeAndCreate;
     private javax.swing.JLabel date;
@@ -254,6 +275,15 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         initValue.setText("Kwota początkowa: " + inS + " zł");
         createTableModel();
         day.requestFocus();
+        day.setEnabled(!f.isClosed());
+        title.setEditable(!f.isClosed());
+        value.setEditable(!f.isClosed());
+        add.setEnabled(!f.isClosed());
+        close.setEnabled(!f.isClosed());
+        closeAndCreate.setEnabled(!f.isClosed());
+        event.setEnabled(!f.isClosed());
+        title.setBackground(f.isClosed() ? Color.LIGHT_GRAY : Color.WHITE);
+        value.setBackground(f.isClosed() ? Color.LIGHT_GRAY : Color.WHITE);
     }
     
     private void createTableModel() {
