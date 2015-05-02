@@ -51,6 +51,15 @@ public class Project {
         return finances.get(i);
     }
     
+    public Finance getFinance(int month, int year) {
+        for (Finance f : finances) {
+            if (f.getMonth() == month && f.getYear() == year) {
+                return f;
+            }
+        }
+        return null;
+    }
+    
     public Finance getLastClosedFinance() {
         Finance ret = null;
         for (int i = 0; i < finances.size(); i++) {

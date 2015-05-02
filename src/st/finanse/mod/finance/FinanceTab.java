@@ -56,6 +56,8 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         subtracts = new javax.swing.JLabel();
         close = new javax.swing.JButton();
         closeAndCreate = new javax.swing.JButton();
+        before = new javax.swing.JButton();
+        after = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -152,6 +154,20 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
             }
         });
 
+        before.setText("<");
+        before.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                beforeActionPerformed(evt);
+            }
+        });
+
+        after.setText(">");
+        after.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,16 +187,6 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                         .addComponent(value, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(add))
-                    .addComponent(date)
-                    .addComponent(initValue)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(event))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bilance)
@@ -192,18 +198,40 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(close, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(closeAndCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(closeAndCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(date2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(event))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(before)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(date)
+                                    .addComponent(initValue))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(after)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(date)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(date)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(initValue))
+                    .addComponent(before, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(after, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(initValue)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -264,11 +292,23 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         }
     }//GEN-LAST:event_tableMouseClicked
 
+    private void beforeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beforeActionPerformed
+        f = Finance.getBefore(f);
+        Frame.updateAll();
+    }//GEN-LAST:event_beforeActionPerformed
+
+    private void afterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afterActionPerformed
+        f = Finance.getAfter(f);
+        Frame.updateAll();
+    }//GEN-LAST:event_afterActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actual;
     private javax.swing.JButton add;
     private javax.swing.JLabel adds;
+    private javax.swing.JButton after;
+    private javax.swing.JButton before;
     private javax.swing.JLabel bilance;
     private javax.swing.JButton close;
     private javax.swing.JButton closeAndCreate;
@@ -288,7 +328,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     private javax.swing.JFormattedTextField value;
     // End of variables declaration//GEN-END:variables
 
-    private final Finance f;
+    private Finance f;
     
     @Override
     public void updateData() {
@@ -327,6 +367,9 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         else {
             bilance.setForeground(Color.BLACK);
         }
+        
+        before.setEnabled(Finance.getBefore(f) != null);
+        after.setEnabled(Finance.getAfter(f) != null);
     }
     
     private void createTableModel() {

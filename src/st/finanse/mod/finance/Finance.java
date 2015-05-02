@@ -134,6 +134,16 @@ public class Finance {
     private final int year;
     private final BigDecimal start;
     private final ArrayList<FinanceEntry> entries;
+    
+    public static Finance getBefore(Finance f) {
+        int[] i = Month.getBefore(f.year, f.month);
+        return Project.project.getFinance(i[1], i[0]);
+    }
+    
+    public static Finance getAfter(Finance f) {
+        int[] i = Month.getAfter(f.year, f.month);
+        return Project.project.getFinance(i[1], i[0]);
+    }
 }
 
 class FinanceEntry {
