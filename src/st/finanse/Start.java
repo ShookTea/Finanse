@@ -1,5 +1,7 @@
 package st.finanse;
 
+import st.finanse.gui.Frame;
+
 /**
  *
  * @author ShookTea

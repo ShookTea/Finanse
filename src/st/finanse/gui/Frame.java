@@ -1,6 +1,7 @@
-package st.finanse;
+package st.finanse.gui;
 
 import javax.swing.JInternalFrame;
+import st.finanse.UpdateI;
 
 /**
  *

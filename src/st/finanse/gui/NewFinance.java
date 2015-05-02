@@ -1,7 +1,8 @@
-package st.finanse;
+package st.finanse.gui;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
+import st.finanse.Month;
 import st.finanse.proj.Project;
 
 /**
