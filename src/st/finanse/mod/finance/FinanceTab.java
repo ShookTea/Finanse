@@ -95,6 +95,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
             }
         });
         table.getTableHeader().setReorderingAllowed(false);
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table);
 
         jLabel1.setText("Data:");
@@ -247,6 +252,15 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         f.close();
         Frame.updateAll();
     }//GEN-LAST:event_closeAndCreateActionPerformed
+
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+        int r = table.rowAtPoint(evt.getPoint());
+        int c = table.columnAtPoint(evt.getPoint());
+        if (c == 3) { //Usuń
+            f.removeEntry(r);
+            Frame.updateAll();
+        }
+    }//GEN-LAST:event_tableMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
