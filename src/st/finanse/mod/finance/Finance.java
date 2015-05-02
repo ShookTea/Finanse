@@ -2,6 +2,8 @@ package st.finanse.mod.finance;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import st.finanse.proj.Project;
 
 /**
  * Klasa zarządzająca pojedynczym miesiącem finansowym
@@ -49,6 +51,74 @@ public class Finance {
     
     public void close() {
         isClosed = true;
+    }
+    
+    public DefaultTableModel createTableModel() {
+        if (isClosed) {
+            return new DefaultTableModel(getTableModelData(), getTableModelTitles()) {
+                Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false, false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            };
+        }
+        else {
+            return new DefaultTableModel(getTableModelData(), getTableModelTitles())  {
+                Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            };
+        }
+    }
+    
+    private Object[][] getTableModelData() {
+        Object[][] ret;
+        if (isClosed) {
+            ret = new Object[entries.size()][3];
+        }
+        else {
+            ret = new Object[entries.size()][4];
+        }
+        for (int i = 0; i < ret.length; i++) {
+            FinanceEntry e = entries.get(i);
+            ret[i][0] = e.day + "-" + (month+1) + "-" + year;
+            ret[i][1] = e.title;
+            ret[i][2] = Project.project.df.format(e.cash + " zł");
+            if (!isClosed) {
+                ret[i][3] = "Usuń";
+            }
+        }
+        return ret;
+    }
+    
+    private String[] getTableModelTitles() {
+        if (isClosed) {
+            return new String[] {"Data", "Tytuł", "Kwota"};
+        }
+        else {
+            return new String[] {"Data", "Tytuł", "Kwota", "Usuń"};
+        }
     }
     
     private boolean isClosed = false;

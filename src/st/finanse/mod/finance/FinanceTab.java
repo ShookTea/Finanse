@@ -29,7 +29,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         date = new javax.swing.JLabel();
         initValue = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        table = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         day = new javax.swing.JSpinner();
         date2 = new javax.swing.JLabel();
@@ -58,7 +58,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         initValue.setText("jLabel1");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -84,8 +84,8 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        table.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(table);
 
         jLabel1.setText("Data:");
 
@@ -216,8 +216,8 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel substracts;
+    private javax.swing.JTable table;
     private javax.swing.JTextField title;
     private javax.swing.JFormattedTextField value;
     // End of variables declaration//GEN-END:variables
@@ -235,62 +235,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     }
     
     private void createTableModel() {
-        if (f.isClosed()) {
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null},
-                    {null, null, null}
-                },
-                new String [] {
-                    "Data", "Tytuł", "Kwota"
-                }
-            ) {
-                Class[] types = new Class [] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class
-                };
-                boolean[] canEdit = new boolean [] {
-                    false, false, false
-                };
-
-                public Class getColumnClass(int columnIndex) {
-                    return types [columnIndex];
-                }
-
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit [columnIndex];
-                }
-            });
-        }
-        else {
-            jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object [][] {
-                    {null, null, null, null},
-                    {null, null, null, null},
-                    {null, null, null, null},
-                    {null, null, null, null}
-                },
-                new String [] {
-                    "Data", "Tytuł", "Kwota", "Usuń"
-                }
-            ) {
-                Class[] types = new Class [] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-                };
-                boolean[] canEdit = new boolean [] {
-                    false, false, false, false
-                };
-
-                public Class getColumnClass(int columnIndex) {
-                    return types [columnIndex];
-                }
-
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit [columnIndex];
-                }
-            });
-        }
+        table.setModel(f.createTableModel());
     }
 
 }
