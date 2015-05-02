@@ -60,7 +60,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="substracts" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="subtracts" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="adds" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -109,7 +109,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="bilance" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="substracts" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="subtracts" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="closeAndCreate" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -232,11 +232,17 @@
     </Component>
     <Component class="javax.swing.JLabel" name="adds">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="66" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Zyski:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="substracts">
+    <Component class="javax.swing.JLabel" name="subtracts">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="99" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Straty:"/>
       </Properties>
     </Component>

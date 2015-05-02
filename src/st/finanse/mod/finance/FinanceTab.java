@@ -47,7 +47,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         bilance = new javax.swing.JLabel();
         actual = new javax.swing.JLabel();
         adds = new javax.swing.JLabel();
-        substracts = new javax.swing.JLabel();
+        subtracts = new javax.swing.JLabel();
         close = new javax.swing.JButton();
         closeAndCreate = new javax.swing.JButton();
 
@@ -121,9 +121,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         actual.setText("Aktualna kwota:");
 
+        adds.setForeground(new java.awt.Color(51, 102, 0));
         adds.setText("Zyski:");
 
-        substracts.setText("Straty:");
+        subtracts.setForeground(new java.awt.Color(153, 0, 0));
+        subtracts.setText("Straty:");
 
         close.setText("Zamknij miesiąc");
         close.addActionListener(new java.awt.event.ActionListener() {
@@ -174,7 +176,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                             .addComponent(actual))
                         .addGap(141, 141, 141)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(substracts)
+                            .addComponent(subtracts)
                             .addComponent(adds))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -214,7 +216,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bilance)
-                    .addComponent(substracts)
+                    .addComponent(subtracts)
                     .addComponent(closeAndCreate))
                 .addContainerGap())
         );
@@ -258,7 +260,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel substracts;
+    private javax.swing.JLabel subtracts;
     private javax.swing.JTable table;
     private javax.swing.JTextField title;
     private javax.swing.JFormattedTextField value;
@@ -284,6 +286,25 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         event.setEnabled(!f.isClosed());
         title.setBackground(f.isClosed() ? Color.LIGHT_GRAY : Color.WHITE);
         value.setBackground(f.isClosed() ? Color.LIGHT_GRAY : Color.WHITE);
+        
+        BigDecimal cashAdd = f.getAdds();
+        BigDecimal cashSub = f.getSubtracts();
+        BigDecimal cashBil = cashAdd.subtract(cashSub);
+        BigDecimal cashFinal = f.getStart().add(cashBil);
+        adds.setText("Przychody: " + Project.project.df.format(cashAdd) + " zł");
+        subtracts.setText("Straty: " + Project.project.df.format(cashSub) + " zł");
+        bilance.setText("Bilans: " + Project.project.df.format(cashBil) + " zł");
+        actual.setText("Aktualna kwota: " + Project.project.df.format(cashFinal) + " zł");
+        
+        if (cashBil.signum() == -1) {
+            bilance.setForeground(new java.awt.Color(153, 0, 0));
+        }
+        else if (cashBil.signum() == 1) {
+            bilance.setForeground(new java.awt.Color(51, 102, 0));
+        }
+        else {
+            bilance.setForeground(Color.BLACK);
+        }
     }
     
     private void createTableModel() {

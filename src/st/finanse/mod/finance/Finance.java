@@ -53,6 +53,26 @@ public class Finance {
         isClosed = true;
     }
     
+    public BigDecimal getAdds() {
+        BigDecimal ret = new BigDecimal("0.0");
+        for (FinanceEntry e : entries) {
+            if (e.cash.signum() == 1) {
+                ret = ret.add(e.cash);
+            }
+        }
+        return ret;
+    }
+    
+    public BigDecimal getSubtracts() {
+        BigDecimal ret = new BigDecimal("0.0");
+        for (FinanceEntry e : entries) {
+            if (e.cash.signum() == -1) {
+                ret = ret.subtract(e.cash);
+            }
+        }
+        return ret;
+    }
+    
     public DefaultTableModel createTableModel() {
         if (isClosed) {
             return new DefaultTableModel(getTableModelData(), getTableModelTitles()) {
