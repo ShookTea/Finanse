@@ -1,8 +1,14 @@
 package st.finanse.mod.finance;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Arrays;
+import java.util.List;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
 import st.finanse.Month;
 import st.finanse.UpdateI;
 import st.finanse.gui.Frame;
@@ -309,6 +315,69 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     
     private void createTableModel() {
         table.setModel(f.createTableModel());
+        CellRenderer cr = new CellRenderer();
+        for (int i = 0; i < table.getColumnCount(); i++) {
+            table.getColumnModel().getColumn(i).setCellRenderer(cr);
+        }
     }
+    
+    private class CellRenderer extends DefaultTableCellRenderer {
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            TableModel model = (TableModel) table.getModel();
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+            c.setBackground(model.getRowColour(row));
+            if (model.getRowColour(row).equals(Color.WHITE)) {
+                c.setForeground(Color.BLACK);
+            }
+            else {
+                c.setForeground(Color.WHITE);
+            }
+            return c;
+        }
+    }
+    
+    public static class TableModel extends DefaultTableModel {
+        public TableModel(Object[][] ob, String[] titles, boolean isClosed) {
+            super(ob, titles);
+            rowColours = Arrays.asList(new Color[ob.length]);
+            if (isClosed) {
+                types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                canEdit = new boolean [] {
+                    false, false, false
+                };
+            }
+            else {
+                types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                canEdit = new boolean [] {
+                    false, false, false, false
+                };
+            }
+        }
+        
+        Class[] types;
+        boolean[] canEdit;
+        List<Color> rowColours;
 
+        public Class getColumnClass(int columnIndex) {
+            return types[columnIndex];
+        }
+
+        public boolean isCellEditable(int rowIndex, int columnIndex) {
+            return canEdit[columnIndex];
+        }
+
+        public void setRowColour(int row, Color c) {
+            rowColours.set(row, c);
+            fireTableRowsUpdated(row, row);
+        }
+
+        public Color getRowColour(int row) {
+            return rowColours.get(row);
+        }
+    }
 }

@@ -1,8 +1,12 @@
 package st.finanse.mod.finance;
 
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import st.finanse.mod.finance.FinanceTab.TableModel;
 import st.finanse.proj.Project;
 
 /**
@@ -74,42 +78,19 @@ public class Finance {
     }
     
     public DefaultTableModel createTableModel() {
-        if (isClosed) {
-            return new DefaultTableModel(getTableModelData(), getTableModelTitles()) {
-                Class[] types = new Class [] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class
-                };
-                boolean[] canEdit = new boolean [] {
-                    false, false, false
-                };
-
-                public Class getColumnClass(int columnIndex) {
-                    return types [columnIndex];
-                }
-
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit [columnIndex];
-                }
-            };
+        TableModel tm = new TableModel(getTableModelData(), getTableModelTitles(), isClosed);
+        for (int i = 0; i < entries.size(); i++) {
+            if (entries.get(i).cash.signum() == 1) {
+                tm.setRowColour(i, Color.BLUE);
+            }
+            else if (entries.get(i).isEvent) {
+                tm.setRowColour(i, Color.RED);
+            }
+            else {
+                tm.setRowColour(i, Color.WHITE);
+            }
         }
-        else {
-            return new DefaultTableModel(getTableModelData(), getTableModelTitles())  {
-                Class[] types = new Class [] {
-                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-                };
-                boolean[] canEdit = new boolean [] {
-                    false, false, false, false
-                };
-
-                public Class getColumnClass(int columnIndex) {
-                    return types [columnIndex];
-                }
-
-                public boolean isCellEditable(int rowIndex, int columnIndex) {
-                    return canEdit [columnIndex];
-                }
-            };
-        }
+        return tm;
     }
     
     private Object[][] getTableModelData() {
