@@ -1,5 +1,6 @@
 package st.finanse.mod.finance;
 
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import st.finanse.Month;
@@ -58,10 +59,20 @@ public class NewFinance extends javax.swing.JInternalFrame {
 
         valueGroup.add(valueFromMonth);
         valueFromMonth.setText("Z poprzedniego miesiąca (musi być zamknięty)");
+        valueFromMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valueGroupActionPerformed(evt);
+            }
+        });
 
         valueGroup.add(valueNew);
         valueNew.setSelected(true);
         valueNew.setText("Nowa wartość:");
+        valueNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valueGroupActionPerformed(evt);
+            }
+        });
 
         value.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.##"))));
 
@@ -145,6 +156,18 @@ public class NewFinance extends javax.swing.JInternalFrame {
         this.dispose();
         Frame.updateAll();
     }//GEN-LAST:event_createActionPerformed
+
+    private void valueGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valueGroupActionPerformed
+        if (valueGroup.isSelected(valueFromMonth.getModel())) {
+            value.setEditable(false);
+            value.setText("");
+            value.setBackground(Color.LIGHT_GRAY);
+        }
+        else {
+            value.setEditable(true);
+            value.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_valueGroupActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

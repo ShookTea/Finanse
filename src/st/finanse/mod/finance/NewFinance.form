@@ -132,6 +132,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Z poprzedniego miesi&#x105;ca (musi by&#x107; zamkni&#x119;ty)"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valueGroupActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="valueNew">
       <Properties>
@@ -141,6 +144,9 @@
         <Property name="selected" type="boolean" value="true"/>
         <Property name="text" type="java.lang.String" value="Nowa warto&#x15b;&#x107;:"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valueGroupActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JFormattedTextField" name="value">
       <Properties>
