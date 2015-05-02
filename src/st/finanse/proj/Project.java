@@ -25,6 +25,16 @@ public class Project {
         return f;
     }
     
+    public Finance createFinance(Finance before) {
+        if (before.isClosed()) {
+            int[] after = Month.getAfter(before.getYear(), before.getMonth());
+            return this.createFinance(after[1], after[0], before.getCash());
+        }
+        else {
+            return before;
+        }
+    }
+    
     public Object[][] createFinanceModel() {
         Object[][] ret = new Object[finances.size()][4];
         for (int i = 0; i < ret.length; i++) {

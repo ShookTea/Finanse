@@ -250,6 +250,8 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
     private void closeAndCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeAndCreateActionPerformed
         f.close();
+        Finance newF = Project.project.createFinance(f);
+        Frame.addJIF(new FinanceTab(newF));
         Frame.updateAll();
     }//GEN-LAST:event_closeAndCreateActionPerformed
 
