@@ -53,9 +53,25 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Data", "Tytuł", "Kwota", "Usuń"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         jLabel1.setText("Data:");
@@ -122,6 +138,66 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         date2.setText(dS);
         String inS = Project.project.df.format(f.getStart());
         initValue.setText("Kwota początkowa: " + inS + " zł");
+        createTableModel();
+    }
+    
+    private void createTableModel() {
+        if (f.isClosed()) {
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null},
+                    {null, null, null}
+                },
+                new String [] {
+                    "Data", "Tytuł", "Kwota"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false, false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+        }
+        else {
+            jTable1.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Data", "Tytuł", "Kwota", "Usuń"
+                }
+            ) {
+                Class[] types = new Class [] {
+                    java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                };
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false
+                };
+
+                public Class getColumnClass(int columnIndex) {
+                    return types [columnIndex];
+                }
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+        }
     }
 
 }
