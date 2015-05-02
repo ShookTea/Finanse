@@ -1,5 +1,7 @@
 package st.finanse.gui;
 
+import st.finanse.proj.Project;
+
 /**
  *
  * @author ShookTea
@@ -9,6 +11,7 @@ public class AllFinance extends javax.swing.JInternalFrame {
     /** Creates new form AllFinance */
     public AllFinance() {
         initComponents();
+        Project.project.createFinanceModel();
     }
 
     /** This method is called from within the constructor to
@@ -30,16 +33,19 @@ public class AllFinance extends javax.swing.JInternalFrame {
         setTitle("Wszystkie tabele");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
+            Project.project.createFinanceModel(),
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Rok", "Miesiąc", "Zamknięty?", "Pokaż"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
