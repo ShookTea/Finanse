@@ -140,6 +140,7 @@ public class NewFinance extends javax.swing.JInternalFrame {
             cash = new BigDecimal("0.0");
         }
         Project.project.createFinance(m, y, cash);
+        Frame.updateAll();
         this.dispose();
     }//GEN-LAST:event_createActionPerformed
 

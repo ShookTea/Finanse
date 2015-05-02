@@ -1,12 +1,13 @@
 package st.finanse.gui;
 
+import st.finanse.UpdateI;
 import st.finanse.proj.Project;
 
 /**
  *
  * @author ShookTea
  */
-public class AllFinance extends javax.swing.JInternalFrame {
+public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
 
     /** Creates new form AllFinance */
     public AllFinance() {
@@ -67,5 +68,23 @@ public class AllFinance extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateData() {
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            Project.project.createFinanceModel(),
+            new String [] {
+                "Rok", "Miesiąc", "Zamknięty?", "Pokaż"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+    }
 
 }
