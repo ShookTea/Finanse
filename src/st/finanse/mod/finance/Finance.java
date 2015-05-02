@@ -104,7 +104,7 @@ public class Finance {
             FinanceEntry e = entries.get(i);
             ret[i][0] = e.day + "-" + (month+1) + "-" + year;
             ret[i][1] = e.title;
-            ret[i][2] = Project.project.df.format(e.cash + " zł");
+            ret[i][2] = Project.project.df.format(e.cash) + " zł";
             if (!isClosed) {
                 ret[i][3] = "Usuń";
             }

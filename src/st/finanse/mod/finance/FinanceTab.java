@@ -1,7 +1,10 @@
 package st.finanse.mod.finance;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import st.finanse.Month;
 import st.finanse.UpdateI;
+import st.finanse.gui.Frame;
 import st.finanse.proj.Project;
 
 /**
@@ -13,6 +16,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     public FinanceTab(Finance f) {
         this.f = f;
         initComponents();
+        this.getRootPane().setDefaultButton(add);
         updateData();
     }
 
@@ -106,6 +110,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         add.setText("Dodaj");
         add.setNextFocusableComponent(day);
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
 
         bilans.setText("Bilans:");
 
@@ -201,6 +210,14 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        f.addEntry(Integer.parseInt(day.getValue().toString()), title.getText(), event.isSelected(), new BigDecimal(value.getValue().toString()).setScale(2, RoundingMode.HALF_UP));
+        title.setText("");
+        value.setText("");
+        Frame.updateAll();
+        day.requestFocus();
+    }//GEN-LAST:event_addActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
