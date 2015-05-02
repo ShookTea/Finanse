@@ -10,7 +10,6 @@ import st.finanse.proj.Project;
  */
 public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
-    /** Creates new form FinanceTab */
     public FinanceTab(Finance f) {
         this.f = f;
         initComponents();
@@ -90,6 +89,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         jLabel1.setText("Data:");
 
         day.setModel(new javax.swing.SpinnerNumberModel(Month.getActualDay(), 1, Month.getMaxDay(f.getMonth()), 1));
+        day.setNextFocusableComponent(title);
 
         date2.setText("jLabel2");
 
@@ -97,11 +97,15 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         jLabel2.setText("Tytuł:");
 
+        title.setNextFocusableComponent(value);
+
         jLabel3.setText("Kwota:");
 
         value.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.##"))));
+        value.setNextFocusableComponent(add);
 
         add.setText("Dodaj");
+        add.setNextFocusableComponent(day);
 
         bilans.setText("Bilans:");
 
@@ -232,6 +236,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         String inS = Project.project.df.format(f.getStart());
         initValue.setText("Kwota początkowa: " + inS + " zł");
         createTableModel();
+        day.requestFocus();
     }
     
     private void createTableModel() {
