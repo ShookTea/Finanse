@@ -41,6 +41,16 @@ public class Project {
         return finances.get(i);
     }
     
+    public Finance getLastClosedFinance() {
+        Finance ret = null;
+        for (int i = 0; i < finances.size(); i++) {
+            if (finances.get(i).isClosed()) {
+                ret = finances.get(i);
+            }
+        }
+        return ret;
+    }
+    
     private final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
 }

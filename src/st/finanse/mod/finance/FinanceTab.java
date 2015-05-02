@@ -296,7 +296,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         BigDecimal cashAdd = f.getAdds();
         BigDecimal cashSub = f.getSubtracts();
         BigDecimal cashBil = cashAdd.subtract(cashSub);
-        BigDecimal cashFinal = f.getStart().add(cashBil);
+        BigDecimal cashFinal = f.getCash();
         adds.setText("Przychody: " + Project.project.df.format(cashAdd) + " zł");
         subtracts.setText("Straty: " + Project.project.df.format(cashSub) + " zł");
         bilance.setText("Bilans: " + Project.project.df.format(cashBil) + " zł");

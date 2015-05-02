@@ -3,9 +3,8 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import st.finanse.Month;
 import st.finanse.mod.finance.FinanceTab.TableModel;
 import st.finanse.proj.Project;
 
@@ -18,6 +17,14 @@ public class Finance {
         this.month = month;
         this.year = year;
         this.start = start;
+        this.entries = new ArrayList();
+    }
+    
+    public Finance(Finance before) {
+        int[] after = Month.getAfter(before.year, before.month);
+        this.year = after[0];
+        this.month = after[1];
+        this.start = before.getCash();
         this.entries = new ArrayList();
     }
     
@@ -36,7 +43,7 @@ public class Finance {
     public BigDecimal getCash() {
         BigDecimal cash = start;
         for (FinanceEntry entry : entries) {
-            cash.add(entry.cash);
+            cash = cash.add(entry.cash);
         }
         return cash;
     }

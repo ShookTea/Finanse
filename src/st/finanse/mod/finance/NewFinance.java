@@ -3,6 +3,7 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.Calendar;
+import javax.swing.JOptionPane;
 import st.finanse.Month;
 import st.finanse.gui.Frame;
 import st.finanse.proj.Project;
@@ -107,7 +108,7 @@ public class NewFinance extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(valueNew)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(value, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE))
+                                .addComponent(value, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
                             .addComponent(valueFromMonth)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -149,7 +150,12 @@ public class NewFinance extends javax.swing.JInternalFrame {
             cash = new BigDecimal(value.getValue().toString());
         }
         else {
-            cash = new BigDecimal("0.0");
+            Finance f = Project.project.getLastClosedFinance();
+            if (f == null) {
+                JOptionPane.showMessageDialog(this, "Żaden miesiąc nie został jeszcze zamknięty", "Błąd", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            cash = Project.project.getLastClosedFinance().getCash();
         }
         Finance f = Project.project.createFinance(m, y, cash);
         Frame.addJIF(new FinanceTab(f));

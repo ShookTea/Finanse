@@ -34,6 +34,24 @@ public enum Month {
         return maxDays[month];
     }
     
+    public static int[] getBefore(int year, int month) {
+        if (month == 0) {
+            return new int[] {year-1, 11};
+        }
+        else {
+            return new int[] {year, month-1};
+        }
+    }
+    
+    public static int[] getAfter(int year, int month) {
+        if (month == 11) {
+            return new int[] {year+1, 0};
+        }
+        else {
+            return new int[] {year, month+1};
+        }
+    }
+    
     
     private static final int[] maxDays = {31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 }
