@@ -43,6 +43,15 @@ public class Finance {
         entries.remove(id);
     }
     
+    public boolean isClosed() {
+        return isClosed;
+    }
+    
+    public void close() {
+        isClosed = true;
+    }
+    
+    private boolean isClosed = false;
     private final int month;
     private final int year;
     private final BigDecimal start;
