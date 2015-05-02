@@ -1,4 +1,4 @@
-package st.finanse.proj;
+package st.finanse.mod.finance;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

@@ -1,5 +1,7 @@
 package st.finanse.gui;
 
+import st.finanse.mod.finance.NewFinance;
+import st.finanse.mod.finance.AllFinance;
 import javax.swing.JInternalFrame;
 import st.finanse.UpdateI;
 

@@ -1,4 +1,4 @@
-package st.finanse.gui;
+package st.finanse.mod.finance;
 
 import st.finanse.UpdateI;
 import st.finanse.proj.Project;

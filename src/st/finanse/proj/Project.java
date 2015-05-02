@@ -1,5 +1,6 @@
 package st.finanse.proj;
 
+import st.finanse.mod.finance.Finance;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import st.finanse.Month;
