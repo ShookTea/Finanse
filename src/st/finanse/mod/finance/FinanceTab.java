@@ -2,6 +2,7 @@ package st.finanse.mod.finance;
 
 import st.finanse.Month;
 import st.finanse.UpdateI;
+import st.finanse.proj.Project;
 
 /**
  *
@@ -31,6 +32,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
+        date2 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -60,6 +62,8 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         jSpinner1.setModel(new javax.swing.SpinnerNumberModel(Month.getActualDay(), 1, Month.getMaxDay(f.getMonth()), 1));
 
+        date2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,8 +77,10 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(date2)))
+                .addContainerGap(497, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,8 +94,9 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(293, Short.MAX_VALUE))
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(date2))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +105,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel date;
+    private javax.swing.JLabel date2;
     private javax.swing.JLabel initValue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -109,7 +117,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     
     @Override
     public void updateData() {
-        date.setText(Month.getAllPolish()[f.getMonth()] + " " + f.getYear());
+        String dS = Month.getAllPolish()[f.getMonth()] + " " + f.getYear();
+        date.setText(dS);
+        date2.setText(dS);
+        String inS = Project.project.df.format(f.getStart());
+        initValue.setText("Kwota początkowa: " + inS + " zł");
     }
 
 }
