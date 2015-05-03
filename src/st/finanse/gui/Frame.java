@@ -3,7 +3,9 @@ package st.finanse.gui;
 import st.finanse.mod.finance.NewFinance;
 import st.finanse.mod.finance.AllFinance;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import st.finanse.UpdateI;
+import st.finanse.proj.Project;
 
 /**
  *
@@ -28,6 +30,12 @@ public class Frame extends javax.swing.JFrame {
             if (jif instanceof UpdateI) {
                 ((UpdateI)jif).updateData();
             }
+        }
+    }
+    
+    public static void removeAllJIF() {
+        for (JInternalFrame jif : frame.desktop.getAllFrames()) {
+            jif.dispose();
         }
     }
 
@@ -73,6 +81,11 @@ public class Frame extends javax.swing.JFrame {
 
         newFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         newFile.setText("Nowy");
+        newFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newFileActionPerformed(evt);
+            }
+        });
         file.add(newFile);
         file.add(jSeparator1);
 
@@ -138,6 +151,22 @@ public class Frame extends javax.swing.JFrame {
     private void allFinanseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allFinanseActionPerformed
         addJIF(new AllFinance());
     }//GEN-LAST:event_allFinanseActionPerformed
+
+    private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
+        int i = JOptionPane.showConfirmDialog(
+                this,
+                "Czy chcesz zapisać obecny projekt przed utworzeniem nowego?",
+                "Potwierdzenie",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+        if (i != JOptionPane.CANCEL_OPTION) {
+            if (i == JOptionPane.YES_OPTION) {
+                //zapisanie pliku
+            }
+            Project.project = new Project();
+        }
+    }//GEN-LAST:event_newFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

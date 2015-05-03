@@ -6,6 +6,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import st.finanse.Month;
+import st.finanse.gui.Frame;
 
 /**
  * Klasa zarządzająca projektem.
@@ -17,6 +18,7 @@ public class Project {
         finances = new ArrayList();
         df.setMaximumFractionDigits(2);
         df.setMinimumFractionDigits(2);
+        Frame.removeAllJIF();
     }
     
     public Finance createFinance(int month, int year, BigDecimal start) {
