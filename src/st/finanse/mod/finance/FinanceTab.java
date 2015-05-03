@@ -264,6 +264,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         f.addEntry(Integer.parseInt(day.getValue().toString()), title.getText(), event.isSelected(), new BigDecimal(value.getValue().toString()).setScale(2, RoundingMode.HALF_UP));
+        Finance.addTitleBase(title.getText());
         title.setText("");
         value.setText("");
         Frame.updateAll();
