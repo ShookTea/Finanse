@@ -3,6 +3,7 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.table.DefaultTableModel;
 import st.finanse.Month;
 import st.finanse.mod.finance.FinanceTab.TableModel;
@@ -144,6 +145,44 @@ public class Finance {
         int[] i = Month.getAfter(f.year, f.month);
         return Project.project.getFinance(i[1], i[0]);
     }
+    
+    public static void addTitleBase(String title) {
+        if (titles.containsKey(title)) {
+            titles.replace(title, titles.get(title) + 1);
+        }
+        else {
+            titles.put(title, 1);
+        }
+    }
+    
+    public static void removeTitleBase(String title) {
+        if (titles.containsKey(title)) {
+            int v = titles.get(title);
+            if (v == 1) {
+                titles.remove(title);
+            }
+            else {
+                titles.replace(title, v-1);
+            }
+        }
+    }
+    
+    public static String getTitleBase(String title) {
+        String ret = "";
+        int v = 0;
+        for (String t : titles.keySet()) {
+            if (t.startsWith(title) && titles.get(t) > v) {
+                ret = t;
+                v = titles.get(t);
+            }
+        }
+        if (v == 0) {
+            return title;
+        }
+        return ret;
+    }
+    
+    private static HashMap<String, Integer> titles = new HashMap();
 }
 
 class FinanceEntry {
