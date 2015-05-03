@@ -87,6 +87,10 @@ public class Finance {
         return ret;
     }
     
+    public FinanceEntry[] getEntries() {
+        return entries.toArray(new FinanceEntry[entries.size()]);
+    }
+    
     public DefaultTableModel createTableModel() {
         TableModel tm = new TableModel(getTableModelData(), getTableModelTitles(), isClosed);
         for (int i = 0; i < entries.size(); i++) {
@@ -184,19 +188,28 @@ public class Finance {
         return ret;
     }
     
-    private static HashMap<String, Integer> titles = new HashMap();
-}
-
-class FinanceEntry {
-    public FinanceEntry(int day, String title, boolean isEvent, BigDecimal cash) {
-        this.day = day;
-        this.title = title;
-        this.isEvent = isEvent;
-        this.cash = cash;
+    public static String[] getKeys() {
+        return titles.keySet().toArray(new String[titles.size()]);
     }
     
-    public final int day;
-    public final String title;
-    public final boolean isEvent;
-    public final BigDecimal cash;
+    public static int getWeight(String key) {
+        return titles.get(key);
+    }
+    
+    private static HashMap<String, Integer> titles = new HashMap();
+
+    public static class FinanceEntry {
+        public FinanceEntry(int day, String title, boolean isEvent, BigDecimal cash) {
+            this.day = day;
+            this.title = title;
+            this.isEvent = isEvent;
+            this.cash = cash;
+        }
+
+        public final int day;
+        public final String title;
+        public final boolean isEvent;
+        public final BigDecimal cash;
+    }
+
 }

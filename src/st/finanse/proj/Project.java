@@ -76,7 +76,7 @@ public class Project {
         return ret;
     }
     
-    private final ArrayList<Finance> finances;
+    public final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
     
     public static boolean save(Project p, File file, Format format) {
