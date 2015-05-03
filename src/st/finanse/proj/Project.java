@@ -91,20 +91,19 @@ public class Project {
         return false;
     }
     
-    public static Project load(File file) {
+    public static void load(File file) {
         Format f = null;
         for (Format form : Format.getAllFormats()) {
-            if (file.getName().toUpperCase().endsWith(form.getFileEnd().toUpperCase())) {
+            if (form.createFileFilter().accept(file)) {
                 f = form;
             }
         }
         if (f != null) {
             try {
-                return f.load(file);
+                Project.project = f.load(file);
             } catch (Exception ex) {
                 Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return null;
     }
 }

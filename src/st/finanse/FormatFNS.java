@@ -21,6 +21,11 @@ public class FormatFNS extends Format {
     public String getFileEnd() {
         return ".FNS";
     }
+    
+    @Override
+    public String getDescription() {
+        return "Plik programu Finanse 2014";
+    }
 
     @Override
     public void save(Project p, File file) throws Exception {

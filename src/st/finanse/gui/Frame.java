@@ -1,9 +1,11 @@
 package st.finanse.gui;
 
+import javax.swing.JFileChooser;
 import st.finanse.mod.finance.NewFinance;
 import st.finanse.mod.finance.AllFinance;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import st.finanse.FormatFNS;
 import st.finanse.UpdateI;
 import st.finanse.proj.Project;
 
@@ -18,7 +20,14 @@ public class Frame extends javax.swing.JFrame {
      */
     private Frame() {
         initComponents();
+        jfc = new JFileChooser();
+        jfc.setAcceptAllFileFilterUsed(false);
+        jfc.setFileFilter(new FormatFNS().createFileFilter());
+        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        jfc.setMultiSelectionEnabled(false);
     }
+    
+    private final JFileChooser jfc;
     
     public static void addJIF(JInternalFrame jif) {
         frame.desktop.add(jif);
@@ -99,6 +108,11 @@ public class Frame extends javax.swing.JFrame {
 
         openFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
         openFile.setText("Wczytaj");
+        openFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openFileActionPerformed(evt);
+            }
+        });
         file.add(openFile);
         file.add(jSeparator2);
 
@@ -167,6 +181,14 @@ public class Frame extends javax.swing.JFrame {
             Project.project = new Project();
         }
     }//GEN-LAST:event_newFileActionPerformed
+
+    private void openFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileActionPerformed
+        if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            Project.load(jfc.getSelectedFile());
+        }
+        Frame.removeAllJIF();
+        Frame.updateAll();
+    }//GEN-LAST:event_openFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

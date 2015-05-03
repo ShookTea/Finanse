@@ -19,7 +19,6 @@ import javax.swing.UIManager;
  */
 public class Update implements Runnable {
     public static void main(String[] args) throws Exception {
-        new st.finanse.FormatFNS().load(new java.io.File("D:/test.fns"));
         UIManager.setLookAndFeel(UIManager.getInstalledLookAndFeels()[1].getClassName()); //NimbusLAF
         
         
