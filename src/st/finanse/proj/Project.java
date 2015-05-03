@@ -1,10 +1,14 @@
 package st.finanse.proj;
 
+import java.io.File;
 import st.finanse.mod.finance.Finance;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import st.finanse.Format;
 import st.finanse.Month;
 import st.finanse.gui.Frame;
 
@@ -74,4 +78,33 @@ public class Project {
     
     private final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
+    
+    public static boolean save(Project p, File file, Format format) {
+        if (file.getName().toUpperCase().endsWith(format.getFileEnd().toUpperCase())) {
+            try {
+                format.save(p, file);
+                return true;
+            } catch (Exception ex) {
+                Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return false;
+    }
+    
+    public static Project load(File file) {
+        Format f = null;
+        for (Format form : Format.getAllFormats()) {
+            if (file.getName().toUpperCase().endsWith(form.getFileEnd().toUpperCase())) {
+                f = form;
+            }
+        }
+        if (f != null) {
+            try {
+                return f.load(file);
+            } catch (Exception ex) {
+                Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return null;
+    }
 }
