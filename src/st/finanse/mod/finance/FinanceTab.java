@@ -2,8 +2,10 @@ package st.finanse.mod.finance;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.JTable;
@@ -116,6 +118,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         jLabel2.setText("Tytuł:");
 
         title.setNextFocusableComponent(value);
+        title.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                titleKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Kwota:");
 
@@ -301,6 +308,17 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         Frame.updateAll();
     }//GEN-LAST:event_afterActionPerformed
 
+    private void titleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_titleKeyReleased
+        if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+            String act = title.getText();
+            String base = Finance.getTitleBase(act);
+            if (!base.equals(act)) {
+                title.setText(base);
+                title.setSelectionStart(act.length());
+                title.setSelectionEnd(base.length());
+            }
+        }
+    }//GEN-LAST:event_titleKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actual;
