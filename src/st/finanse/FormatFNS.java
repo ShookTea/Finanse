@@ -1,8 +1,12 @@
 package st.finanse;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
 import st.finanse.mod.finance.Finance;
 import st.finanse.mod.finance.Finance.FinanceEntry;
 import st.finanse.proj.Project;
@@ -55,7 +59,52 @@ public class FormatFNS extends Format {
 
     @Override
     public Project load(File f) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FileInputStream fis = new FileInputStream(f);
+        DataInputStream dis = new DataInputStream(fis);
+        Project p = new Project();
+        boolean EOF = false;
+        while (!EOF) {
+            try {
+                if (dis.readUTF().equals("FINANCE.START")) {
+                    loadMonth(p, dis);
+                }
+                //TITLE.BASE.START jest wyliczany automatycznie.
+            }
+            catch (EOFException ex) {
+                EOF = true;
+            }
+        }
+        
+        
+        dis.close();
+        fis.close();
+        return p;
     }
-
+    
+    private void loadMonth(Project p, DataInputStream dis) throws Exception {
+        String monthS = dis.readUTF();
+        int month = Month.getMonthID(monthS);
+        int year = dis.readInt();
+        BigDecimal start = new BigDecimal(dis.readUTF());
+        boolean closed = dis.readBoolean();
+        
+        Finance f = p.createFinance(month, year, start);
+        
+        while (dis.readUTF().equals("FINANCE_ENTRY")) {
+            String date = dis.readUTF();
+            int day = Integer.parseInt(date.split(":")[0].trim());
+            String title = dis.readUTF();
+            BigDecimal cash = new BigDecimal(dis.readUTF());
+            boolean event = false;
+            String next = dis.readUTF();
+            if (next.equals("EVENT")) {
+                event = true;
+                dis.readUTF(); //usunięcie "FINANCE_ENTRY_STOP"
+            }
+            f.addEntry(day, title, event, cash);
+        }
+        if (closed) {
+            f.close();
+        }
+    }
 }

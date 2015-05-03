@@ -34,6 +34,37 @@ public enum Month {
         return maxDays[month];
     }
     
+    public static int getMonthID(String name) {
+        switch (name.toLowerCase()) {
+            case "styczeń":
+                return 0;
+            case "luty":
+                return 1;
+            case "marzec":
+                return 2;
+            case "kwiecień":
+                return 3;
+            case "maj":
+                return 4;
+            case "czerwiec":
+                return 5;
+            case "lipiec":
+                return 6;
+            case "sierpień":
+                return 7;
+            case "wrzesień":
+                return 8;
+            case "październik":
+                return 9;
+            case "listopad":
+                return 10;
+            case "grudzień":
+                return 11;
+            default:
+                return 12;
+        }
+    }
+    
     public static int[] getBefore(int year, int month) {
         if (month == 0) {
             return new int[] {year-1, 11};
