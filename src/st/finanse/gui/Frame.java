@@ -102,6 +102,11 @@ public class Frame extends javax.swing.JFrame {
 
         saveFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         saveFile.setText("Zapisz");
+        saveFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveFileActionPerformed(evt);
+            }
+        });
         file.add(saveFile);
 
         saveAsFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
@@ -183,18 +188,33 @@ public class Frame extends javax.swing.JFrame {
         );
         if (i != JOptionPane.CANCEL_OPTION) {
             if (i == JOptionPane.YES_OPTION) {
-                //zapisanie pliku
+                saveFileActionPerformed(null);
             }
             Project.project = new Project();
         }
     }//GEN-LAST:event_newFileActionPerformed
 
     private void openFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileActionPerformed
-        if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
-            Project.load(jfc.getSelectedFile());
+        int i = JOptionPane.showConfirmDialog(
+                this,
+                "Czy chcesz zapisać obecny projekt przed wczytaniem innego?",
+                "Potwierdzenie",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+        if (i != JOptionPane.CANCEL_OPTION) {
+            if (i == JOptionPane.YES_OPTION) {
+                saveFileActionPerformed(null);
+            }
+            if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+                File f = jfc.getSelectedFile();
+                Project.load(f);
+                Project.project.file = f;
+                Project.project.format = Format.getFormatByFileFilter(jfc.getFileFilter());
+            }
+            Frame.removeAllJIF();
+            Frame.updateAll();
         }
-        Frame.removeAllJIF();
-        Frame.updateAll();
     }//GEN-LAST:event_openFileActionPerformed
 
     private void saveAsFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsFileActionPerformed
@@ -202,10 +222,21 @@ public class Frame extends javax.swing.JFrame {
             File f = jfc.getSelectedFile();
             Format form = Format.getFormatByFileFilter(jfc.getFileFilter());
             if (f != null && form != null) {
-                Project.save(jfc.getSelectedFile(), Format.getFormatByFileFilter(jfc.getFileFilter()));
+                Project.save(f, form);
+                Project.project.file = f;
+                Project.project.format = form;
             }
         }
     }//GEN-LAST:event_saveAsFileActionPerformed
+
+    private void saveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveFileActionPerformed
+        if (Project.project.file == null || Project.project.format == null) {
+            saveAsFileActionPerformed(null);
+        }
+        else {
+            Project.save(Project.project.file, Project.project.format);
+        }
+    }//GEN-LAST:event_saveFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

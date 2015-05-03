@@ -78,6 +78,8 @@ public class Project {
     
     public final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
+    public File file = null;
+    public Format format = null;
     
     public static boolean save(File file, Format format) {
         if (!file.getName().toUpperCase().endsWith(format.getFileEnd().toUpperCase())) {
