@@ -51,9 +51,11 @@ public class Finance {
     
     public void addEntry(int day, String title, boolean isEvent, BigDecimal cash) {
         entries.add(new FinanceEntry(day, title, isEvent, cash));
+        Finance.addTitleBase(title);
     }
     
     public void removeEntry(int id) {
+        Finance.removeTitleBase(entries.get(id).title);
         entries.remove(id);
     }
     
