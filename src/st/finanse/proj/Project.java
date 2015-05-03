@@ -79,14 +79,15 @@ public class Project {
     public final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
     
-    public static boolean save(Project p, File file, Format format) {
-        if (file.getName().toUpperCase().endsWith(format.getFileEnd().toUpperCase())) {
-            try {
-                format.save(p, file);
-                return true;
-            } catch (Exception ex) {
-                Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    public static boolean save(File file, Format format) {
+        if (!file.getName().toUpperCase().endsWith(format.getFileEnd().toUpperCase())) {
+            file = new File(file.getAbsolutePath() + format.getFileEnd().toLowerCase());
+        }
+        try {
+            format.save(project, file);
+            return true;
+        } catch (Exception ex) {
+            Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
     }

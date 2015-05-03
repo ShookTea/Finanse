@@ -24,11 +24,15 @@ public class FormatFNS extends Format {
     
     @Override
     public String getDescription() {
-        return "Plik programu Finanse 2014";
+        return "Plik programu Finanse 2014 (.FNS)";
     }
 
     @Override
     public void save(Project p, File file) throws Exception {
+        if (file.exists()) {
+            file.delete();
+        }
+        file.createNewFile();
         FileOutputStream fos = new FileOutputStream(file);
         DataOutputStream dos = new DataOutputStream(fos);
         

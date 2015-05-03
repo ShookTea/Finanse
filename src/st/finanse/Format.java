@@ -23,6 +23,15 @@ public abstract class Format {
         return new Format[] {new FormatFNS()};
     }
     
+    public static Format getFormatByFileFilter(javax.swing.filechooser.FileFilter f) {
+        for (Format form : getAllFormats()) {
+            if (f.getDescription().equals(form.createFileFilter().getDescription())) {
+                return form;
+            }
+        }
+        return null;
+    }
+    
     private class FileFilter extends javax.swing.filechooser.FileFilter {
         
         public FileFilter(String end, String desc) {

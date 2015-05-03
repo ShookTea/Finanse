@@ -1,10 +1,12 @@
 package st.finanse.gui;
 
+import java.io.File;
 import javax.swing.JFileChooser;
 import st.finanse.mod.finance.NewFinance;
 import st.finanse.mod.finance.AllFinance;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
+import st.finanse.Format;
 import st.finanse.FormatFNS;
 import st.finanse.UpdateI;
 import st.finanse.proj.Project;
@@ -104,6 +106,11 @@ public class Frame extends javax.swing.JFrame {
 
         saveAsFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         saveAsFile.setText("Zapisz jako");
+        saveAsFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveAsFileActionPerformed(evt);
+            }
+        });
         file.add(saveAsFile);
 
         openFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
@@ -189,6 +196,16 @@ public class Frame extends javax.swing.JFrame {
         Frame.removeAllJIF();
         Frame.updateAll();
     }//GEN-LAST:event_openFileActionPerformed
+
+    private void saveAsFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsFileActionPerformed
+        if (jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            File f = jfc.getSelectedFile();
+            Format form = Format.getFormatByFileFilter(jfc.getFileFilter());
+            if (f != null && form != null) {
+                Project.save(jfc.getSelectedFile(), Format.getFormatByFileFilter(jfc.getFileFilter()));
+            }
+        }
+    }//GEN-LAST:event_saveAsFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
