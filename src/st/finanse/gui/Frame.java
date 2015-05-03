@@ -73,9 +73,14 @@ public class Frame extends javax.swing.JFrame {
         allFinanse = new javax.swing.JMenuItem();
         newFinanse = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Finanse");
         setExtendedState(Frame.MAXIMIZED_BOTH);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                windowClosingListener(evt);
+            }
+        });
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
@@ -237,6 +242,22 @@ public class Frame extends javax.swing.JFrame {
             Project.save(Project.project.file, Project.project.format);
         }
     }//GEN-LAST:event_saveFileActionPerformed
+
+    private void windowClosingListener(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_windowClosingListener
+        int i = JOptionPane.showConfirmDialog(
+                this,
+                "Czy chcesz zapisać obecny projekt przed zamknięciem programu?",
+                "Potwierdzenie",
+                JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.QUESTION_MESSAGE
+        );
+        if (i != JOptionPane.CANCEL_OPTION) {
+            if (i == JOptionPane.YES_OPTION) {
+                saveFileActionPerformed(null);
+            }
+            this.dispose();
+        }
+    }//GEN-LAST:event_windowClosingListener
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
