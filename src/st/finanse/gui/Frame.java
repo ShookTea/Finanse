@@ -147,6 +147,11 @@ public class Frame extends javax.swing.JFrame {
 
         quitFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         quitFile.setText("Zakończ");
+        quitFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitFileActionPerformed(evt);
+            }
+        });
         file.add(quitFile);
 
         jMenuBar1.add(file);
@@ -272,6 +277,10 @@ public class Frame extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_windowClosingListener
+
+    private void quitFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitFileActionPerformed
+        windowClosingListener(null);
+    }//GEN-LAST:event_quitFileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
