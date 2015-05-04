@@ -28,6 +28,7 @@ public class Start implements st.init.StartI {
                 jar = jar.replace("\\", "\\\\").replace("/", "\\");
                 String[] commands = new String[] {
                     "reg add HKCR\\.fns /ve /t REG_SZ /d \"st.finanse\" /f",
+                    "reg add HKCR\\.fnsx /ve /t REG_SZ /d \"st.finanse\" /f",
                     "reg add HKCR\\st.finanse /ve /t REG_SZ /d \"Plik programu Finanse\" /f",
                     "reg add HKCR\\st.finanse\\shell /f",
                     "reg add HKCR\\st.finanse\\shell\\Open /f",
