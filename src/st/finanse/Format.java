@@ -20,6 +20,14 @@ public abstract class Format {
     }
     
     public static Format[] getAllFormats() {
+        return new Format[] {new FormatFNS(), new FormatFNSX()};
+    }
+    
+    public static Format getDefaultFormat() {
+        return new FormatFNSX();
+    }
+    
+    public static Format[] getChosableFormat() {
         return new Format[] {new FormatFNS()};
     }
     

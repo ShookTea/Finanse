@@ -54,22 +54,21 @@ Nagłówek modułu Finanse:
 UTF |MOD_FINANCE.START
 
 Nagłówek tabeli miesiąca w module Finanse:
-UTF |MOD_FINANCE_TABLE.START
+UTF |TABLE.START
 INT |numer miesiąca (styczeń - 0, luty - 1, ..., grudzień - 11)
 INT |rok
 UTF |wartość początkowa
 BOOL|czy miesiąc jest zamknięty?
 
 następnie dla każdego wpisu do tabeli:
-UTF |ENTRY.START
+UTF |ENTRY
 UTF |tytuł
 INT |dzień
 UTF |kwota
 BOOL|czy dany dzień jest świętem?
-UTF |ENTRY.STOP
 
 Mesiąc kończy się stopką:
-UTF |MOD_FINANCE_TABLE.STOP
+UTF |TABLE.STOP
 
 Zaś moduł Finanse:
 UTF |MOD_FINANCE.STOP

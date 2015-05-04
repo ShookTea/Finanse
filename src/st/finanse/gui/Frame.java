@@ -7,7 +7,6 @@ import st.finanse.mod.finance.AllFinance;
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import st.finanse.Format;
-import st.finanse.FormatFNS;
 import st.finanse.UpdateI;
 import st.finanse.proj.Project;
 
@@ -24,7 +23,10 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         jfc = new JFileChooser();
         jfc.setAcceptAllFileFilterUsed(false);
-        jfc.setFileFilter(new FormatFNS().createFileFilter());
+        jfc.setFileFilter(Format.getDefaultFormat().createFileFilter());
+        for (Format f : Format.getChosableFormat()) {
+            jfc.addChoosableFileFilter(f.createFileFilter());
+        }
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         jfc.setMultiSelectionEnabled(false);
     }
