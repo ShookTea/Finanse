@@ -16,7 +16,7 @@ public abstract class Format {
     public abstract Project load(File f) throws Exception;
     
     public javax.swing.filechooser.FileFilter createFileFilter() {
-        return new FileFilter(getFileEnd(), getDescription());
+        return new FileFilter(getDescription(), getFileEnd());
     }
     
     public static Format[] getAllFormats() {
@@ -31,25 +31,37 @@ public abstract class Format {
         return new Format[] {new FormatFNS()};
     }
     
-    public static Format getFormatByFileFilter(javax.swing.filechooser.FileFilter f) {
+    public static javax.swing.filechooser.FileFilter getAllFileFilter() {
+        return new FileFilter("Wszystkie pliki programu Finanse (.FNSX, .FNS)", ".FNSX", ".FNS");
+    }
+    
+    public static Format getFormatByFile(File f) {
         for (Format form : getAllFormats()) {
-            if (f.getDescription().equals(form.createFileFilter().getDescription())) {
+            if (form.createFileFilter().accept(f)) {
                 return form;
             }
         }
         return null;
     }
     
-    private class FileFilter extends javax.swing.filechooser.FileFilter {
+    private static class FileFilter extends javax.swing.filechooser.FileFilter {
         
-        public FileFilter(String end, String desc) {
-            this.end = end;
+        public FileFilter(String desc, String... end) {
+            this.ends = end;
             this.desc = desc;
         }
         
         @Override
         public boolean accept(File f) {
-            return f.isDirectory() || f.getName().toUpperCase().endsWith(end.toUpperCase());
+            if (f.isDirectory()) {
+                return true;
+            }
+            for (String end : ends) {
+                if (f.getName().toUpperCase().endsWith(end.toUpperCase())) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         @Override
@@ -57,7 +69,7 @@ public abstract class Format {
             return desc;
         }
         
-        private final String end;
+        private final String ends[];
         private final String desc;
     }
 }

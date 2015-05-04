@@ -23,12 +23,22 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         jfc = new JFileChooser();
         jfc.setAcceptAllFileFilterUsed(false);
-        jfc.setFileFilter(Format.getDefaultFormat().createFileFilter());
+        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        jfc.setMultiSelectionEnabled(false);
+    }
+    
+    private void initJfcFilters(boolean save) {
+        jfc.resetChoosableFileFilters();
         for (Format f : Format.getChosableFormat()) {
             jfc.addChoosableFileFilter(f.createFileFilter());
         }
-        jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        jfc.setMultiSelectionEnabled(false);
+        if (save) {
+            jfc.setFileFilter(Format.getDefaultFormat().createFileFilter());
+        }
+        else {
+            jfc.setFileFilter(Format.getAllFileFilter());
+            jfc.addChoosableFileFilter(Format.getDefaultFormat().createFileFilter());
+        }
     }
     
     private final JFileChooser jfc;
@@ -213,11 +223,12 @@ public class Frame extends javax.swing.JFrame {
             if (i == JOptionPane.YES_OPTION) {
                 saveFileActionPerformed(null);
             }
+            initJfcFilters(false);
             if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 File f = jfc.getSelectedFile();
                 Project.load(f);
                 Project.project.file = f;
-                Project.project.format = Format.getFormatByFileFilter(jfc.getFileFilter());
+                Project.project.format = Format.getFormatByFile(f);
             }
             Frame.removeAllJIF();
             Frame.updateAll();
@@ -225,9 +236,10 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_openFileActionPerformed
 
     private void saveAsFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsFileActionPerformed
+        initJfcFilters(true);
         if (jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
             File f = jfc.getSelectedFile();
-            Format form = Format.getFormatByFileFilter(jfc.getFileFilter());
+            Format form = Format.getFormatByFile(f);
             if (f != null && form != null) {
                 Project.save(f, form);
                 Project.project.file = f;
