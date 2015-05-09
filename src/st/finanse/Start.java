@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.UIManager;
 import st.finanse.gui.Frame;
 import st.finanse.proj.Project;
 
@@ -46,7 +47,37 @@ public class Start implements st.init.StartI {
             File f = new File(args[0]);
             Project.load(f);
         }
+        initUI();
         Frame.frame.setVisible(true);
     }
-
+    
+    private static void initUI() {
+        UIManager.put("FileChooser.openDialogTitleText", "Otwórz");
+        UIManager.put("FileChooser.lookInLabelText", "Szukaj w");
+        UIManager.put("FileChooser.openButtonText", "Otwórz");
+        UIManager.put("FileChooser.saveButtonText", "Zapisz");
+        UIManager.put("FileChooser.cancelButtonText", "Anuluj");
+        UIManager.put("FileChooser.fileNameLabelText", "Nazwa pliku");
+        UIManager.put("FileChooser.filesOfTypeLabelText", "Typy plików");
+        UIManager.put("FileChooser.openButtonToolTipText", "Otwórz wybrany plik");
+        UIManager.put("FileChooser.saveButtonToolTipText", "Zapisz w wybranym pliku");
+        UIManager.put("FileChooser.cancelButtonToolTipText","Anuluj");
+        UIManager.put("FileChooser.fileNameHeaderText","Nazwa pliku");
+        UIManager.put("FileChooser.upFolderToolTipText", "Poziom wyżej");
+        UIManager.put("FileChooser.homeFolderToolTipText","Pulpit");
+        UIManager.put("FileChooser.newFolderToolTipText","Stwórz nowy folder");
+        UIManager.put("FileChooser.listViewButtonToolTipText","Lista");
+        UIManager.put("FileChooser.newFolderButtonText","Stwórz nowy folder");
+        UIManager.put("FileChooser.renameFileButtonText", "Zmień nazwę pliku");
+        UIManager.put("FileChooser.deleteFileButtonText", "Usuń plik");
+        UIManager.put("FileChooser.filterLabelText", "Typy plików");
+        UIManager.put("FileChooser.detailsViewButtonToolTipText", "Detale");
+        UIManager.put("FileChooser.fileSizeHeaderText","Rozmiar");
+        UIManager.put("FileChooser.fileDateHeaderText", "Data modyfikacji");
+       
+        UIManager.put("OptionPane.yesButtonText", "Tak");
+        UIManager.put("OptionPane.noButtonText", "Nie");
+        UIManager.put("OptionPane.cancelButtonText", "Anuluj");
+        UIManager.put("OptionPane.titleText", "Tytuł");
+    }
 }
