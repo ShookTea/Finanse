@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -111,6 +113,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         day.setModel(new javax.swing.SpinnerNumberModel(Month.getActualDay(), 1, Month.getMaxDay(f.getMonth()), 1));
         day.setNextFocusableComponent(title);
+        day.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                dayStateChanged(evt);
+            }
+        });
 
         date2.setText("jLabel2");
 
@@ -277,7 +284,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         Frame.updateAll();
         jScrollPane1.getViewport().setViewPosition(new Point(0, table.getHeight()));
         day.requestFocus();
-        day.getModel().setValue(((int)day.getModel().getValue()) - 1);
+        setDay(((int)day.getModel().getValue()) - 1);
     }//GEN-LAST:event_addActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
@@ -323,6 +330,10 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         }
     }//GEN-LAST:event_titleKeyReleased
 
+    private void dayStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_dayStateChanged
+        setDay((int)day.getValue());
+    }//GEN-LAST:event_dayStateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actual;
     private javax.swing.JButton add;
@@ -350,6 +361,15 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
     private Finance f;
     
+    private void setDay(int d) {
+        day.getModel().setValue(d);
+        GregorianCalendar c = (GregorianCalendar) GregorianCalendar.getInstance();
+        c.set(Calendar.DAY_OF_MONTH, d);
+        c.set(Calendar.MONTH, f.getMonth());
+        c.set(Calendar.YEAR, f.getYear());
+        event.setSelected(c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY);
+    }
+    
     @Override
     public void updateData() {
         String dS = Month.getAllPolish()[f.getMonth()] + " " + f.getYear();
@@ -358,7 +378,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         String inS = Project.project.df.format(f.getStart());
         initValue.setText("Kwota początkowa: " + inS + " zł");
         createTableModel();
-        day.getModel().setValue(f.getLastDay() + 1);
+        setDay(f.getLastDay() + 1);
         day.requestFocus();
         day.setEnabled(!f.isClosed());
         title.setEditable(!f.isClosed());

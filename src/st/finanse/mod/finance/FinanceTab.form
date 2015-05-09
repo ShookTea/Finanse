@@ -188,6 +188,9 @@
           <ComponentRef name="title"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="dayStateChanged"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="date2">
       <Properties>
