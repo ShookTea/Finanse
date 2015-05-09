@@ -27,6 +27,7 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        createNewMonth = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -56,15 +57,30 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
         });
         jScrollPane1.setViewportView(jTable1);
 
+        createNewMonth.setText("Stwórz nowy miesiąc");
+        createNewMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createNewMonthActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(createNewMonth)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(createNewMonth)
+                .addContainerGap())
         );
 
         pack();
@@ -78,8 +94,13 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
         }
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void createNewMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewMonthActionPerformed
+        Frame.addJIF(new NewFinance());
+    }//GEN-LAST:event_createNewMonthActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton createNewMonth;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
