@@ -1,14 +1,19 @@
 package st.finanse.mod.finance;
 
+import java.util.ArrayList;
+import st.finanse.UpdateI;
+import st.finanse.proj.Project;
+
 /**
  *
  * @author ShookTea
  */
-public class FinanceSum extends javax.swing.JInternalFrame {
+public class FinanceSum extends javax.swing.JInternalFrame implements UpdateI {
 
     /** Creates new form FinanceSum */
     public FinanceSum() {
         initComponents();
+        updateData();
     }
 
     /** This method is called from within the constructor to
@@ -20,6 +25,8 @@ public class FinanceSum extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabs = new javax.swing.JTabbedPane();
+
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
@@ -30,11 +37,11 @@ public class FinanceSum extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 628, Short.MAX_VALUE)
+            .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 417, Short.MAX_VALUE)
+            .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
         );
 
         pack();
@@ -42,6 +49,31 @@ public class FinanceSum extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane tabs;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateData() {
+        tabs.removeAll();
+        Finance[] finances = Project.project.finances.toArray(new Finance[Project.project.finances.size()]);
+        ArrayList<Integer> years = new ArrayList();
+        for (Finance f : finances) {
+            if (!years.contains(f.getYear())) {
+                years.add(f.getYear());
+            }
+        }
+        for (int year : years) {
+            ArrayList<Finance> months = new ArrayList();
+            for (Finance f : finances) {
+                if (f.getYear() == year) {
+                    months.add(f);
+                }
+            }
+            Finance[] monthsT = months.toArray(new Finance[months.size()]);
+            FinanceSumPanel fsp = new FinanceSumPanel(monthsT);
+            tabs.add(year + "", fsp);
+            fsp.updateData();
+        }
+    }
 
 }
