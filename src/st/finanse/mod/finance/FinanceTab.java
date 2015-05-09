@@ -2,6 +2,7 @@ package st.finanse.mod.finance;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -274,6 +275,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         title.setText("");
         value.setText("");
         Frame.updateAll();
+        jScrollPane1.getViewport().setViewPosition(new Point(0, table.getHeight()));
         day.requestFocus();
     }//GEN-LAST:event_addActionPerformed
 
