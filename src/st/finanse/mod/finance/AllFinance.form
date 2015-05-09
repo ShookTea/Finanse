@@ -30,6 +30,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="createNewMonth" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="showSum" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -39,7 +41,10 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="jScrollPane1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="createNewMonth" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="createNewMonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="showSum" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -74,6 +79,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createNewMonthActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="showSum">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Podsumowanie"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="showSumActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

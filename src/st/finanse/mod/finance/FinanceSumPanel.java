@@ -11,14 +11,13 @@ import st.finanse.mod.finance.Finance.FinanceEntry;
  */
 public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
 
-    /** Creates new form FinanceSumPanel */
     public FinanceSumPanel(Finance[] finances) {
+        this.months = finances;
         initComponents();
         updateData();
-        this.months = finances;
     }
     
-    private Finance[] months;
+    private final Finance[] months;
 
     /** This method is called from within the constructor to
      * initialize the form.

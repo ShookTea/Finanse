@@ -28,6 +28,7 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         createNewMonth = new javax.swing.JButton();
+        showSum = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -64,6 +65,13 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
             }
         });
 
+        showSum.setText("Podsumowanie");
+        showSum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showSumActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -72,6 +80,8 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(createNewMonth)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(showSum)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -79,7 +89,9 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(createNewMonth)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(createNewMonth)
+                    .addComponent(showSum))
                 .addContainerGap())
         );
 
@@ -98,11 +110,16 @@ public class AllFinance extends javax.swing.JInternalFrame implements UpdateI {
         Frame.addJIF(new NewFinance());
     }//GEN-LAST:event_createNewMonthActionPerformed
 
+    private void showSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showSumActionPerformed
+        Frame.addJIF(new FinanceSum());
+    }//GEN-LAST:event_showSumActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton createNewMonth;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JButton showSum;
     // End of variables declaration//GEN-END:variables
 
     @Override
