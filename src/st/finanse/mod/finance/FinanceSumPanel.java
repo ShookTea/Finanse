@@ -106,13 +106,13 @@ public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
     }
     
     private String[] tableHeader() {
-        String[] table = new String[months.length + 2];
-        table[0] = "Tytuły";
+        String[] header = new String[months.length + 2];
+        header[0] = "Tytuły";
         for (int i = 0; i < months.length; i++) {
-            table[i+1] = Month.getAllPolish()[months[i].getMonth()];
+            header[i+1] = Month.getAllPolish()[months[i].getMonth()];
         }
-        table[table.length - 1] = "Rok";
-        return table;
+        header[header.length - 1] = "Rok";
+        return header;
     }
 
 }
