@@ -277,6 +277,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         Frame.updateAll();
         jScrollPane1.getViewport().setViewPosition(new Point(0, table.getHeight()));
         day.requestFocus();
+        day.getModel().setValue(((int)day.getModel().getValue()) - 1);
     }//GEN-LAST:event_addActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
@@ -357,6 +358,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         String inS = Project.project.df.format(f.getStart());
         initValue.setText("Kwota początkowa: " + inS + " zł");
         createTableModel();
+        day.getModel().setValue(f.getLastDay() + 1);
         day.requestFocus();
         day.setEnabled(!f.isClosed());
         title.setEditable(!f.isClosed());

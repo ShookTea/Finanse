@@ -70,6 +70,15 @@ public class Finance {
         isClosed = true;
     }
     
+    public int getLastDay() {
+        if (entries.isEmpty()) {
+            return 0;
+        }
+        else {
+            return entries.get(entries.size() - 1).day;
+        }
+    }
+    
     public BigDecimal getAdds() {
         BigDecimal ret = new BigDecimal("0.0");
         for (FinanceEntry e : entries) {
