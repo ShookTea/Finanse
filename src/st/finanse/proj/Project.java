@@ -26,12 +26,14 @@ public class Project {
     }
     
     public Finance createFinance(int month, int year, BigDecimal start) {
+        changed = true;
         Finance f = new Finance(month, year, start.setScale(2, RoundingMode.HALF_UP));
         finances.add(f);
         return f;
     }
     
     public Finance createFinance(Finance before) {
+        changed = true;
         if (before.isClosed()) {
             int[] after = Month.getAfter(before.getYear(), before.getMonth());
             return this.createFinance(after[1], after[0], before.getCash());
@@ -76,6 +78,7 @@ public class Project {
         return ret;
     }
     
+    public boolean changed = false;
     public final ArrayList<Finance> finances;
     public final DecimalFormat df = new DecimalFormat();
     public File file = null;
