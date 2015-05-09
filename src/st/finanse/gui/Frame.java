@@ -201,13 +201,14 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_allFinanseActionPerformed
 
     private void newFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newFileActionPerformed
-        int i = JOptionPane.showConfirmDialog(
+        
+        int i = Project.project.changed ? JOptionPane.showConfirmDialog(
                 this,
                 "Czy chcesz zapisać obecny projekt przed utworzeniem nowego?",
                 "Potwierdzenie",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE
-        );
+        ) : JOptionPane.NO_OPTION;
         if (i != JOptionPane.CANCEL_OPTION) {
             if (i == JOptionPane.YES_OPTION) {
                 saveFileActionPerformed(null);
@@ -217,13 +218,13 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_newFileActionPerformed
 
     private void openFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileActionPerformed
-        int i = JOptionPane.showConfirmDialog(
+        int i = Project.project.changed ? JOptionPane.showConfirmDialog(
                 this,
                 "Czy chcesz zapisać obecny projekt przed wczytaniem innego?",
                 "Potwierdzenie",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE
-        );
+        ) : JOptionPane.NO_OPTION;
         if (i != JOptionPane.CANCEL_OPTION) {
             if (i == JOptionPane.YES_OPTION) {
                 saveFileActionPerformed(null);
@@ -263,13 +264,13 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_saveFileActionPerformed
 
     private void windowClosingListener(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_windowClosingListener
-        int i = JOptionPane.showConfirmDialog(
+        int i = Project.project.changed ? JOptionPane.showConfirmDialog(
                 this,
                 "Czy chcesz zapisać obecny projekt przed zamknięciem programu?",
                 "Potwierdzenie",
                 JOptionPane.YES_NO_CANCEL_OPTION,
                 JOptionPane.QUESTION_MESSAGE
-        );
+        ) : JOptionPane.NO_OPTION;
         if (i != JOptionPane.CANCEL_OPTION) {
             if (i == JOptionPane.YES_OPTION) {
                 saveFileActionPerformed(null);
