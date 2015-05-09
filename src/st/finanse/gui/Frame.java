@@ -8,6 +8,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import st.finanse.Format;
 import st.finanse.UpdateI;
+import st.finanse.mod.finance.FinanceSum;
 import st.finanse.proj.Project;
 
 /**
@@ -84,6 +85,7 @@ public class Frame extends javax.swing.JFrame {
         finanse = new javax.swing.JMenu();
         allFinanse = new javax.swing.JMenuItem();
         newFinanse = new javax.swing.JMenuItem();
+        sumFinanse = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Finanse");
@@ -173,6 +175,14 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         finanse.add(newFinanse);
+
+        sumFinanse.setText("Podsumowanie");
+        sumFinanse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sumFinanseActionPerformed(evt);
+            }
+        });
+        finanse.add(sumFinanse);
 
         jMenuBar1.add(finanse);
 
@@ -283,6 +293,10 @@ public class Frame extends javax.swing.JFrame {
         windowClosingListener(null);
     }//GEN-LAST:event_quitFileActionPerformed
 
+    private void sumFinanseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumFinanseActionPerformed
+        Frame.addJIF(new FinanceSum());
+    }//GEN-LAST:event_sumFinanseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem allFinanse;
@@ -298,5 +312,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem quitFile;
     private javax.swing.JMenuItem saveAsFile;
     private javax.swing.JMenuItem saveFile;
+    private javax.swing.JMenuItem sumFinanse;
     // End of variables declaration//GEN-END:variables
 }
