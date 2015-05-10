@@ -1,6 +1,7 @@
 package st.finanse.gui;
 
 import java.io.File;
+import javax.swing.ButtonModel;
 import javax.swing.JFileChooser;
 import st.finanse.mod.finance.NewFinance;
 import st.finanse.mod.finance.AllFinance;
@@ -10,6 +11,7 @@ import st.finanse.Format;
 import st.finanse.UpdateI;
 import st.finanse.mod.finance.FinanceSum;
 import st.finanse.proj.Project;
+import st.init.Update;
 
 /**
  *
@@ -26,6 +28,21 @@ public class Frame extends javax.swing.JFrame {
         jfc.setAcceptAllFileFilterUsed(false);
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         jfc.setMultiSelectionEnabled(false);
+        
+        String trybe = Update.prefs.get("check", "day");
+        ButtonModel m = null;
+        switch (trybe) {
+            case "run":
+                m = settingsUpdatePerRun.getModel();
+                break;
+            case "day":
+                m = settingsUpdatePerDay.getModel();
+                break;
+            case "month":
+                m = settingsUpdatePerMonth.getModel();
+                break;
+        }
+        settingsUpdateGroup.setSelected(m, true);
     }
     
     private void initJfcFilters(boolean save) {
@@ -72,6 +89,7 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        settingsUpdateGroup = new javax.swing.ButtonGroup();
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
@@ -157,15 +175,16 @@ public class Frame extends javax.swing.JFrame {
 
         settingsUpdate.setText("Sprawdzanie aktualizacji");
 
+        settingsUpdateGroup.add(settingsUpdatePerRun);
         settingsUpdatePerRun.setSelected(true);
         settingsUpdatePerRun.setText("Przy każdym włączeniu");
         settingsUpdate.add(settingsUpdatePerRun);
 
-        settingsUpdatePerDay.setSelected(true);
+        settingsUpdateGroup.add(settingsUpdatePerDay);
         settingsUpdatePerDay.setText("Codziennie");
         settingsUpdate.add(settingsUpdatePerDay);
 
-        settingsUpdatePerMonth.setSelected(true);
+        settingsUpdateGroup.add(settingsUpdatePerMonth);
         settingsUpdatePerMonth.setText("Co miesiąc");
         settingsUpdate.add(settingsUpdatePerMonth);
 
@@ -342,6 +361,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuItem saveFile;
     private javax.swing.JMenu settings;
     private javax.swing.JMenu settingsUpdate;
+    private javax.swing.ButtonGroup settingsUpdateGroup;
     private javax.swing.JRadioButtonMenuItem settingsUpdatePerDay;
     private javax.swing.JRadioButtonMenuItem settingsUpdatePerMonth;
     private javax.swing.JRadioButtonMenuItem settingsUpdatePerRun;

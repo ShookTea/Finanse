@@ -42,7 +42,7 @@ public class Update implements Runnable {
         Calendar c = Calendar.getInstance();
         String trybe = prefs.get("check", "day");
         switch (trybe) {
-            case "every":
+            case "run":
                 return true;
             case "day":
                 return prefs.getInt("day", 0) != c.get(Calendar.DAY_OF_MONTH);
