@@ -178,14 +178,29 @@ public class Frame extends javax.swing.JFrame {
         settingsUpdateGroup.add(settingsUpdatePerRun);
         settingsUpdatePerRun.setSelected(true);
         settingsUpdatePerRun.setText("Przy każdym włączeniu");
+        settingsUpdatePerRun.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsUpdateActionPerformed(evt);
+            }
+        });
         settingsUpdate.add(settingsUpdatePerRun);
 
         settingsUpdateGroup.add(settingsUpdatePerDay);
         settingsUpdatePerDay.setText("Codziennie");
+        settingsUpdatePerDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsUpdateActionPerformed(evt);
+            }
+        });
         settingsUpdate.add(settingsUpdatePerDay);
 
         settingsUpdateGroup.add(settingsUpdatePerMonth);
         settingsUpdatePerMonth.setText("Co miesiąc");
+        settingsUpdatePerMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                settingsUpdateActionPerformed(evt);
+            }
+        });
         settingsUpdate.add(settingsUpdatePerMonth);
 
         settings.add(settingsUpdate);
@@ -342,6 +357,21 @@ public class Frame extends javax.swing.JFrame {
     private void sumFinanseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumFinanseActionPerformed
         Frame.addJIF(new FinanceSum());
     }//GEN-LAST:event_sumFinanseActionPerformed
+
+    private void settingsUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_settingsUpdateActionPerformed
+        ButtonModel m = settingsUpdateGroup.getSelection();
+        String v;
+        if (m.equals(settingsUpdatePerDay)) {
+            v = "day";
+        }
+        else if (m.equals(settingsUpdatePerMonth)) {
+            v = "month";
+        }
+        else {
+            v = "run";
+        }
+        Update.prefs.put("check", v);
+    }//GEN-LAST:event_settingsUpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

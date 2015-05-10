@@ -77,6 +77,9 @@
                         <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Przy ka&#x17c;dym w&#x142;&#x105;czeniu"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingsUpdateActionPerformed"/>
+                      </Events>
                     </MenuItem>
                     <MenuItem class="javax.swing.JRadioButtonMenuItem" name="settingsUpdatePerDay">
                       <Properties>
@@ -85,6 +88,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Codziennie"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingsUpdateActionPerformed"/>
+                      </Events>
                     </MenuItem>
                     <MenuItem class="javax.swing.JRadioButtonMenuItem" name="settingsUpdatePerMonth">
                       <Properties>
@@ -93,6 +99,9 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Co miesi&#x105;c"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="settingsUpdateActionPerformed"/>
+                      </Events>
                     </MenuItem>
                   </SubComponents>
                 </Menu>
