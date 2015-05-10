@@ -80,6 +80,12 @@ public class Frame extends javax.swing.JFrame {
         saveFile = new javax.swing.JMenuItem();
         saveAsFile = new javax.swing.JMenuItem();
         openFile = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        settings = new javax.swing.JMenu();
+        settingsUpdate = new javax.swing.JMenu();
+        settingsUpdatePerRun = new javax.swing.JRadioButtonMenuItem();
+        settingsUpdatePerDay = new javax.swing.JRadioButtonMenuItem();
+        settingsUpdatePerMonth = new javax.swing.JRadioButtonMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         quitFile = new javax.swing.JMenuItem();
         finanse = new javax.swing.JMenu();
@@ -145,6 +151,27 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         file.add(openFile);
+        file.add(jSeparator3);
+
+        settings.setText("Ustawienia");
+
+        settingsUpdate.setText("Sprawdzanie aktualizacji");
+
+        settingsUpdatePerRun.setSelected(true);
+        settingsUpdatePerRun.setText("Przy każdym włączeniu");
+        settingsUpdate.add(settingsUpdatePerRun);
+
+        settingsUpdatePerDay.setSelected(true);
+        settingsUpdatePerDay.setText("Codziennie");
+        settingsUpdate.add(settingsUpdatePerDay);
+
+        settingsUpdatePerMonth.setSelected(true);
+        settingsUpdatePerMonth.setText("Co miesiąc");
+        settingsUpdate.add(settingsUpdatePerMonth);
+
+        settings.add(settingsUpdate);
+
+        file.add(settings);
         file.add(jSeparator2);
 
         quitFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -306,12 +333,18 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JMenuItem newFile;
     private javax.swing.JMenuItem newFinanse;
     private javax.swing.JMenuItem openFile;
     private javax.swing.JMenuItem quitFile;
     private javax.swing.JMenuItem saveAsFile;
     private javax.swing.JMenuItem saveFile;
+    private javax.swing.JMenu settings;
+    private javax.swing.JMenu settingsUpdate;
+    private javax.swing.JRadioButtonMenuItem settingsUpdatePerDay;
+    private javax.swing.JRadioButtonMenuItem settingsUpdatePerMonth;
+    private javax.swing.JRadioButtonMenuItem settingsUpdatePerRun;
     private javax.swing.JMenuItem sumFinanse;
     // End of variables declaration//GEN-END:variables
 }
