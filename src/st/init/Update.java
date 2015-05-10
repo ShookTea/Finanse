@@ -6,9 +6,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Calendar;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.prefs.Preferences;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
@@ -20,24 +22,58 @@ import javax.swing.UIManager;
 public class Update implements Runnable {
     public static void main(String[] args) throws Exception {
         UIManager.setLookAndFeel(UIManager.getInstalledLookAndFeels()[1].getClassName()); //NimbusLAF
-        
-        
         Update.args = args;
-        uf = new UpdateForm();
-        uf.setVisible(true);
         initCfg();
+        boolean isCheckNeeded = isCheckNeeded();
+        Calendar c = Calendar.getInstance();
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        int month = c.get(Calendar.MONTH);
+        prefs.putInt("day", day);
+        prefs.putInt("month", month);
+        if (isCheckNeeded) {
+            update(true);
+        }
+        else {
+            startApp();
+        }
+    }
+    
+    private static boolean isCheckNeeded() {
+        Calendar c = Calendar.getInstance();
+        String trybe = prefs.get("check", "day");
+        switch (trybe) {
+            case "every":
+                return true;
+            case "day":
+                return prefs.getInt("day", 0) != c.get(Calendar.DAY_OF_MONTH);
+            case "month":
+                return prefs.getInt("month", 0) != c.get(Calendar.MONTH);
+            default:
+                return true;
+        }
+    }
+    
+    private static void update(boolean run) {
         try {
+            uf = new UpdateForm();
+            uf.setVisible(true);
             if (isUpdateOnline()) {
                 uf.showUpdateInfo(version, versionOnline, historyOnline);
             }
-            else {
+            else if (run) {
                 startApp();
             }
         } catch (IOException ex) {
             //Brak połączenia z internetem: pobranie aktualizacji niemożliwe
             //Uruchom program normalnie
-            startApp();
+            if (run) {
+                startApp();
+            }
         }
+    }
+    
+    public static void update() {
+        update(false);
     }
     
     private static void initCfg() throws IOException {
@@ -62,7 +98,9 @@ public class Update implements Runnable {
     
     public static void startApp() {
         if (!started) {
-            uf.dispose();
+            if (uf != null) {
+                uf.dispose();
+            }
             try {
                 Object ob = Class.forName(start).newInstance();
                 if (ob instanceof StartI) {
@@ -97,7 +135,16 @@ public class Update implements Runnable {
                 uf.updateBar(size, allSize);
             }
             JOptionPane.showMessageDialog(uf, "Zakończono pobieranie aktualizacji. Program powinien automatycznie uruchomić się ponownie.", "Zakończono", JOptionPane.INFORMATION_MESSAGE);
-            Runtime.getRuntime().exec("java -jar " + jarfile.getAbsolutePath());
+            String line = "java -jar " + jarfile.getAbsolutePath();
+            for (String arg : args) {
+                if (!arg.contains(" ")) {
+                    line += (" " + arg);
+                }
+                else {
+                    line += ("\"" + arg + "\"");
+                }
+            }
+            Runtime.getRuntime().exec(line);
             System.exit(0);
         } catch (Exception ex) {
             Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,4 +167,6 @@ public class Update implements Runnable {
     private static String versionOnline;
     private static String historyOnline;
     private static String start;
+    
+    public static final Preferences prefs = Preferences.userRoot().node(Update.class.getName());
 }
