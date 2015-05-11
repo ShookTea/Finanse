@@ -316,8 +316,13 @@ public class Frame extends javax.swing.JFrame {
         initJfcFilters(true);
         if (jfc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
             File f = jfc.getSelectedFile();
+            String end = ((Format.FileFilter)jfc.getFileFilter()).getEnd();
+            end = end.startsWith(".") ? end : ("." + end);
+            if (!f.getName().endsWith(end)) {
+                f = new File(f.getAbsolutePath() + end);
+            }
             Format form = Format.getFormatByFile(f);
-            if (f != null && form != null) {
+            if (form != null) {
                 Project.save(f, form);
                 Project.project.file = f;
                 Project.project.format = form;
