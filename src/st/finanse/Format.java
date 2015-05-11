@@ -44,7 +44,7 @@ public abstract class Format {
         return null;
     }
     
-    private static class FileFilter extends javax.swing.filechooser.FileFilter {
+    public static class FileFilter extends javax.swing.filechooser.FileFilter {
         
         public FileFilter(String desc, String... end) {
             this.ends = end;
@@ -67,6 +67,10 @@ public abstract class Format {
         @Override
         public String getDescription() {
             return desc;
+        }
+        
+        public String getEnd() {
+            return ends[0];
         }
         
         private final String ends[];
