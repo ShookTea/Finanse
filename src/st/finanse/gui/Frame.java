@@ -261,7 +261,7 @@ public class Frame extends javax.swing.JFrame {
                 f = new File(f.getAbsolutePath() + end);
             }
             Format form = Format.getFormatByFile(f);
-            if (f != null && form != null) {
+            if (form != null) {
                 Project.save(f, form);
                 Project.project.file = f;
                 Project.project.format = form;
