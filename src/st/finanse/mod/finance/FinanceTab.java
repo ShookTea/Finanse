@@ -282,7 +282,6 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         value.setText("");
         Frame.updateAll();
         jScrollPane1.getViewport().setViewPosition(new Point(0, table.getHeight()));
-        day.requestFocus();
         setDay(((int)day.getModel().getValue()) - 1);
     }//GEN-LAST:event_addActionPerformed
 
@@ -318,7 +317,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     }//GEN-LAST:event_afterActionPerformed
 
     private void titleKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_titleKeyReleased
-        if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+        if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE && !title.getText().isEmpty()) {
             String act = title.getText();
             String base = Finance.getTitleBase(act);
             if (!base.equals(act)) {
@@ -378,7 +377,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         initValue.setText("Kwota początkowa: " + inS + " zł");
         createTableModel();
         setDay(f.getLastDay() + 1);
-        day.requestFocus();
+        title.requestFocus();
         day.setEnabled(!f.isClosed());
         title.setEditable(!f.isClosed());
         value.setEditable(!f.isClosed());
