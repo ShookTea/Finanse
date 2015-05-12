@@ -137,7 +137,7 @@ public class Frame extends javax.swing.JFrame {
         file.setText("Plik");
 
         newFile.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
-        newFile.setText("Nowy");
+        newFile.setText("Nowy projekt");
         newFile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newFileActionPerformed(evt);

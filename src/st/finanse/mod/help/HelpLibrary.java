@@ -18,7 +18,13 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
     }
     
     private void initFiles() {
-        
+        pathes.put("Podstawy korzystania z programu", "podstawy");
+        pathes.put("Aktualizacje", "update");
+        pathes.put("Moduł Finanse", "/fin/index");
+        pathes.put("Moduł Finanse::Tworzenie nowego miesiąca", "/fin/miesiac");
+        pathes.put("Moduł Finanse::Tworzenie i usuwanie wpisów", "/fin/wpis");
+        pathes.put("Moduł Finanse::Zamykanie miesiąca", "/fin/zamykanie");
+        pathes.put("Moduł Finanse::Podsumowanie roku", "/fin/rok");
     }
 
     /** This method is called from within the constructor to
@@ -54,10 +60,10 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Pomoc programu");
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Podstawy korzystania z programu");
         treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Aktualizacje");
+        treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Moduł Finanse");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Zastosowania modułu");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie nowego miesiąca");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie nowego miesiąca");
         treeNode2.add(treeNode3);
         treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie i usuwanie wpisów");
         treeNode2.add(treeNode3);
@@ -120,6 +126,8 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         while (sc.hasNextLine()) {
             code += sc.nextLine();
         }
+        String res = getClass().getResource("/st/finanse/mod/help/img/updateSearch.jpg").toString().replace("/st/finanse/mod/help/img/updateSearch.jpg", "");
+        code = code.replace("<img src=\"", "<img src=\"" + res);
         sc.close();
         panel.setText(code);
     }

@@ -81,7 +81,7 @@
             <Component class="javax.swing.JTree" name="tree">
               <Properties>
                 <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-                  <TreeModel code="Pomoc programu&#xa; Podstawy korzystania z programu&#xa; Modu&#x142; Finanse&#xa;  Zastosowania modu&#x142;u&#xa;  Tworzenie nowego miesi&#x105;ca&#xa;  Tworzenie i usuwanie wpis&#xf3;w&#xa;  Zamykanie miesi&#x105;ca&#xa;  Podsumowanie roku"/>
+                  <TreeModel code="Pomoc programu&#xa; Podstawy korzystania z programu&#xa; Aktualizacje&#xa; Modu&#x142; Finanse&#xa;  Tworzenie nowego miesi&#x105;ca&#xa;  Tworzenie i usuwanie wpis&#xf3;w&#xa;  Zamykanie miesi&#x105;ca&#xa;  Podsumowanie roku"/>
                 </Property>
               </Properties>
               <Events>
