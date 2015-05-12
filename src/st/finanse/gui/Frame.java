@@ -304,8 +304,6 @@ public class Frame extends javax.swing.JFrame {
             if (jfc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
                 File f = jfc.getSelectedFile();
                 Project.load(f);
-                Project.project.file = f;
-                Project.project.format = Format.getFormatByFile(f);
             }
             Frame.removeAllJIF();
             Frame.updateAll();

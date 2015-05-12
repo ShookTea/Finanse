@@ -107,6 +107,8 @@ public class Project {
         if (f != null) {
             try {
                 Project.project = f.load(file);
+                Project.project.file = file;
+                Project.project.format = Format.getFormatByFile(file);
             } catch (Exception ex) {
                 Logger.getLogger(Project.class.getName()).log(Level.SEVERE, null, ex);
             }
