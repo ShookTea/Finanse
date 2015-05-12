@@ -1,5 +1,10 @@
 package st.finanse.mod.help;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+import javax.swing.tree.TreePath;
+
 /**
  *
  * @author ShookTea
@@ -9,6 +14,11 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
     /** Creates new form HelpLibrary */
     public HelpLibrary() {
         initComponents();
+        initFiles();
+    }
+    
+    private void initFiles() {
+        
     }
 
     /** This method is called from within the constructor to
@@ -41,6 +51,27 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
 
         jSplitPane1.setRightComponent(jScrollPane2);
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Pomoc programu");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Podstawy korzystania z programu");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Moduł Finanse");
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Zastosowania modułu");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie nowego miesiąca");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie i usuwanie wpisów");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Zamykanie miesiąca");
+        treeNode2.add(treeNode3);
+        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Podsumowanie roku");
+        treeNode2.add(treeNode3);
+        treeNode1.add(treeNode2);
+        tree.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        tree.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
+            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
+                treeValueChanged(evt);
+            }
+        });
         jScrollPane1.setViewportView(tree);
 
         jSplitPane1.setLeftComponent(jScrollPane1);
@@ -59,6 +90,39 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void treeValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_treeValueChanged
+        TreePath path = evt.getPath();
+        ArrayList<String> a = new ArrayList();
+        while (path != null) {
+            a.add(path.getLastPathComponent().toString());
+            path = path.getParentPath();
+        }
+        String b = "";
+        for (int i = a.size() - 2; i >= 0; i--) {
+            if (!b.isEmpty()) {
+                b += "::";
+            }
+            b += a.get(i);
+            b = b.trim();
+        }
+        
+        if (pathes.containsKey(b)) {
+            String p = "/st/finanse/mod/help/" + pathes.get(b) + ".html";
+            load(p);
+        }
+    }//GEN-LAST:event_treeValueChanged
+
+    private final HashMap<String, String> pathes = new HashMap();
+    
+    private void load(String path) {
+        Scanner sc = new Scanner(HelpLibrary.class.getResourceAsStream(path));
+        String code = "";
+        while (sc.hasNextLine()) {
+            code += sc.nextLine();
+        }
+        sc.close();
+        panel.setText(code);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
