@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import st.finanse.Format;
 import st.finanse.UpdateI;
 import st.finanse.mod.finance.FinanceSum;
+import st.finanse.mod.help.HelpLibrary;
 import st.finanse.proj.Project;
 import st.init.Update;
 
@@ -110,6 +111,8 @@ public class Frame extends javax.swing.JFrame {
         allFinanse = new javax.swing.JMenuItem();
         newFinanse = new javax.swing.JMenuItem();
         sumFinanse = new javax.swing.JMenuItem();
+        help = new javax.swing.JMenu();
+        helpWindow = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Finanse");
@@ -247,6 +250,18 @@ public class Frame extends javax.swing.JFrame {
 
         jMenuBar1.add(finanse);
 
+        help.setText("Pomoc");
+
+        helpWindow.setText("Pomoc programu");
+        helpWindow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                helpWindowActionPerformed(evt);
+            }
+        });
+        help.add(helpWindow);
+
+        jMenuBar1.add(help);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -376,12 +391,18 @@ public class Frame extends javax.swing.JFrame {
         Update.prefs.put("check", v);
     }//GEN-LAST:event_settingsUpdateActionPerformed
 
+    private void helpWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpWindowActionPerformed
+        Frame.addJIF(new HelpLibrary());
+    }//GEN-LAST:event_helpWindowActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem allFinanse;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu file;
     private javax.swing.JMenu finanse;
+    private javax.swing.JMenu help;
+    private javax.swing.JMenuItem helpWindow;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
