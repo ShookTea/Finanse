@@ -27,11 +27,11 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         pathes.put("Podstawy korzystania z programu", "podstawy");
         pathes.put("Aktualizacje", "update");
         pathes.put("Czy masz jakiś problem?", "issue");
-        pathes.put("Moduł Finanse", "/fin/index");
-        pathes.put("Moduł Finanse::Tworzenie nowego miesiąca", "/fin/miesiac");
-        pathes.put("Moduł Finanse::Tworzenie i usuwanie wpisów", "/fin/wpis");
-        pathes.put("Moduł Finanse::Zamykanie miesiąca", "/fin/zamykanie");
-        pathes.put("Moduł Finanse::Podsumowanie roku", "/fin/rok");
+        pathes.put("Moduł Finanse", "fin_index");
+        pathes.put("Moduł Finanse::Tworzenie nowego miesiąca", "fin_month");
+        pathes.put("Moduł Finanse::Tworzenie i usuwanie wpisów", "fin_entry");
+        pathes.put("Moduł Finanse::Zamykanie miesiąca", "fin_close");
+        pathes.put("Moduł Finanse::Podsumowanie roku", "fin_year");
     }
 
     /** This method is called from within the constructor to
@@ -150,7 +150,7 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         while (sc.hasNextLine()) {
             code += sc.nextLine();
         }
-        String res = getClass().getResource("/st/finanse/mod/help/img/updateSearch.jpg").toString().replace("/st/finanse/mod/help/img/updateSearch.jpg", "");
+        String res = getClass().getResource("/st/finanse/mod/help/updateSearch.jpg").toString().replace("/st/finanse/mod/help/updateSearch.jpg", "");
         code = code.replace("<img src=\"", "<img src=\"" + res);
         sc.close();
         panel.setText(code);

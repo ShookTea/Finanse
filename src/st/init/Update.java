@@ -40,7 +40,7 @@ public class Update implements Runnable {
     
     private static boolean isCheckNeeded() {
         Calendar c = Calendar.getInstance();
-        String trybe = prefs.get("check", "day");
+        String trybe = prefs.get("check", "run");
         switch (trybe) {
             case "run":
                 return true;
