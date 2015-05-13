@@ -1,6 +1,12 @@
 package st.finanse.gui;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ButtonModel;
 import javax.swing.JFileChooser;
 import st.finanse.mod.finance.NewFinance;
@@ -113,6 +119,7 @@ public class Frame extends javax.swing.JFrame {
         sumFinanse = new javax.swing.JMenuItem();
         help = new javax.swing.JMenu();
         helpWindow = new javax.swing.JMenuItem();
+        contact = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Finanse");
@@ -260,6 +267,14 @@ public class Frame extends javax.swing.JFrame {
         });
         help.add(helpWindow);
 
+        contact.setText("Kontakt");
+        contact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactActionPerformed(evt);
+            }
+        });
+        help.add(contact);
+
         jMenuBar1.add(help);
 
         setJMenuBar(jMenuBar1);
@@ -395,9 +410,18 @@ public class Frame extends javax.swing.JFrame {
         Frame.addJIF(new HelpLibrary());
     }//GEN-LAST:event_helpWindowActionPerformed
 
+    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
+        try {
+            Desktop.getDesktop().browse(new URL("https://gitreports.com/issue/ShookTea/Finanse").toURI());
+        } catch (IOException | URISyntaxException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_contactActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem allFinanse;
+    private javax.swing.JMenuItem contact;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu file;
     private javax.swing.JMenu finanse;
