@@ -1,8 +1,14 @@
 package st.finanse.mod.help;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.event.HyperlinkEvent;
 import javax.swing.tree.TreePath;
 
 /**
@@ -20,6 +26,7 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
     private void initFiles() {
         pathes.put("Podstawy korzystania z programu", "podstawy");
         pathes.put("Aktualizacje", "update");
+        pathes.put("Czy masz jakiś problem?", "issue");
         pathes.put("Moduł Finanse", "/fin/index");
         pathes.put("Moduł Finanse::Tworzenie nowego miesiąca", "/fin/miesiac");
         pathes.put("Moduł Finanse::Tworzenie i usuwanie wpisów", "/fin/wpis");
@@ -53,6 +60,11 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         panel.setEditable(false);
         panel.setBackground(new java.awt.Color(204, 204, 204));
         panel.setContentType("text/html"); // NOI18N
+        panel.addHyperlinkListener(new javax.swing.event.HyperlinkListener() {
+            public void hyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {
+                panelHyperlinkUpdate(evt);
+            }
+        });
         jScrollPane2.setViewportView(panel);
 
         jSplitPane1.setRightComponent(jScrollPane2);
@@ -61,6 +73,8 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Podstawy korzystania z programu");
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Aktualizacje");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Czy masz jakiś problem?");
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Moduł Finanse");
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tworzenie nowego miesiąca");
@@ -117,6 +131,16 @@ public class HelpLibrary extends javax.swing.JInternalFrame {
             load(p);
         }
     }//GEN-LAST:event_treeValueChanged
+
+    private void panelHyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {//GEN-FIRST:event_panelHyperlinkUpdate
+        try {
+            if (evt.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                Desktop.getDesktop().browse(evt.getURL().toURI());
+            }
+        } catch (URISyntaxException | IOException ex) {
+            Logger.getLogger(HelpLibrary.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_panelHyperlinkUpdate
 
     private final HashMap<String, String> pathes = new HashMap();
     
