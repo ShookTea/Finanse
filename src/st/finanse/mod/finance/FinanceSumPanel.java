@@ -1,6 +1,10 @@
 package st.finanse.mod.finance;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.math.BigDecimal;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import st.finanse.Month;
 import st.finanse.UpdateI;
 import st.finanse.mod.finance.Finance.FinanceEntry;
@@ -77,6 +81,14 @@ public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
             @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return false;
+            }
+        });
+        table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+                final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                c.setBackground(row % 2 == 1 ? Color.LIGHT_GRAY : Color.WHITE);
+                return this;
             }
         });
     }
