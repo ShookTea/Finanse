@@ -3,7 +3,7 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.TreeMap;
 import javax.swing.table.DefaultTableModel;
 import st.finanse.Month;
 import st.finanse.mod.finance.FinanceTab.TableModel;
@@ -208,7 +208,7 @@ public class Finance {
         return titles.get(key);
     }
     
-    private static HashMap<String, Integer> titles = new HashMap();
+    private static TreeMap<String, Integer> titles = new TreeMap();
 
     public static class FinanceEntry {
         public FinanceEntry(int day, String title, boolean isEvent, BigDecimal cash) {
