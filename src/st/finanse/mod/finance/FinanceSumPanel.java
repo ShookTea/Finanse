@@ -3,6 +3,8 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.awt.Component;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import st.finanse.Month;
@@ -15,12 +17,18 @@ import st.finanse.mod.finance.Finance.FinanceEntry;
  */
 public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
 
-    public FinanceSumPanel(Finance[] finances) {
+    public FinanceSumPanel(Finance[] finances, boolean isAll) {
         this.months = finances;
+        this.isAll = isAll;
         initComponents();
         updateData();
     }
     
+    public FinanceSumPanel(Finance[] finances) {
+        this(finances, false);
+    }
+    
+    private final boolean isAll;
     private final Finance[] months;
 
     /** This method is called from within the constructor to
@@ -95,6 +103,7 @@ public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
     
     private Object[][] tableValue() {
         String[] keys = Finance.getKeys();
+        keys = removeEmptyKeys(keys);
         int height = keys.length;
         int width = months.length + 2;
         Object[][] value = new Object[height][width];
@@ -122,9 +131,32 @@ public class FinanceSumPanel extends javax.swing.JPanel implements UpdateI {
         header[0] = "Tytuły";
         for (int i = 0; i < months.length; i++) {
             header[i+1] = Month.getAllPolish()[months[i].getMonth()];
+            if (isAll) {
+                header[i+1] += " " + months[i].getYear();
+            }
         }
         header[header.length - 1] = "Rok";
         return header;
     }
 
+    private String[] removeEmptyKeys(String[] keys) {
+        ArrayList<String> k = new ArrayList();
+        k.addAll(Arrays.asList(keys));
+        
+        for (String key : keys) {
+            boolean isUsed = false;
+            for (Finance f : months) {
+                for (FinanceEntry fe : f.getEntries()) {
+                    if (fe.title.equals(key)) {
+                        isUsed = true;
+                    }
+                }
+            }
+            if (!isUsed) {
+                k.remove(key);
+            }
+        }
+        
+        return k.toArray(new String[k.size()]);
+    }
 }
