@@ -3,6 +3,8 @@ package st.finanse.mod.finance;
 import java.awt.Color;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.TreeMap;
 import javax.swing.table.DefaultTableModel;
 import st.finanse.Month;
@@ -104,6 +106,7 @@ public class Finance {
     }
     
     public DefaultTableModel createTableModel() {
+        sortEntries();
         TableModel tm = new TableModel(getTableModelData(), getTableModelTitles(), isClosed);
         for (int i = 0; i < entries.size(); i++) {
             if (entries.get(i).cash.signum() == 1) {
@@ -146,6 +149,15 @@ public class Finance {
         else {
             return new String[] {"Data", "Tytuł", "Kwota", "Usuń"};
         }
+    }
+    
+    private void sortEntries() {
+        Collections.sort(entries, new Comparator<FinanceEntry>() {
+            @Override
+            public int compare(FinanceEntry o1, FinanceEntry o2) {
+                return o1.day == o2.day ? 0 : (o1.day < o2.day ? -1 : 1);
+            }
+        });
     }
     
     private boolean isClosed = false;
