@@ -13,14 +13,35 @@ public class LineChart extends Chart {
         lines.add(l);
     }
     
-    private final ArrayList<Line> lines = new ArrayList();
+    public void removeAllLines() {
+        lines.clear();
+    }
     
     @Override
-    public void update() {}
+    public void update() {
+        minValue = Integer.MAX_VALUE;
+        maxValue = Integer.MIN_VALUE;
+        length = Integer.MIN_VALUE;
+        for (Line l : lines) {
+            if (l.getMaxValue() > maxValue) {
+                maxValue = l.getMaxValue();
+            }
+            if (l.getLength() > length) {
+                length = l.getLength();
+            }
+            if (l.getMinValue() < minValue) {
+                minValue = l.getMinValue();
+            }
+        }
+    }
 
     @Override
     public void draw(Graphics2D g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
-
+    
+    private int length;
+    private int maxValue;
+    private int minValue;
+    private final ArrayList<Line> lines = new ArrayList();
 }

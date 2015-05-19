@@ -1,6 +1,5 @@
 package st.finanse.mod.chart;
 
-import java.awt.Graphics2D;
 import st.finanse.mod.finance.Finance;
 
 /**
@@ -15,12 +14,7 @@ public class FinanceChart extends LineChart {
 
     @Override
     public void update() {
-        
-    }
-
-    @Override
-    public void draw(Graphics2D g) {
-        
+        super.update();
     }
     
     private final Finance f;
