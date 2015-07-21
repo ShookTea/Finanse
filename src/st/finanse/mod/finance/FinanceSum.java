@@ -1,6 +1,7 @@
 package st.finanse.mod.finance;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import st.finanse.UpdateI;
 import st.finanse.proj.Project;
 
@@ -74,6 +75,11 @@ public class FinanceSum extends javax.swing.JInternalFrame implements UpdateI {
             tabs.add(year + "", fsp);
             fsp.updateData();
         }
+        
+        //Podsumowanie całości
+        FinanceSumPanel fsp = new FinanceSumPanel(finances, true);
+        tabs.add("Wszystkie lata", fsp);
+        fsp.updateData();
     }
 
 }
