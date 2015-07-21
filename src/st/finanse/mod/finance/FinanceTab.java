@@ -16,7 +16,6 @@ import javax.swing.table.DefaultTableModel;
 import st.finanse.Month;
 import st.finanse.UpdateI;
 import st.finanse.gui.Frame;
-import st.finanse.mod.chart.FinanceChart;
 import st.finanse.proj.Project;
 
 /**
@@ -63,7 +62,6 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         closeAndCreate = new javax.swing.JButton();
         before = new javax.swing.JButton();
         after = new javax.swing.JButton();
-        chart = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -184,18 +182,11 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
             }
         });
 
-        chart.setText("Wykres");
-        chart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                chartActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 717, Short.MAX_VALUE)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -239,9 +230,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                                     .addComponent(date)
                                     .addComponent(initValue))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(after, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(chart, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addComponent(after)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -253,11 +242,9 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
                     .addComponent(before)
                     .addComponent(after))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(initValue)
-                    .addComponent(chart))
+                .addComponent(initValue)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -345,10 +332,6 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
         setDay((int)day.getValue());
     }//GEN-LAST:event_dayStateChanged
 
-    private void chartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chartActionPerformed
-        new FinanceChart(f).createJIF();
-    }//GEN-LAST:event_chartActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actual;
     private javax.swing.JButton add;
@@ -356,7 +339,6 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
     private javax.swing.JButton after;
     private javax.swing.JButton before;
     private javax.swing.JLabel bilance;
-    private javax.swing.JButton chart;
     private javax.swing.JButton close;
     private javax.swing.JButton closeAndCreate;
     private javax.swing.JLabel date;
