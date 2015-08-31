@@ -182,7 +182,7 @@
     <Component class="javax.swing.JSpinner" name="day">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.SpinnerNumberModel(Month.getActualDay(), 1, Month.getMaxDay(f.getMonth()), 1)" type="code"/>
+          <Connection code="new javax.swing.SpinnerNumberModel(this.actualDay, 1, this.maxDay, 1)" type="code"/>
         </Property>
         <Property name="nextFocusableComponent" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="title"/>

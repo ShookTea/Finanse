@@ -25,11 +25,19 @@ import st.finanse.proj.Project;
 public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
     public FinanceTab(Finance f) {
+        actualDay = Month.getActualDay();
+        maxDay = Month.getMaxDay(f.getMonth());
+        if (actualDay > maxDay) {
+            actualDay = 1;
+        }
         this.f = f;
         initComponents();
         this.getRootPane().setDefaultButton(add);
         updateData();
     }
+    
+    private int actualDay;
+    private int maxDay;
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -110,7 +118,7 @@ public class FinanceTab extends javax.swing.JInternalFrame implements UpdateI {
 
         jLabel1.setText("Data:");
 
-        day.setModel(new javax.swing.SpinnerNumberModel(Month.getActualDay(), 1, Month.getMaxDay(f.getMonth()), 1));
+        day.setModel(new javax.swing.SpinnerNumberModel(this.actualDay, 1, this.maxDay, 1));
         day.setNextFocusableComponent(title);
         day.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
