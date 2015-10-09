@@ -6,6 +6,7 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.UTFDataFormatException;
 import java.math.BigDecimal;
 import st.finanse.mod.finance.Finance;
 import st.finanse.mod.finance.Finance.FinanceEntry;
@@ -82,6 +83,7 @@ public class FormatFNS extends Format {
             catch (EOFException ex) {
                 EOF = true;
             }
+            catch (UTFDataFormatException ex) {}
         }
         
         
