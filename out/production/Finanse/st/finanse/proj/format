@@ -1,0 +1,81 @@
+================================================================================
+          INFORMACJA O FORMATACH UŻYWANYCH PRZEZ PROGRAM
+================================================================================
+Program Finanse używa kilku formatów zapisu danych. Wybór użytego formatu
+zależy jedynie od użytkownika. Wszystkie formaty wykorzystują w pełni swoje
+możliwości, choć część z nich jest zalecana do użycia, a część odradzana.
+--------------------------------------------------------------------------------
+Najstarszym formatem jest .FNS (FinaNSe). Format ten jest odradzany i
+prawdopodobnie zostanie w przyszłości wycofany.
+
+Każdy miesiąc Finanse zaczyna się nagłówkiem:
+UTF |FINANCE.START
+UTF |miesiąc tabeli
+INT |rok tabeli
+UTF |wartość początkowa
+BOOL|czy miesiąc jest zamknięty?
+
+Następnie dla każdego wpisu do tabeli:
+UTF |FINANCE_ENTRY
+UTF |dzień:miesiąc:rok
+UTF |tytuł wpisu
+UTF |kwota wpisu
+UTF |EVENT (jeśli święto)
+UTF |FINANCE_ENTRY_STOP
+
+Miesiąc kończy się stopką:
+UTF | FINANCE.STOP
+
+Baza najczęściej używanych tytułów wpisów zaczyna się od nagłówka:
+UTF |TITLE.BASE.START
+Następnie kodowany jest każdy tytuł klucz-wartość:
+UTF |klucz
+INT |wartość
+Tabela kończy się stopką:
+UTF |TITLE.BASE.STOP
+
+--------------------------------------------------------------------------------
+Kolejnym, obecnie najbardziej zalecanym formatem jest format .FNSX
+(FinaNSe eXtended). Powstał on na bazie wyżej opisanego .FNS. Jest to pierwszy
+wspierany format, w którym znajduje się nagłówek dla całego pliku, opisujący
+jego format i wersję. Oznacza to, że dalszy rozwój i zmiany w formacie .FNSX
+będą mogły działać w tym samym pliku, bez konieczności tworzenia nowego formatu.
+Ujednolicono również używanie kropek i podkreśleń, a także zmniejszono wielkość
+pliku poprzez usunięcie powtarzających się danych.
+
+Plik zaczyna się nagłówkiem:
+UTF |FNSX
+INT |kolejny numer wersji nagłówka
+
+W wersji FNSX_1 wszystkie tabele jednego modułu (np. tabele miesięczne modułu
+Finanse) są zapisywane jako jeden moduł, a nie jako oddzielne tabele.
+
+Nagłówek modułu Finanse:
+UTF |MOD_FINANCE.START
+
+Nagłówek tabeli miesiąca w module Finanse:
+UTF |TABLE.START
+INT |numer miesiąca (styczeń - 0, luty - 1, ..., grudzień - 11)
+INT |rok
+UTF |wartość początkowa
+BOOL|czy miesiąc jest zamknięty?
+
+następnie dla każdego wpisu do tabeli:
+UTF |ENTRY
+UTF |tytuł
+INT |dzień
+UTF |kwota
+BOOL|czy dany dzień jest świętem?
+
+Mesiąc kończy się stopką:
+UTF |TABLE.STOP
+
+Zaś moduł Finanse:
+UTF |MOD_FINANCE.STOP
+
+Baza najczęściej używanych tytułów wpisów została usunięta, jest wyliczana
+na bieżąco oraz przy wczytywaniu na podstawie tabeli.
+
+--------------------------------------------------------------------------------
+Planowane jest wprowadzenie obsługi formatów tekstowych .TXT, markerowych .XML,
+a także .JSON.
