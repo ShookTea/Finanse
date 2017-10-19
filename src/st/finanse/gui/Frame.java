@@ -31,7 +31,7 @@ public class Frame extends javax.swing.JFrame {
      */
     private Frame() {
         initComponents();
-        file.setText("Plik (ZIP)");
+        file.setText("Plik");
         jfc = new JFileChooser();
         jfc.setAcceptAllFileFilterUsed(false);
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
