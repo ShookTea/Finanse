@@ -7,133 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Finanse_jar/Finanse.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Finanse_jar/Finanse.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Format$FileFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Format.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/FormatFNS.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/FormatFNSX.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Month.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/UpdateI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/AllFinance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/Finance$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/Finance$FinanceEntry.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/Finance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceSum.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceSumPanel$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceSumPanel$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceSumPanel$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceSumPanel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$CellRenderer.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab$TableModel.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/FinanceTab.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/NewFinance$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/NewFinance$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/NewFinance$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/finance/NewFinance.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/HelpLibrary$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/HelpLibrary$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/HelpLibrary.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/closedMonth.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/entry1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/entry2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/entry3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/fin_close.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/fin_entry.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/fin_index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/fin_month.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/fin_year.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/issue.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/podstawy.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/update.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/updateFound.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/mod/help/updateSearch.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/proj/Project.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/proj/format" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/StartI.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/Update.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/UpdateForm$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/UpdateForm$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/UpdateForm$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/UpdateForm.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/init.cfg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Finanse/stmanager.conf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/Format.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/FormatFNS.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/FormatFNSX.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/Month.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/Start.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/UpdateI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/gui/Frame.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/gui/Frame.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/AllFinance.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/AllFinance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/Finance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceSum.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceSum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceSumPanel.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceSumPanel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceTab.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceTab.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/NewFinance.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/finance/NewFinance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/HelpLibrary.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/HelpLibrary.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/closedMonth.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/entry1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/entry2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/entry3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/fin_close.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/fin_entry.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/fin_index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/fin_month.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/fin_year.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/issue.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/podstawy.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/update.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/updateFound.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/mod/help/updateSearch.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/finanse/proj/Project.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/init/StartI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/init/Update.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/init/UpdateForm.form" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/init/UpdateForm.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/st/init/init.cfg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/st/finanse/proj/format" afterPath="$PROJECT_DIR$/src/st/finanse/format" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Start.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Start.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nbproject/project.properties" afterPath="$PROJECT_DIR$/nbproject/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Finanse/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/description.txt" afterPath="$PROJECT_DIR$/out/production/Finanse/description.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -146,14 +19,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+            <state relative-caret-position="340">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -188,6 +71,7 @@
         <option value="$PROJECT_DIR$/src/st/finanse/StartOld.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Format.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format" />
+        <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       </list>
     </option>
   </component>
@@ -254,6 +138,12 @@
               <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
               <item name="Finanse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Finanse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -432,15 +322,16 @@
       <workItem from="1508664211388" duration="448000" />
       <workItem from="1508668259382" duration="791000" />
       <workItem from="1509569671699" duration="1501000" />
-      <workItem from="1509571211190" duration="594000" />
+      <workItem from="1509571211190" duration="1268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6189000" />
+    <option name="totallyTimeSpent" value="6863000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -455,7 +346,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15364583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -523,14 +414,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/guiOld/Frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/stmanager.conf" />
     <entry file="file://$PROJECT_DIR$/src/test.strep" />
     <entry file="file://$PROJECT_DIR$/src/st/finanse/init/Update.java">
@@ -852,11 +735,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
