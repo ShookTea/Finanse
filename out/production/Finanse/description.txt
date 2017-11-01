@@ -1,0 +1,1 @@
+Tymczasowy opis programu, w celu testów StRepository.

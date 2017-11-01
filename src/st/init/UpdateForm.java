@@ -128,18 +128,18 @@ public class UpdateForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        Update.startApp();
+        //Update.startApp();
     }//GEN-LAST:event_formWindowClosing
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        Update.startApp();
+        //Update.startApp();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void installActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_installActionPerformed
         install.setEnabled(false);
         cancel.setEnabled(false);
         version.setText("Aktualizacja w tle...");
-        Update.initUpdate();
+        //Update.initUpdate();
     }//GEN-LAST:event_installActionPerformed
 
     public void updateBar(int actual, int max) {

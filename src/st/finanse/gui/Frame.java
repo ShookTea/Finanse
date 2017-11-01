@@ -37,7 +37,7 @@ public class Frame extends javax.swing.JFrame {
         jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
         jfc.setMultiSelectionEnabled(false);
         
-        String trybe = Update.prefs.get("check", "day");
+        String trybe = "run";
         ButtonModel m = null;
         switch (trybe) {
             case "run":
@@ -404,7 +404,7 @@ public class Frame extends javax.swing.JFrame {
         else {
             v = "run";
         }
-        Update.prefs.put("check", v);
+        //Update.prefs.put("check", v);
     }//GEN-LAST:event_settingsUpdateActionPerformed
 
     private void helpWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpWindowActionPerformed

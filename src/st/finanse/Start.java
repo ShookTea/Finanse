@@ -14,7 +14,6 @@ import st.finanse.proj.Project;
  * @author ShookTea
  */
 public class Start implements st.init.StartI {
-
     @Override
     public void start(String[] args) {
         if (System.getProperty("os.name").startsWith("Windows") && (args.length == 0 || !args[0].equals("-t"))) {
@@ -27,19 +26,7 @@ public class Start implements st.init.StartI {
                     jar = jar.substring(1);
                 }
                 jar = jar.replace("\\", "\\\\").replace("/", "\\");
-                String[] commands = new String[] {
-                    "reg add HKCR\\.fns /ve /t REG_SZ /d \"st.finanse\" /f",
-                    "reg add HKCR\\.fnsx /ve /t REG_SZ /d \"st.finanse\" /f",
-                    "reg add HKCR\\st.finanse /ve /t REG_SZ /d \"Plik programu Finanse\" /f",
-                    "reg add HKCR\\st.finanse\\shell /f",
-                    "reg add HKCR\\st.finanse\\shell\\Open /f",
-                    "reg add HKCR\\st.finanse\\shell\\Open\\Command /ve /t REG_SZ /d \"\\\"" + java + "\\\" -jar \\\"" + jar + "\\\" \\\"%1\\\"\" /f"
-                };
-                for (String command : commands) {
-                    System.out.println(command);
-                    r.exec(command);
-                }
-            } catch (URISyntaxException | IOException ex) {
+            } catch (URISyntaxException ex) {
                 Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
