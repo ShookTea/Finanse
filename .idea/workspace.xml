@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/Frame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/init/Update.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/init/Update.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/Start.java" afterPath="$PROJECT_DIR$/src/st/finanse/Start.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/gui/Frame.java" afterPath="$PROJECT_DIR$/src/st/finanse/gui/Frame.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/stmanager.conf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/description.txt" afterPath="$PROJECT_DIR$/src/description.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/init/Update.java" afterPath="$PROJECT_DIR$/src/st/init/Update.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/init/UpdateForm.java" afterPath="$PROJECT_DIR$/src/st/init/UpdateForm.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +54,8 @@
       <file leaf-file-name="Update.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/st/init/Update.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -80,9 +76,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/test.strep" />
         <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
-        <option value="$PROJECT_DIR$/src/st/init/Update.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/Frame.java" />
         <option value="$PROJECT_DIR$/src/st/init/UpdateForm.java" />
+        <option value="$PROJECT_DIR$/src/description.txt" />
+        <option value="$PROJECT_DIR$/src/st/init/Update.java" />
       </list>
     </option>
   </component>
@@ -295,12 +292,12 @@
       <workItem from="1508432022001" duration="1202000" />
       <workItem from="1508664211388" duration="448000" />
       <workItem from="1508668259382" duration="791000" />
-      <workItem from="1509569671699" duration="1012000" />
+      <workItem from="1509569671699" duration="1274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5106000" />
+    <option name="totallyTimeSpent" value="5368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -671,7 +668,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.strep" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/GregorianCalendar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -686,14 +682,6 @@
           <folding>
             <element signature="e#1287#1376#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/stmanager.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,10 +717,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/stmanager.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.strep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/description.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/init/Update.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="31" column="8" lean-forward="false" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
           <folding />
         </state>
       </provider>

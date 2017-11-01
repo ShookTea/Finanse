@@ -21,14 +21,16 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class Update extends Application {
     public static void main(String[] args) throws Exception {
         UIManager.setLookAndFeel(new NimbusLookAndFeel()); //NimbusLAF
-        Update.args = args;
+        if (args.length > 0) {
+            toOpen = new File(args[0]);
+        }
         launch(args);
     }
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        
     }
 
-    private static String[] args;
+    private static File toOpen = null;
 }
