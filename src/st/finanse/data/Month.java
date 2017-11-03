@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.data;
 
 public class Month {
     public Month(int year, int month) {

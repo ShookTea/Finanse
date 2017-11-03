@@ -2,7 +2,7 @@ package st.finanse;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import st.finanse.modules.finanse.Month;
+import st.finanse.data.Month;
 
 import java.io.File;
 
