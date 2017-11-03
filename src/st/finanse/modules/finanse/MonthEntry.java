@@ -36,6 +36,15 @@ public class MonthEntry {
         return startingAmount.add(getEarnedAmount()).subtract(getLostAmount());
     }
 
+    @Override
+    public String toString() {
+        String ret = "MONTH-ENTRY: " + month.toString() + " starting: " + startingAmount + " isClosed: " + isClosed;
+        for (Entry entry : entries) {
+            ret = ret + "\n\t" + entry.toString();
+        }
+        return ret;
+    }
+
     public final Month month;
     public final Amount startingAmount;
     public final boolean isClosed;

@@ -87,6 +87,11 @@ public class Month {
         }
     }
 
+    @Override
+    public String toString() {
+        return getMonthName() + " " + year;
+    }
+
     private final int year;
     private final int month;
     private String monthName = null;

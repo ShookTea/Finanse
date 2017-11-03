@@ -16,7 +16,8 @@ public class Amount {
         this(new BigDecimal(s));
     }
 
-    public String getCash() {
+    @Override
+    public String toString() {
         return cash.toString();
     }
 

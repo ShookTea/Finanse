@@ -11,6 +11,15 @@ import java.io.IOException;
 public class Project {
     public Project() {}
 
+    @Override
+    public String toString() {
+        String ret = "MODULE FINANCE";
+        for (MonthEntry entry : FINANSE_MONTHS) {
+            ret = ret + "\n" + entry.toString();
+        }
+        return ret;
+    }
+
     public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
 
     public static Project PROJECT = new Project();
