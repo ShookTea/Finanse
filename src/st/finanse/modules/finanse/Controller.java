@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import st.finanse.Project;
 import st.finanse.data.Month;
 
@@ -92,6 +93,28 @@ public class Controller {
             }
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
+        reloadTable();
+    }
+
+    private void reloadTable() {
+        table.setRowFactory(row -> new TableRow<Entry>() {
+            @Override
+            public void updateItem(Entry item, boolean empty) {
+                super.updateItem(item, empty);
+                setStyle("-fx-background-color: whitesmoke");
+                if (item == null | empty) return;
+
+                if (isSelected()){
+                    setStyle("-fx-background-color: darkblue");
+                }
+                else if (item.getColor() == Entry.Color.RED) {
+                    setStyle("-fx-background-color: #de3525");
+                }
+                else if (item.getColor() == Entry.Color.BLUE) {
+                    setStyle("-fx-background-color: #32c9ff");
+                }
+            }
+        });
     }
 
     private void setFormDisabled(boolean locked) {
