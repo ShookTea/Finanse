@@ -1,6 +1,8 @@
 package st.finanse.modules.finanse;
 
+import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,9 +31,14 @@ public class Controller {
 
     }
 
-    @FXML
-    private void monthChosen(MouseEvent event) {
-        
+    private void monthChosen(Observable observable) {
+        ReadOnlyObjectProperty<TreeItem> robp = (ReadOnlyObjectProperty) observable;
+        TreeItem selected = robp.get();
+        if (selected.isLeaf()) {
+            String monthName = selected.getValue().toString();
+            int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
+            System.out.println("WCZYTANIE: " + monthName + " " + year);
+        }
     }
 
     @FXML
@@ -61,6 +68,7 @@ public class Controller {
             root.getChildren().add(yearItem);
         }
         monthTree.setRoot(root);
+        monthTree.getSelectionModel().selectedItemProperty().addListener(e -> monthChosen(e));
     }
 
     private class MonthTreeItem extends TreeItem<String> {
