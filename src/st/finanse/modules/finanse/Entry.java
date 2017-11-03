@@ -7,7 +7,7 @@ public class Entry {
         this.day = day;
         this.title = title;
         this.amount = amount;
-        if (amount.signum() > 0) {
+        if (amount.sign() > 0) {
             color = Color.BLUE;
         }
         else if (holiday) {

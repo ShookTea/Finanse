@@ -1,6 +1,6 @@
 package st.finanse.data;
 
-public class Month {
+public class Month implements Comparable<Month> {
     public Month(int year, int month) {
         this.year = year;
         this.month = month;
@@ -97,6 +97,23 @@ public class Month {
     @Override
     public String toString() {
         return getMonthName() + " " + year;
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof Month) {
+            return ((Month) ob).compareTo(this) == 0;
+        }
+        return false;
+    }
+
+    @Override
+    public int compareTo(Month m) {
+        int y = Integer.compare(year, m.year);
+        if (y == 0) {
+            return Integer.compare(month, m.month);
+        }
+        return y;
     }
 
     private final int year;

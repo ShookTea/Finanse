@@ -15,7 +15,7 @@ public class MonthEntry {
     public Amount getEarnedAmount() {
         Amount ret = new Amount("0.00");
         for (Entry entry : entries) {
-            if (entry.amount.signum() > 0) {
+            if (entry.amount.sign() > 0) {
                 ret = ret.add(entry.amount);
             }
         }
@@ -25,7 +25,7 @@ public class MonthEntry {
     public Amount getLostAmount() {
         Amount ret = new Amount("0.00");
         for (Entry entry : entries) {
-            if (entry.amount.signum() < 0) {
+            if (entry.amount.sign() < 0) {
                 ret = ret.add(entry.amount);
             }
         }

@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import st.finanse.Project;
+import st.finanse.data.Month;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,7 +35,7 @@ public class Controller {
 
     @FXML
     private void monthClosed(ActionEvent event) {
-        
+
     }
 
     private void monthChosen(Observable observable) {
@@ -43,7 +44,7 @@ public class Controller {
         if (selected.isLeaf()) {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
-            System.out.println("WCZYTANIE: " + monthName + " " + year);
+            currentEntry.set(Project.PROJECT.getEntryByMonth(new Month(year, monthName)));
         }
     }
 
@@ -54,7 +55,13 @@ public class Controller {
 
     @FXML
     private void initialize() {
+        currentEntry.addListener(e -> reloadTable());
         reloadTree();
+    }
+
+    private void reloadTable() {
+        MonthEntry me = currentEntry.get();
+        System.out.println(me);
     }
 
     private void reloadTree() {
@@ -72,6 +79,12 @@ public class Controller {
                 yearItem.getChildren().add(new MonthTreeItem(me));
             }
             root.getChildren().add(yearItem);
+        }
+        if (Project.PROJECT.FINANSE_MONTHS.size() == 0) {
+            currentEntry.set(null);
+        }
+        else {
+            currentEntry.set(Project.PROJECT.FINANSE_MONTHS.sorted((a, b) -> -a.month.compareTo(b.month)).get(0));
         }
         monthTree.setRoot(root);
         monthTree.getSelectionModel().selectedItemProperty().addListener(e -> monthChosen(e));
