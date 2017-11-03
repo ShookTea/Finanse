@@ -10,7 +10,6 @@ public class MainWindowController {
 
     @FXML
     public void exit() {
-        System.out.println("EXIT");
         System.exit(0);
     }
 
