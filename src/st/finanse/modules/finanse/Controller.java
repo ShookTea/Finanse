@@ -24,11 +24,17 @@ public class Controller {
     @FXML private TextField entryTitle;
     @FXML private TextField entryAmount;
     @FXML private Button entryAccepted;
+    @FXML private Button closeMonth;
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
 
     @FXML
     private void addEntry(ActionEvent event) {
 
+    }
+
+    @FXML
+    private void monthClosed(ActionEvent event) {
+        
     }
 
     private void monthChosen(Observable observable) {
