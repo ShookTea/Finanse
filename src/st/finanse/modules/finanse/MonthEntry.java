@@ -6,9 +6,10 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 
 public class MonthEntry {
-    public MonthEntry(Month month, Amount startAmount) {
+    public MonthEntry(Month month, Amount startAmount, boolean isClosed) {
         this.month = month;
         this.startingAmount = startAmount;
+        this.isClosed = isClosed;
     }
 
     public Amount getEarnedAmount() {
@@ -37,5 +38,6 @@ public class MonthEntry {
 
     public final Month month;
     public final Amount startingAmount;
+    public final boolean isClosed;
     public final ObservableList<Entry> entries = FXCollections.observableArrayList();
 }

@@ -6,6 +6,16 @@ public class Month {
         this.month = month;
     }
 
+    public Month(int year, String month) {
+        this.year = year;
+        int res = -1;
+        for (int i = 1; i <= 12; i++) {
+            if (reloadMonthName(i).equalsIgnoreCase(month)) res = i;
+        }
+        if (res == -1) throw new RuntimeException();
+        this.month = res;
+    }
+
     public int getYear() {
         return year;
     }
@@ -16,13 +26,13 @@ public class Month {
 
     public String getMonthName() {
         if (monthName == null) {
-            monthName = reloadMonthName();
+            monthName = reloadMonthName(month);
         }
         return monthName;
     }
 
-    private String reloadMonthName() {
-        switch (month) {
+    private String reloadMonthName(int m) {
+        switch (m) {
             case  1: return "Styczeń";
             case  2: return "Luty";
             case  3: return "Marzec";
