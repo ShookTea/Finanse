@@ -11,7 +11,8 @@ import java.io.File;
 public class Start extends Application {
     public static void main(String[] args) throws Exception {
         if (args.length > 0) {
-            toOpen = new File(args[0]);
+            File toOpen = new File(args[0]);
+            Project.loadProject(toOpen);
         }
         launch(args);
     }
@@ -31,6 +32,4 @@ public class Start extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
-    private static File toOpen = null;
 }
