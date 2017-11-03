@@ -47,7 +47,7 @@ public class FNS implements Format {
                 holiday = true;
                 dis.readUTF();
             }
-            Entry e = new Entry(title, day, cash, holiday);
+            Entry e = new Entry(title, day, cash, holiday, monthEntry);
             monthEntry.entries.add(e);
         }
         return monthEntry;

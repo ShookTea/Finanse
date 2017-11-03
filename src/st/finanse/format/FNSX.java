@@ -56,10 +56,10 @@ public class FNSX implements Format {
 
             for (Entry entry : monthEntry.entries) {
                 dos.writeUTF("ENTRY");
-                dos.writeUTF(entry.title);
-                dos.writeInt(entry.day);
-                dos.writeUTF(entry.amount.toString());
-                dos.writeBoolean(entry.color == Entry.Color.RED);
+                dos.writeUTF(entry.getTitle());
+                dos.writeInt(entry.getDay());
+                dos.writeUTF(entry.getAmount().toString());
+                dos.writeBoolean(entry.getColor() == Entry.Color.RED);
             }
 
             dos.writeUTF("TABLE.STOP");

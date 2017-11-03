@@ -4,9 +4,11 @@ import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import st.finanse.Project;
 import st.finanse.data.Month;
@@ -19,13 +21,18 @@ import java.util.Map;
 public class Controller {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
-    @FXML private TableView<?> table;
+    @FXML private TableView<Entry> table;
     @FXML private Spinner<?> entryDay;
     @FXML private CheckBox isHoliday;
     @FXML private TextField entryTitle;
     @FXML private TextField entryAmount;
     @FXML private Button entryAccepted;
     @FXML private Button closeMonth;
+    @FXML private TableColumn<Entry, String> dateColumn;
+    @FXML private TableColumn<Entry, String> titleColumn;
+    @FXML private TableColumn<Entry, String> amountColumn;
+    @FXML private TableColumn<Entry, String> deleteColumn;
+
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
 
     @FXML
@@ -57,11 +64,28 @@ public class Controller {
     private void initialize() {
         currentEntry.addListener(e -> reloadTable());
         reloadTree();
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        deleteColumn.setCellValueFactory(e -> new SimpleStringProperty("Usuń"));
     }
 
     private void reloadTable() {
         MonthEntry me = currentEntry.get();
-        System.out.println(me);
+        boolean locked = me == null ? true : me.isClosed;
+        setFormDisabled(locked);
+        deleteColumn.setVisible(!locked);
+        table.getItems().clear();
+        if (me != null) table.getItems().addAll(me.entries);
+    }
+
+    private void setFormDisabled(boolean locked) {
+        entryDay.setDisable(locked);
+        isHoliday.setDisable(locked);
+        entryTitle.setDisable(locked);
+        entryAmount.setDisable(locked);
+        entryAccepted.setDisable(locked);
+        closeMonth.setDisable(locked);
     }
 
     private void reloadTree() {
