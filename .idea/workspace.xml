@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Project.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Month.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Start.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Start.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/Start.java" afterPath="$PROJECT_DIR$/src/st/finanse/Start.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/format" afterPath="$PROJECT_DIR$/src/st/finanse/format" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test.strep" afterPath="$PROJECT_DIR$/src/test.strep" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +28,8 @@
       <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="292">
+              <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,7 +37,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.strep" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test.strep">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
@@ -84,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test.strep" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/Frame.java" />
         <option value="$PROJECT_DIR$/src/st/init/UpdateForm.java" />
         <option value="$PROJECT_DIR$/src/description.txt" />
@@ -94,9 +108,10 @@
         <option value="$PROJECT_DIR$/src/st/finanse/Format.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format" />
+        <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
+        <option value="$PROJECT_DIR$/src/test.strep" />
       </list>
     </option>
   </component>
@@ -180,19 +195,6 @@
               <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
               <item name="Finanse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finanse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="finanse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finanse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="finanse" type="462c0819:PsiDirectoryNode" />
-              <item name="finanse" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,7 +361,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8176000" />
+    <option name="totallyTimeSpent" value="8583000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -466,7 +468,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/stmanager.conf" />
     <entry file="file://$PROJECT_DIR$/src/test.strep" />
     <entry file="file://$PROJECT_DIR$/src/st/finanse/init/Update.java" />
     <entry file="file://$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceTab.java" />
@@ -499,13 +500,6 @@
     <entry file="file://$PROJECT_DIR$/src/st/finanse/mod/finance/FinanceTab.java" />
     <entry file="file://$PROJECT_DIR$/src/st/finanse/guiOld/Frame.java" />
     <entry file="file://$PROJECT_DIR$/src/stmanager.conf" />
-    <entry file="file://$PROJECT_DIR$/src/test.strep">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/description.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -563,16 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Month.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -586,8 +570,8 @@
         <state relative-caret-position="193">
           <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
           <folding>
-            <element signature="e#11614#11615#0" expanded="true" />
-            <element signature="e#11668#11669#0" expanded="true" />
+            <element signature="e#11614#11615#0" expanded="false" />
+            <element signature="e#11668#11669#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -615,6 +599,32 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="2221" column="18" lean-forward="false" selection-start-line="2221" selection-start-column="18" selection-end-line="2221" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test.strep">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>

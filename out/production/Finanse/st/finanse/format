@@ -77,7 +77,3 @@ UTF |MOD_FINANCE.STOP
 
 Baza najczęściej używanych tytułów wpisów została usunięta, jest wyliczana
 na bieżąco oraz przy wczytywaniu na podstawie tabeli.
-
---------------------------------------------------------------------------------
-Planowane jest wprowadzenie obsługi formatów tekstowych .TXT, markerowych .XML,
-a także .JSON.

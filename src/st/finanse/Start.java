@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import st.finanse.gui.MainWindowController;
 
 import java.io.File;
+import java.util.Scanner;
 
 public class Start extends Application {
     public static void main(String[] args) throws Exception {
@@ -24,7 +25,7 @@ public class Start extends Application {
         MainWindowController mwc = loader.getController();
 
         primaryStage.setMaximized(true);
-        primaryStage.setTitle("Finanse 2.0");
+        primaryStage.setTitle("Finanse " + getVersion());
         primaryStage.setOnCloseRequest(e -> {
             e.consume();
             mwc.exit();
@@ -32,4 +33,27 @@ public class Start extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    public static String getVersion() {
+        if (version == null) {
+            version = "";
+        }
+        if (version.isEmpty()) {
+            Scanner scanner = new Scanner(Start.class.getResourceAsStream("/test.strep"));
+            String result = "";
+            String regex = "\"version\": \"[^\"]*\",";
+            while (!result.matches(regex) && scanner.hasNextLine()) {
+                result = scanner.nextLine().trim();
+            }
+            if (result.isEmpty()) {
+                version = "2.0";
+            }
+            else {
+                version = result.replaceAll("\"version\": \"([^\"]*)\",", "$1");
+            }
+        }
+        return version;
+    }
+
+    private static String version = "";
 }
