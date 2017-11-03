@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="HBox" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
+   <children>
+      <TreeView fx:id="monthTree" onMouseClicked="#monthChoosen" prefHeight="200.0" prefWidth="200.0" />
+      <VBox prefHeight="400.0" prefWidth="459.0">
+         <children>
+            <Label fx:id="monthTitle" text="Listopad 2017" VBox.vgrow="NEVER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" onMouseClicked="#tableClicked" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+            <HBox prefHeight="0.0" prefWidth="430.0">
+               <children>
+                  <Label prefHeight="41.0" prefWidth="28.0" text="Data:" />
+                  <Spinner fx:id="entryDay" editable="true" prefHeight="25.0" prefWidth="51.0" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="2.0" right="10.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="2.0" right="2.0" />
+                     </padding>
+                  </Spinner>
+                  <Label prefHeight="56.0" prefWidth="78.0" text="listopada 2017" />
+                  <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <CheckBox fx:id="isHoliday" mnemonicParsing="false" prefHeight="37.0" prefWidth="57.0" text="Święto">
+                     <HBox.margin>
+                        <Insets right="2.0" />
+                     </HBox.margin>
+                  </CheckBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="0.0" prefWidth="430.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="29.0" text="Tytuł:" HBox.hgrow="NEVER" />
+                  <TextField fx:id="entryTitle" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="2.0" right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label prefHeight="44.0" prefWidth="36.0" text="Kwota:" />
+                  <TextField fx:id="entryAmount" prefHeight="25.0" prefWidth="55.0">
+                     <HBox.margin>
+                        <Insets left="2.0" right="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="entryAccepted" mnemonicParsing="false" onAction="#addEntry" text="Dodaj">
+                     <HBox.margin>
+                        <Insets right="2.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="1.0" top="1.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</fx:root>
