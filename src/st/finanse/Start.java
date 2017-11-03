@@ -15,7 +15,6 @@ public class Start extends Application {
             File toOpen = new File(args[0]);
             Project.loadProject(toOpen);
         }
-        System.out.println(Project.PROJECT);
         launch(args);
     }
 
