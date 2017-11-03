@@ -13,16 +13,13 @@ import javafx.scene.input.MouseEvent;
 import st.finanse.Project;
 import st.finanse.data.Month;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Controller {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
     @FXML private TableView<Entry> table;
-    @FXML private Spinner<?> entryDay;
+    @FXML private Spinner<Integer> entryDay;
     @FXML private CheckBox isHoliday;
     @FXML private TextField entryTitle;
     @FXML private TextField entryAmount;
@@ -67,7 +64,7 @@ public class Controller {
 
     @FXML
     private void initialize() {
-        currentEntry.addListener(e -> reloadTable());
+        currentEntry.addListener(e -> reloadForm());
         reloadTree();
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
@@ -75,13 +72,26 @@ public class Controller {
         deleteColumn.setCellValueFactory(e -> new SimpleStringProperty("Usuń"));
     }
 
-    private void reloadTable() {
+    private void reloadForm() {
         MonthEntry me = currentEntry.get();
         boolean locked = me == null ? true : me.isClosed;
         setFormDisabled(locked);
         deleteColumn.setVisible(!locked);
         table.getItems().clear();
-        if (me != null) table.getItems().addAll(me.entries);
+        int maxDays = 30;
+        int defaultDay = 1;
+        if (me != null) {
+            table.getItems().addAll(me.entries.sorted(Comparator.comparingInt(Entry::getDay)));
+            maxDays = me.month.getMaxDays();
+            if (me.entries.size() == 0) {
+                defaultDay = 1;
+            }
+            else {
+                defaultDay = me.entries.sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay() + 1;
+                if (defaultDay > maxDays) defaultDay = maxDays;
+            }
+        }
+        entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
     }
 
     private void setFormDisabled(boolean locked) {
