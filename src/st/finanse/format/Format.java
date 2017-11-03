@@ -23,7 +23,7 @@ public interface Format {
             file.createNewFile();
         }
         else if (file.getName().toUpperCase().endsWith(".FNS")) {
-            new FNS().saveTo(project, file);
+            file = new File(file.getAbsolutePath() + "X");
         }
     }
 }

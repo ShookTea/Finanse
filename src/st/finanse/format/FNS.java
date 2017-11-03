@@ -6,10 +6,7 @@ import st.finanse.data.Month;
 import st.finanse.modules.finanse.Entry;
 import st.finanse.modules.finanse.MonthEntry;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FNS implements Format {
     @Override
@@ -58,6 +55,6 @@ public class FNS implements Format {
 
     @Override
     public void saveTo(Project project, File file) throws IOException {
-
+        throw new IOException();
     }
 }
