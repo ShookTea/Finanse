@@ -10,7 +10,7 @@ public class Month {
         this.year = year;
         int res = -1;
         for (int i = 1; i <= 12; i++) {
-            if (reloadMonthName(i).equalsIgnoreCase(month)) res = i;
+            if (reloadMonthName(i, false).equalsIgnoreCase(month)) res = i;
         }
         if (res == -1) throw new RuntimeException();
         this.month = res;
@@ -26,25 +26,32 @@ public class Month {
 
     public String getMonthName() {
         if (monthName == null) {
-            monthName = reloadMonthName(month);
+            monthName = reloadMonthName(month, false);
         }
         return monthName;
     }
 
-    private String reloadMonthName(int m) {
+    public String getMonthAccusative() {
+        if (monthNameAcc == null) {
+            monthNameAcc = reloadMonthName(month, true);
+        }
+        return monthNameAcc;
+    }
+
+    private String reloadMonthName(int m, boolean acc) {
         switch (m) {
-            case  1: return "Styczeń";
-            case  2: return "Luty";
-            case  3: return "Marzec";
-            case  4: return "Kwiecień";
-            case  5: return "Maj";
-            case  6: return "Czerwiec";
-            case  7: return "Lipiec";
-            case  8: return "Sierpień";
-            case  9: return "Wrzesień";
-            case 10: return "Październik";
-            case 11: return "Listopad";
-            case 12: return "Grudzień";
+            case  1: return acc ? "stycznia" : "Styczeń";
+            case  2: return acc ? "lutego" : "Luty";
+            case  3: return acc ? "marca" : "Marzec";
+            case  4: return acc ? "kwietnia" : "Kwiecień";
+            case  5: return acc ? "maja" : "Maj";
+            case  6: return acc ? "czerwca" : "Czerwiec";
+            case  7: return acc ? "lipca" : "Lipiec";
+            case  8: return acc ? "sierpnia" : "Sierpień";
+            case  9: return acc ? "września" : "Wrzesień";
+            case 10: return acc ? "października" : "Październik";
+            case 11: return acc ? "listopada" : "Listopad";
+            case 12: return acc ? "grudnia" : "Grudzień";
             default: return "[null]";
         }
     }
@@ -95,5 +102,6 @@ public class Month {
     private final int year;
     private final int month;
     private String monthName = null;
+    private String monthNameAcc = null;
     private int maxDays = -1;
 }
