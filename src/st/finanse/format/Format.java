@@ -13,6 +13,9 @@ public interface Format {
         if (f.getName().toUpperCase().endsWith(".FNS")) {
             return new FNS().loadFrom(f);
         }
+        else if (f.getName().toUpperCase().endsWith(".FNSX")) {
+            return new FNSX().loadFrom(f);
+        }
 
         return null;
     }
@@ -24,6 +27,10 @@ public interface Format {
         }
         else if (file.getName().toUpperCase().endsWith(".FNS")) {
             file = new File(file.getAbsolutePath() + "X");
+        }
+
+        if (file.getName().toUpperCase().endsWith(".FNSX")) {
+            new FNSX().saveTo(project, file);
         }
     }
 }
