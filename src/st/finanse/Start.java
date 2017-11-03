@@ -39,7 +39,7 @@ public class Start extends Application {
             version = "";
         }
         if (version.isEmpty()) {
-            Scanner scanner = new Scanner(Start.class.getResourceAsStream("/test.strep"));
+            Scanner scanner = new Scanner(Start.class.getResourceAsStream("/repository.strep"));
             String result = "";
             String regex = "\"version\": \"[^\"]*\",";
             while (!result.matches(regex) && scanner.hasNextLine()) {
