@@ -57,7 +57,12 @@ public class Controller {
 
     @FXML
     private void tableClicked(MouseEvent event) {
-
+        TablePosition cell = table.getFocusModel().getFocusedCell();
+        if (cell.getColumn() != -1 && cell.getTableColumn().equals(deleteColumn)) {
+            int row = cell.getRow();
+            Entry e = table.getItems().remove(row);
+            currentEntry.get().entries.remove(e);
+        }
     }
 
     @FXML
