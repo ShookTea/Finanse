@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/Project.java" afterPath="$PROJECT_DIR$/src/st/finanse/Project.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/format/Format.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/Format.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,34 +20,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="format.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/format.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1148">
-              <caret line="68" column="10" lean-forward="false" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Format.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/format/Format.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#298#299#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.strep" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.strep">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -80,16 +63,16 @@
         <option value="$PROJECT_DIR$/src/st/finanse/Format.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format" />
         <option value="$PROJECT_DIR$/src/test.strep" />
-        <option value="$PROJECT_DIR$/src/st/finanse/format/Format.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Month.java" />
         <option value="$PROJECT_DIR$/src/repository.strep" />
         <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/data/Amount.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/format/Format.java" />
       </list>
     </option>
   </component>
@@ -370,7 +353,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12311000" />
+    <option name="totallyTimeSpent" value="13237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -584,16 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="88" lean-forward="true" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/time/Month.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -708,18 +681,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/format.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1148">
+        <state relative-caret-position="1156">
           <caret line="68" column="10" lean-forward="false" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/format/Format.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/format/Format.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
           </folding>
         </state>
       </provider>
