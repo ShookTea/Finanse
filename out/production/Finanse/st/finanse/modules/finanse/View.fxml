@@ -16,7 +16,7 @@
 
 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="558.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
    <children>
-      <TreeView fx:id="monthTree" onMouseClicked="#monthChoosen" prefHeight="200.0" prefWidth="200.0" showRoot="false" />
+      <TreeView fx:id="monthTree" onMouseClicked="#monthChosen" prefHeight="200.0" prefWidth="200.0" showRoot="false" />
       <VBox prefHeight="400.0" prefWidth="459.0" HBox.hgrow="ALWAYS">
          <children>
             <Label fx:id="monthTitle" text="Listopad 2017" VBox.vgrow="NEVER">

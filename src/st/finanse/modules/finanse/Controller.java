@@ -30,8 +30,8 @@ public class Controller {
     }
 
     @FXML
-    private void monthChoosen(MouseEvent event) {
-
+    private void monthChosen(MouseEvent event) {
+        
     }
 
     @FXML
@@ -54,7 +54,6 @@ public class Controller {
             map.get(year).add(me);
         }
         for (Integer year : map.keySet()) {
-            System.out.println("year " + year);
             TreeItem<String> yearItem = new TreeItem<>("Rok " + year);
             for (MonthEntry me : map.get(year)) {
                 yearItem.getChildren().add(new MonthTreeItem(me));
