@@ -1,11 +1,12 @@
 package st.finanse.format;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
 import st.finanse.Project;
+import st.finanse.data.Month;
+import st.finanse.modules.finanse.Entry;
+import st.finanse.modules.finanse.MonthEntry;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class FNSX implements Format {
     @Override
@@ -32,10 +33,43 @@ public class FNSX implements Format {
     //zapis zawsze odbywa się w najnowszej wersji
     @Override
     public void saveTo(Project project, File file) throws IOException {
+        FileOutputStream fos = new FileOutputStream(file);
+        DataOutputStream dos = new DataOutputStream(fos);
 
+        dos.writeUTF("FNSX");
+        dos.writeInt(NEWEST_VERSION);
+
+        writeFinanceModule(project, dos);
+
+        dos.close();
+        fos.close();
+    }
+
+    private void writeFinanceModule(Project project, DataOutputStream dos) throws IOException {
+        dos.writeUTF("MOD_FINANCE.START");
+        for (MonthEntry monthEntry : project.FINANSE_MONTHS) {
+            dos.writeUTF("TABLE.START");
+            dos.writeInt(monthEntry.month.getMonth() - 1);
+            dos.writeInt(monthEntry.month.getYear());
+            dos.writeUTF(monthEntry.startingAmount.toString());
+            dos.writeBoolean(monthEntry.isClosed);
+
+            for (Entry entry : monthEntry.entries) {
+                dos.writeUTF("ENTRY");
+                dos.writeUTF(entry.title);
+                dos.writeInt(entry.day);
+                dos.writeUTF(entry.amount.toString());
+                dos.writeBoolean(entry.color == Entry.Color.RED);
+            }
+
+            dos.writeUTF("TABLE.STOP");
+        }
+        dos.writeUTF("MOD_FINANCE.STOP");
     }
 
     public static interface FnsxVersion {
         public Project load(DataInputStream dis) throws IOException;
     }
+
+    public static final int NEWEST_VERSION = 1;
 }
