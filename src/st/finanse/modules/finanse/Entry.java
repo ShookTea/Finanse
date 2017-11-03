@@ -3,25 +3,15 @@ package st.finanse.modules.finanse;
 import st.finanse.data.Amount;
 
 public class Entry {
-    public Entry(String title, int day, Amount amount) {
+    public Entry(String title, int day, Amount amount, boolean markRed) {
         this.day = day;
         this.title = title;
         this.amount = amount;
+        this.markRed = markRed;
     }
 
-    public int getDay() {
-        return day;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public Amount getAmount() {
-        return amount;
-    }
-
-    private final int day;
-    private final String title;
-    private final Amount amount;
+    public final int day;
+    public final String title;
+    public final Amount amount;
+    public final boolean markRed;
 }

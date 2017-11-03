@@ -24,5 +24,17 @@ public class Amount {
         return new Amount(cash.add(amount.cash));
     }
 
+    public Amount subtract(Amount amount) {
+        return new Amount(cash.subtract(amount.cash));
+    }
+
+    public int signum() {
+        return cash.signum();
+    }
+
+    public Amount switchSign() {
+        return new Amount(0).subtract(this);
+    }
+
     private final BigDecimal cash;
 }
