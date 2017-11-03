@@ -1,15 +1,15 @@
 package st.finanse;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+import st.finanse.gui.MainWindowController;
 
-import javax.swing.*;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.io.File;
 
 public class Start extends Application {
     public static void main(String[] args) throws Exception {
-        UIManager.setLookAndFeel(new NimbusLookAndFeel());
         if (args.length > 0) {
             toOpen = new File(args[0]);
         }
@@ -18,7 +18,18 @@ public class Start extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(Start.class.getResource("/st/finanse/gui/MainWindow.fxml"));
+        Scene scene = new Scene(loader.load());
+        MainWindowController mwc = loader.getController();
 
+        primaryStage.setMaximized(true);
+        primaryStage.setTitle("Finanse 2.0");
+        primaryStage.setOnCloseRequest(e -> {
+            e.consume();
+            mwc.exit();
+        });
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     private static File toOpen = null;
