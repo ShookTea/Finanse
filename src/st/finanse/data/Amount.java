@@ -17,12 +17,16 @@ public class Amount implements Comparable<Amount> {
         this(new BigDecimal(s));
     }
 
-    @Override
-    public String toString() {
+    public String toFormattedString() {
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         nf.setMinimumFractionDigits(2);
         nf.setMaximumFractionDigits(2);
         return nf.format(cash.doubleValue());
+    }
+
+    @Override
+    public String toString() {
+        return cash.toString();
     }
 
     public Amount add(Amount amount) {
