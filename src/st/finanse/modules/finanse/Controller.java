@@ -9,9 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
 import st.finanse.data.Amount;
@@ -49,7 +47,7 @@ public class Controller {
         entryTitle.setText("");
         entryAmount.setText("");
         Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
-        currentEntry.get().entries.add(entry);
+        currentEntry.get().getEntries().add(entry);
         reloadForm();
         entryTitle.requestFocus();
     }
@@ -79,7 +77,7 @@ public class Controller {
         if (cell.getColumn() != -1 && cell.getTableColumn().equals(deleteColumn)) {
             int row = cell.getRow();
             Entry e = table.getItems().remove(row);
-            currentEntry.get().entries.remove(e);
+            currentEntry.get().getEntries().remove(e);
         }
     }
 
@@ -119,20 +117,20 @@ public class Controller {
 
     private void reloadForm() {
         MonthEntry me = currentEntry.get();
-        boolean locked = me == null ? true : me.isClosed;
+        boolean locked = me == null ? true : me.isClosed();
         setFormDisabled(locked);
         deleteColumn.setVisible(!locked);
         table.getItems().clear();
         int maxDays = 30;
         int defaultDay = 1;
         if (me != null) {
-            table.getItems().addAll(me.entries.sorted(Comparator.comparingInt(Entry::getDay)));
+            table.getItems().addAll(me.getEntries().sorted(Comparator.comparingInt(Entry::getDay)));
             maxDays = me.month.getMaxDays();
-            if (me.entries.size() == 0) {
+            if (me.getEntries().size() == 0) {
                 defaultDay = 1;
             }
             else {
-                defaultDay = me.entries.sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
+                defaultDay = me.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
         }

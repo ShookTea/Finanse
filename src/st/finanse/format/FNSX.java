@@ -1,8 +1,6 @@
 package st.finanse.format;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import st.finanse.Project;
-import st.finanse.data.Month;
 import st.finanse.modules.finanse.Entry;
 import st.finanse.modules.finanse.MonthEntry;
 
@@ -52,9 +50,9 @@ public class FNSX implements Format {
             dos.writeInt(monthEntry.month.getMonth() - 1);
             dos.writeInt(monthEntry.month.getYear());
             dos.writeUTF(monthEntry.startingAmount.toString());
-            dos.writeBoolean(monthEntry.isClosed);
+            dos.writeBoolean(monthEntry.isClosed());
 
-            for (Entry entry : monthEntry.entries) {
+            for (Entry entry : monthEntry.getEntries()) {
                 dos.writeUTF("ENTRY");
                 dos.writeUTF(entry.getTitle());
                 dos.writeInt(entry.getDay());

@@ -45,8 +45,21 @@ public class MonthEntry {
         return ret;
     }
 
+    public boolean isClosed() {
+        return isClosed;
+    }
+
+    public void close() {
+        isClosed = true;
+    }
+
+    public ObservableList<Entry> getEntries() {
+        return isClosed ? FXCollections.observableArrayList(entries) : entries;
+    }
+
     public final Month month;
     public final Amount startingAmount;
-    public final boolean isClosed;
-    public final ObservableList<Entry> entries = FXCollections.observableArrayList();
+    private boolean isClosed;
+    private final ObservableList<Entry> entries = FXCollections.observableArrayList();
+
 }
