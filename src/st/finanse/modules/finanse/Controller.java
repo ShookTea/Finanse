@@ -137,7 +137,7 @@ public class Controller {
             }
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
-        bilance.setText("Aktualny stan: " + me.getCurrentAmount().toString() + " zł");
+        bilance.setText("Aktualny stan: " + me.getCurrentAmount().toString());
         reloadTable();
     }
 

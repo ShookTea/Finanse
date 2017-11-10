@@ -2,6 +2,7 @@ package st.finanse.data;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.NumberFormat;
 
 public class Amount implements Comparable<Amount> {
     private Amount(BigDecimal bd) {
@@ -18,7 +19,10 @@ public class Amount implements Comparable<Amount> {
 
     @Override
     public String toString() {
-        return cash.toString();
+        NumberFormat nf = NumberFormat.getCurrencyInstance();
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        return nf.format(cash.doubleValue());
     }
 
     public Amount add(Amount amount) {
