@@ -68,7 +68,7 @@ public class Controller {
     private void monthChosen(Observable observable) {
         ReadOnlyObjectProperty<TreeItem> robp = (ReadOnlyObjectProperty) observable;
         TreeItem selected = robp.get();
-        if (selected.isLeaf()) {
+        if (selected != null && selected.isLeaf()) {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
             Month m = new Month(year, monthName);
