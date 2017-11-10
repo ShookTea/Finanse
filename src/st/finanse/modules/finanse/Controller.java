@@ -14,11 +14,13 @@ import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
+import st.finanse.gui.MainWindowController;
+import st.finanse.gui.Updateable;
 
 import java.math.BigDecimal;
 import java.util.*;
 
-public class Controller {
+public class Controller implements Updateable {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
     @FXML private Label monthTitleInForm;
@@ -36,6 +38,12 @@ public class Controller {
     @FXML private TableColumn<Entry, String> deleteColumn;
 
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
+
+    @Override
+    public void update() {
+        reloadTree();
+        reloadForm();
+    }
 
     @FXML
     private void addEntry() {
@@ -88,6 +96,7 @@ public class Controller {
 
     @FXML
     private void initialize() {
+        MainWindowController.UPDATEABLES.add(this);
         currentEntry.addListener(e -> reloadForm());
         reloadTree();
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));

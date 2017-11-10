@@ -3,10 +3,14 @@ package st.finanse;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 import st.finanse.gui.MainWindowController;
 
 import java.io.File;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Start extends Application {
@@ -53,6 +57,19 @@ public class Start extends Application {
             }
         }
         return version;
+    }
+
+    public static Optional<ButtonType> showConfirmationAlert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setContentText(content);
+
+        ButtonType yes = new ButtonType("Tak", ButtonBar.ButtonData.YES);
+        ButtonType no = new ButtonType("Nie", ButtonBar.ButtonData.NO);
+        ButtonType cancel = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(yes, no, cancel);
+        return alert.showAndWait();
     }
 
     private static String version = "";
