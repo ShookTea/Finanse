@@ -49,6 +49,7 @@ public class Controller {
         if (selected.isLeaf()) {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
+            monthTitle.setText(monthName + " " + year);
             currentEntry.set(Project.PROJECT.getEntryByMonth(new Month(year, monthName)));
         }
     }
