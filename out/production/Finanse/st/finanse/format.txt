@@ -3,12 +3,7 @@ DataOutputStream
 ================================================================================
           INFORMACJA O FORMATACH UŻYWANYCH PRZEZ PROGRAM
 ================================================================================
-Program Finanse używa kilku formatów zapisu danych. Wybór użytego formatu
-zależy jedynie od użytkownika. Wszystkie formaty wykorzystują w pełni swoje
-możliwości, choć część z nich jest zalecana do użycia, a część odradzana.
---------------------------------------------------------------------------------
-Najstarszym formatem jest .FNS (FinaNSe). Format ten jest odradzany i
-prawdopodobnie zostanie w przyszłości wycofany.
+FNS
 
 Każdy miesiąc Finanse zaczyna się nagłówkiem:
 UTF |FINANCE.START
@@ -37,13 +32,8 @@ Tabela kończy się stopką:
 UTF |TITLE.BASE.STOP
 
 --------------------------------------------------------------------------------
-Kolejnym, obecnie najbardziej zalecanym formatem jest format .FNSX
-(FinaNSe eXtended). Powstał on na bazie wyżej opisanego .FNS. Jest to pierwszy
-wspierany format, w którym znajduje się nagłówek dla całego pliku, opisujący
-jego format i wersję. Oznacza to, że dalszy rozwój i zmiany w formacie .FNSX
-będą mogły działać w tym samym pliku, bez konieczności tworzenia nowego formatu.
-Ujednolicono również używanie kropek i podkreśleń, a także zmniejszono wielkość
-pliku poprzez usunięcie powtarzających się danych.
+FNSX
+
 
 Plik zaczyna się nagłówkiem:
 UTF |FNSX

@@ -101,10 +101,10 @@ public class Controller {
             @Override
             public void updateItem(Entry item, boolean empty) {
                 super.updateItem(item, empty);
-                setStyle("-fx-background-color: whitesmoke");
-                if (item == null | empty) return;
-
-                if (isSelected()){
+                if (item == null || empty) {
+                    setStyle("");
+                }
+                else if (isSelected()) {
                     setStyle("-fx-background-color: darkblue");
                 }
                 else if (item.getColor() == Entry.Color.RED) {
@@ -112,6 +112,9 @@ public class Controller {
                 }
                 else if (item.getColor() == Entry.Color.BLUE) {
                     setStyle("-fx-background-color: #32c9ff");
+                }
+                else {
+                    setStyle("");
                 }
             }
         });
