@@ -49,14 +49,14 @@ public class FNSX implements Format {
             dos.writeUTF("TABLE.START");
             dos.writeInt(monthEntry.month.getMonth() - 1);
             dos.writeInt(monthEntry.month.getYear());
-            dos.writeUTF(monthEntry.startingAmount.toString());
+            dos.writeUTF(monthEntry.startingAmount.toUnformattedString());
             dos.writeBoolean(monthEntry.isClosed());
 
             for (Entry entry : monthEntry.getEntries()) {
                 dos.writeUTF("ENTRY");
                 dos.writeUTF(entry.getTitle());
                 dos.writeInt(entry.getDay());
-                dos.writeUTF(entry.getAmount().toString());
+                dos.writeUTF(entry.getAmount().toUnformattedString());
                 dos.writeBoolean(entry.getColor() == Entry.Color.RED);
             }
 

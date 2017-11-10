@@ -12,9 +12,9 @@ is divided into following sections:
   - execution
   - debugging
   - javadoc
-  - test compilation
-  - test execution
-  - test debugging
+toUnformattedStringtest compilation
+toUnformattedStringtest execution
+toUnformattedStringtest debugging
   - applet
   - cleanup
 
