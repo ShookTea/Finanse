@@ -82,7 +82,7 @@
                         <Insets left="2.0" right="10.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="entryAccepted" mnemonicParsing="false" onAction="#addEntry" text="Dodaj">
+                  <Button fx:id="entryAccepted" defaultButton="true" mnemonicParsing="false" onAction="#addEntry" text="Dodaj">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>

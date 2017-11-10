@@ -7,12 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$MonthTreeItem.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$MonthTreeItem.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/View.fxml" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/View.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,13 +30,31 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+            <state relative-caret-position="238">
+              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
               <folding>
-                <element signature="e#5208#5972#0" expanded="true" />
-                <element signature="e#5971#5972#0" expanded="true" />
+                <element signature="e#5350#6114#0" expanded="true" />
+                <element signature="e#6113#6114#0" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+              <folding>
+                <marker date="1510330913768" expanded="true" signature="3424:3607" ph="..." />
+                <marker date="1510330913768" expanded="true" signature="4628:4774" ph="..." />
+                <marker date="1510330913768" expanded="true" signature="4663:4746" ph="..." />
+                <marker date="1510330913768" expanded="true" signature="4830:4912" ph="..." />
+              </folding>
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -360,12 +380,12 @@
       <workItem from="1508668259382" duration="791000" />
       <workItem from="1509569671699" duration="1501000" />
       <workItem from="1509571211190" duration="1268000" />
-      <workItem from="1510328183320" duration="2426000" />
+      <workItem from="1510328183320" duration="2925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31430000" />
+    <option name="totallyTimeSpent" value="31929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
@@ -380,7 +400,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -618,33 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <marker date="1510329595265" expanded="true" signature="2907:3187" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="2942:3037" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3068:3158" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3424:3607" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3482:3577" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3663:3745" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3838:4911" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="3864:4780" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4033:4194" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4068:4163" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4339:4500" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4374:4469" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4607:4753" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4642:4725" ph="..." />
-            <marker date="1510329595265" expanded="true" signature="4809:4891" ph="..." />
-          </folding>
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/javafx-src.zip!/javafx/util/converter/BigDecimalStringConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -670,10 +663,10 @@
         <state relative-caret-position="346">
           <caret line="700" column="8" lean-forward="false" selection-start-line="700" selection-start-column="8" selection-end-line="700" selection-end-column="8" />
           <folding>
-            <element signature="e#29794#29795#0" expanded="true" />
-            <element signature="e#29836#29837#0" expanded="true" />
-            <element signature="e#34114#34115#0" expanded="true" />
-            <element signature="e#34170#34171#0" expanded="true" />
+            <element signature="e#29794#29795#0" expanded="false" />
+            <element signature="e#29836#29837#0" expanded="false" />
+            <element signature="e#34114#34115#0" expanded="false" />
+            <element signature="e#34170#34171#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -686,13 +679,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="46" lean-forward="true" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
+          <folding>
+            <marker date="1510330913768" expanded="true" signature="3424:3607" ph="..." />
+            <marker date="1510330913768" expanded="true" signature="4628:4774" ph="..." />
+            <marker date="1510330913768" expanded="true" signature="4663:4746" ph="..." />
+            <marker date="1510330913768" expanded="true" signature="4830:4912" ph="..." />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="42" column="17" lean-forward="true" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+        <state relative-caret-position="238">
+          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
           <folding>
-            <element signature="e#5208#5972#0" expanded="true" />
-            <element signature="e#5971#5972#0" expanded="true" />
+            <element signature="e#5350#6114#0" expanded="true" />
+            <element signature="e#6113#6114#0" expanded="true" />
           </folding>
         </state>
       </provider>

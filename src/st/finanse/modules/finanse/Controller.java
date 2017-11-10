@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.util.converter.BigDecimalStringConverter;
@@ -38,13 +39,18 @@ public class Controller {
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
 
     @FXML
-    private void addEntry(ActionEvent event) {
+    private void addEntry() {
         boolean markRed = isHoliday.isSelected();
-        String title = entryTitle.getText();
         int day = entryDay.getValue();
+        String title = entryTitle.getText();
         Amount amount = new Amount(entryAmount.getText());
+
+        entryTitle.setText("");
+        entryAmount.setText("");
         Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
         currentEntry.get().entries.add(entry);
+        reloadForm();
+        entryTitle.requestFocus();
     }
 
     @FXML
