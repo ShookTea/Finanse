@@ -19,6 +19,7 @@ import java.util.*;
 public class Controller {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
+    @FXML private Label monthTitleInForm;
     @FXML private TableView<Entry> table;
     @FXML private Spinner<Integer> entryDay;
     @FXML private CheckBox isHoliday;
@@ -49,8 +50,11 @@ public class Controller {
         if (selected.isLeaf()) {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
-            monthTitle.setText(monthName + " " + year);
-            currentEntry.set(Project.PROJECT.getEntryByMonth(new Month(year, monthName)));
+            Month m = new Month(year, monthName);
+            monthTitle.setText(m.getMonthName() + " " + m.getYear());
+            monthTitleInForm.setText(m.getMonthAccusative() + " " + m.getYear());
+
+            currentEntry.set(Project.PROJECT.getEntryByMonth(m));
         }
     }
 
