@@ -124,6 +124,10 @@ public class Month implements Comparable<Month> {
         return ld.getDayOfWeek() == DayOfWeek.SUNDAY;
     }
 
+    public Month getNextMonth() {
+        return month == 12 ? new Month(year + 1, 1) : new Month(year, month + 1);
+    }
+
     private final int year;
     private final int month;
     private String monthName = null;
