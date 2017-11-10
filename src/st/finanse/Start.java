@@ -15,6 +15,7 @@ import java.util.Scanner;
 
 public class Start extends Application {
     public static void main(String[] args) throws Exception {
+        Project.createNewProject();
         if (args.length > 0) {
             File toOpen = new File(args[0]);
             Project.loadProject(toOpen);

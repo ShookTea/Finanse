@@ -2,6 +2,7 @@ package st.finanse;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.format.Format;
 import st.finanse.modules.finanse.MonthEntry;
@@ -45,5 +46,7 @@ public class Project {
 
     public static void createNewProject() {
         PROJECT = new Project();
+        Month month = new Month();
+        PROJECT.FINANSE_MONTHS.add(new MonthEntry(month, new Amount(0), false));
     }
 }
