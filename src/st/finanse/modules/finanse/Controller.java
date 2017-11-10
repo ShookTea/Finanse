@@ -11,9 +11,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
+import st.finanse.data.Amount;
 import st.finanse.data.Month;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Controller {
@@ -36,7 +39,12 @@ public class Controller {
 
     @FXML
     private void addEntry(ActionEvent event) {
-
+        boolean markRed = isHoliday.isSelected();
+        String title = entryTitle.getText();
+        int day = entryDay.getValue();
+        Amount amount = new Amount(entryAmount.getText());
+        Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
+        currentEntry.get().entries.add(entry);
     }
 
     @FXML
@@ -77,6 +85,24 @@ public class Controller {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         deleteColumn.setCellValueFactory(e -> new SimpleStringProperty("Usuń"));
         entryDay.valueProperty().addListener((a, b, c) -> checkHoliday(c));
+        entryAmount.setTextFormatter(new TextFormatter<>(new BigDecimalStringConverter() {
+            public BigDecimal fromString(String value) {
+                if (value == null) {
+                    return null;
+                }
+                value = value.trim().replace(",", ".");
+                if (value.length() < 1) {
+                    return null;
+                }
+                return new BigDecimal(value);
+            }
+            public String toString(BigDecimal value) {
+                if (value == null) {
+                    return "";
+                }
+                return value.toString();
+            }
+        }));
     }
 
     private void checkHoliday(int day) {
