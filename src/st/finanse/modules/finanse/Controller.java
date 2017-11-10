@@ -131,7 +131,7 @@ public class Controller {
                 defaultDay = 1;
             }
             else {
-                defaultDay = me.entries.sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay() + 1;
+                defaultDay = me.entries.sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
         }

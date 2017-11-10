@@ -7,14 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$1.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$MonthTreeItem.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$MonthTreeItem.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/View.fxml" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/View.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +23,11 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="310">
+              <caret line="133" column="113" lean-forward="false" selection-start-line="133" selection-start-column="113" selection-end-line="133" selection-end-column="113" />
               <folding>
-                <element signature="e#5350#6114#0" expanded="true" />
-                <element signature="e#6113#6114#0" expanded="true" />
+                <element signature="e#5346#6110#0" expanded="true" />
+                <element signature="e#6109#6110#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -380,12 +373,12 @@
       <workItem from="1508668259382" duration="791000" />
       <workItem from="1509569671699" duration="1501000" />
       <workItem from="1509571211190" duration="1268000" />
-      <workItem from="1510328183320" duration="2925000" />
+      <workItem from="1510328183320" duration="2992000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31929000" />
+    <option name="totallyTimeSpent" value="31996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
@@ -697,11 +690,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="51" column="21" lean-forward="false" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        <state relative-caret-position="310">
+          <caret line="133" column="113" lean-forward="false" selection-start-line="133" selection-start-column="113" selection-end-line="133" selection-end-column="113" />
           <folding>
-            <element signature="e#5350#6114#0" expanded="true" />
-            <element signature="e#6113#6114#0" expanded="true" />
+            <element signature="e#5346#6110#0" expanded="true" />
+            <element signature="e#6109#6110#0" expanded="true" />
           </folding>
         </state>
       </provider>
