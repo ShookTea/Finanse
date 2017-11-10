@@ -54,7 +54,15 @@ public class Controller {
 
     @FXML
     private void monthClosed(ActionEvent event) {
-
+        MonthEntry me = currentEntry.get();
+        Amount endingAmount = me.getCurrentAmount();
+        Month nextMonth = me.month.getNextMonth();
+        me.close();
+        MonthEntry newEntry = new MonthEntry(nextMonth, endingAmount, false);
+        Project.PROJECT.FINANSE_MONTHS.add(newEntry);
+        currentEntry.set(newEntry);
+        reloadTree();
+        reloadForm();
     }
 
     private void monthChosen(Observable observable) {
@@ -64,9 +72,6 @@ public class Controller {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
             Month m = new Month(year, monthName);
-            monthTitle.setText(m.getMonthName() + " " + m.getYear());
-            monthTitleInForm.setText(m.getMonthAccusative() + " " + m.getYear());
-
             currentEntry.set(Project.PROJECT.getEntryByMonth(m));
         }
     }
@@ -116,26 +121,29 @@ public class Controller {
     }
 
     private void reloadForm() {
-        MonthEntry me = currentEntry.get();
-        boolean locked = me == null ? true : me.isClosed();
+        MonthEntry monthEntry = currentEntry.get();
+        Month month = monthEntry.month;
+        monthTitle.setText(month.getMonthName() + " " + month.getYear());
+        monthTitleInForm.setText(month.getMonthAccusative() + " " + month.getYear());
+        boolean locked = monthEntry == null ? true : monthEntry.isClosed();
         setFormDisabled(locked);
         deleteColumn.setVisible(!locked);
         table.getItems().clear();
         int maxDays = 30;
         int defaultDay = 1;
-        if (me != null) {
-            table.getItems().addAll(me.getEntries().sorted(Comparator.comparingInt(Entry::getDay)));
-            maxDays = me.month.getMaxDays();
-            if (me.getEntries().size() == 0) {
+        if (monthEntry != null) {
+            table.getItems().addAll(monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay)));
+            maxDays = month.getMaxDays();
+            if (monthEntry.getEntries().size() == 0) {
                 defaultDay = 1;
             }
             else {
-                defaultDay = me.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
+                defaultDay = monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
-        bilance.setText("Aktualny stan: " + me.getCurrentAmount().toFormattedString());
+        bilance.setText("Aktualny stan: " + monthEntry.getCurrentAmount().toFormattedString());
         reloadTable();
     }
 
