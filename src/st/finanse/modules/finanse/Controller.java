@@ -24,6 +24,7 @@ public class Controller {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
     @FXML private Label monthTitleInForm;
+    @FXML private Label bilance;
     @FXML private TableView<Entry> table;
     @FXML private Spinner<Integer> entryDay;
     @FXML private CheckBox isHoliday;
@@ -136,6 +137,7 @@ public class Controller {
             }
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
+        bilance.setText("Aktualny stan: " + me.getCurrentAmount().toString() + " zł");
         reloadTable();
     }
 
