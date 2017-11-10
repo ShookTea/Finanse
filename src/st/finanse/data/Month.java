@@ -1,5 +1,8 @@
 package st.finanse.data;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+
 public class Month implements Comparable<Month> {
     public Month(int year, int month) {
         this.year = year;
@@ -116,9 +119,15 @@ public class Month implements Comparable<Month> {
         return y;
     }
 
+    public boolean isSunday(int day) {
+        LocalDate ld = LocalDate.of(year, month, day);
+        return ld.getDayOfWeek() == DayOfWeek.SUNDAY;
+    }
+
     private final int year;
     private final int month;
     private String monthName = null;
     private String monthNameAcc = null;
     private int maxDays = -1;
+
 }

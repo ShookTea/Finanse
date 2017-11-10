@@ -76,6 +76,12 @@ public class Controller {
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         deleteColumn.setCellValueFactory(e -> new SimpleStringProperty("Usuń"));
+        entryDay.valueProperty().addListener((a, b, c) -> checkHoliday(c));
+    }
+
+    private void checkHoliday(int day) {
+        Month m = currentEntry.get().month;
+        isHoliday.setSelected(m.isSunday(day));
     }
 
     private void reloadForm() {
