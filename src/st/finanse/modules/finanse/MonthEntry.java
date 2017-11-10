@@ -54,7 +54,7 @@ public class MonthEntry {
     }
 
     public ObservableList<Entry> getEntries() {
-        return isClosed ? FXCollections.observableArrayList(entries) : entries;
+        return entries;
     }
 
     public final Month month;
