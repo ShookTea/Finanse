@@ -125,18 +125,20 @@ public class Controller implements Updateable {
     }
 
     private void checkHoliday(int day) {
+        if (currentEntry.get() == null) return;
         Month m = currentEntry.get().month;
         isHoliday.setSelected(m.isSunday(day));
     }
 
     private void reloadForm() {
         MonthEntry monthEntry = currentEntry.get();
-        Month month = monthEntry.month;
-        monthTitle.setText(month.getMonthName() + " " + month.getYear());
-        monthTitleInForm.setText(month.getMonthAccusative() + " " + month.getYear());
         boolean locked = monthEntry == null ? true : monthEntry.isClosed();
         setFormDisabled(locked);
         deleteColumn.setVisible(!locked);
+
+        Month month = monthEntry == null ? new Month(2000, 1) : monthEntry.month;
+        monthTitle.setText(month.getMonthName() + " " + month.getYear());
+        monthTitleInForm.setText(month.getMonthAccusative() + " " + month.getYear());
         table.getItems().clear();
         int maxDays = 30;
         int defaultDay = 1;
@@ -150,9 +152,13 @@ public class Controller implements Updateable {
                 defaultDay = monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
+            bilance.setText("Aktualny stan: " + monthEntry.getCurrentAmount().toFormattedString());
+        }
+        else {
+            table.getItems().clear();
+            bilance.setText("Aktualny stan: ---");
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
-        bilance.setText("Aktualny stan: " + monthEntry.getCurrentAmount().toFormattedString());
         reloadTable();
     }
 
