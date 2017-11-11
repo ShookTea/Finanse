@@ -29,8 +29,20 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
         return amount;
     }
 
+    public String getEntryDateString() {
+        return createStringFromDate(entryDate);
+    }
+
     public LocalDate getEntryDate() {
         return entryDate;
+    }
+
+    public String getPaymentDateString() {
+        return paymentDate == null ? "(nie opłacono)" : createStringFromDate(paymentDate);
+    }
+
+    private String createStringFromDate(LocalDate ld) {
+        return ld.getDayOfMonth() + " " + new Month(ld).getMonthAccusative() + " " + ld.getYear();
     }
 
     public LocalDate getPaymentDate() {
@@ -77,7 +89,8 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             PaymentEntry pe = (PaymentEntry)ob;
             return amount.equals(pe.amount)
                     && entryDate.equals(pe.entryDate)
-                    && paymentDate.equals(pe.paymentDate)
+                    && ((paymentDate == null) == (ob == null))
+                    && (paymentDate == null || paymentDate.equals(pe.paymentDate))
                     && isPayed == pe.isPayed
                     && title.equals(pe.title);
         }

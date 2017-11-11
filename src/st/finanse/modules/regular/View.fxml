@@ -35,9 +35,9 @@
             </Label>
             <TableView fx:id="entryTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
-                <TableColumn prefWidth="75.0" text="Data otrzymania" />
-                <TableColumn prefWidth="75.0" text="Data opłacenia" />
-                  <TableColumn prefWidth="75.0" text="Kwota" />
+                <TableColumn fx:id="entryDateColumn" prefWidth="75.0" text="Data otrzymania" />
+                <TableColumn fx:id="paymentDateColumn" prefWidth="75.0" text="Data opłacenia" />
+                  <TableColumn fx:id="amountColumn" prefWidth="75.0" text="Kwota" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
