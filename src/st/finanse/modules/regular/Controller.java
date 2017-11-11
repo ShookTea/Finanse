@@ -42,7 +42,12 @@ public class Controller implements Updateable {
 
     @FXML
     private void createEntry() {
-
+        LocalDate entry = entryDate.getValue();
+        LocalDate payment = paymentDate.getValue();
+        Amount pay = new Amount(amount.getText());
+        PaymentEntry pe = new PaymentEntry(pay, entry, payment);
+        toDisplay.addPayment(pe);
+        updateTable();
     }
 
     @FXML
@@ -89,14 +94,19 @@ public class Controller implements Updateable {
     }
 
     private void updateTable() {
-        entryTable.getItems().addAll(toDisplay.getPayments());
+        entryTable.getItems().setAll(toDisplay.getPayments());
     }
 
     private void setBlockedForm(boolean isBlocked) {
         entryDate.setDisable(isBlocked);
-        paymentDate.setDisable(isBlocked);
         amount.setDisable(isBlocked);
         isPayed.setDisable(isBlocked);
         createEntry.setDisable(isBlocked);
+        if (isBlocked) {
+            paymentDate.setDisable(true);
+        }
+        else {
+            paymentDate.disableProperty().bind(isPayed.selectedProperty().not());
+        }
     }
 }
