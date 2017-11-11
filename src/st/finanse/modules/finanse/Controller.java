@@ -100,24 +100,7 @@ public class Controller implements Updateable {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         deleteColumn.setCellFactory(createRemoveButton());
         entryDay.valueProperty().addListener((a, b, c) -> checkHoliday(c));
-        entryAmount.setTextFormatter(new TextFormatter<>(new BigDecimalStringConverter() {
-            public BigDecimal fromString(String value) {
-                if (value == null) {
-                    return null;
-                }
-                value = value.trim().replace(",", ".");
-                if (value.length() < 1) {
-                    return null;
-                }
-                return new BigDecimal(value);
-            }
-            public String toString(BigDecimal value) {
-                if (value == null) {
-                    return "";
-                }
-                return value.toString();
-            }
-        }));
+        entryAmount.setTextFormatter(Amount.createAmountFormatter());
     }
 
     private void checkHoliday(int day) {
