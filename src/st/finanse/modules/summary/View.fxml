@@ -13,7 +13,7 @@
          <content>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <LineChart maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Stan konta" VBox.vgrow="ALWAYS">
+                  <LineChart fx:id="accountBilanse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Stan konta" VBox.vgrow="ALWAYS">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>

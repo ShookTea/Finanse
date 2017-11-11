@@ -49,6 +49,10 @@ public class Amount implements Comparable<Amount> {
         return new Amount(0).subtract(this);
     }
 
+    public double toDouble() {
+        return cash.doubleValue();
+    }
+
     @Override
     public int compareTo(Amount o) {
         return cash.compareTo(o.cash);
