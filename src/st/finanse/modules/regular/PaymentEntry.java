@@ -90,13 +90,20 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
 
     @Override
     public boolean equals(Object ob) {
+        if (this.equalsIgnoreIsPayed(ob)) {
+            PaymentEntry pe = (PaymentEntry)ob;
+            return isPayed == pe.isPayed
+                    && ((paymentDate == null) == (ob == null))
+                    && (paymentDate == null || paymentDate.equals(pe.paymentDate));
+        }
+        return false;
+    }
+
+    public boolean equalsIgnoreIsPayed(Object ob) {
         if (ob instanceof PaymentEntry) {
             PaymentEntry pe = (PaymentEntry)ob;
             return amount.equals(pe.amount)
                     && entryDate.equals(pe.entryDate)
-                    && ((paymentDate == null) == (ob == null))
-                    && (paymentDate == null || paymentDate.equals(pe.paymentDate))
-                    && isPayed == pe.isPayed
                     && title.equals(pe.title);
         }
         return false;

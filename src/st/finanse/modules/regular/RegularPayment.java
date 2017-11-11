@@ -9,7 +9,20 @@ public class RegularPayment {
     }
 
     public void addPayment(PaymentEntry entry) {
-        payments.add(entry);
+        if (payments.stream().filter(e -> e.equalsIgnoreIsPayed(entry)).count() == 0) {
+            payments.add(entry);
+        }
+        else {
+            int index = -1;
+            for (int i = payments.size() - 1; i >= 0 && index == -1; i--) {
+                if (payments.get(i).equalsIgnoreIsPayed(entry)) {
+                    index = i;
+                }
+            }
+            if (index != -1) {
+                payments.set(index, entry);
+            }
+        }
     }
 
     @Override
