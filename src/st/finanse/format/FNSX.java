@@ -23,6 +23,8 @@ public class FNSX implements Format {
             switch (version) {
                 case 1:
                     return new FNSX_1().load(dis);
+                case 2:
+                    return new FNSX_2().load(dis);
             }
         }
         return new Project();
@@ -69,5 +71,5 @@ public class FNSX implements Format {
         public Project load(DataInputStream dis) throws IOException;
     }
 
-    public static final int NEWEST_VERSION = 1;
+    public static final int NEWEST_VERSION = 2;
 }
