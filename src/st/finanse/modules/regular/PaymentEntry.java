@@ -52,7 +52,7 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             }
             boolean holiday = paymentDate.getDayOfWeek() == DayOfWeek.SUNDAY;
             int day = paymentDate.getDayOfMonth();
-            Entry financeEntry = new Entry(title, day, amount, holiday, monthEntry);
+            Entry financeEntry = new Entry(title, day, amount.switchSign(), holiday, monthEntry);
             monthEntry.getEntries().addAll(financeEntry);
             return true;
         }
