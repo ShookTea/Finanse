@@ -9,12 +9,18 @@ import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
 import st.finanse.Project;
 import st.finanse.data.Amount;
+import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.regular.PaymentEntry;
+import st.finanse.modules.regular.RegularPayment;
+
+import java.util.Map;
 
 public class Controller implements Updateable {
     @FXML private LineChart<String, Double> accountBilanse;
+    @FXML private LineChart<String, Double> regularPayings;
     @FXML private BarChart<String, Double> gainsLoss;
 
     @FXML
@@ -27,7 +33,22 @@ public class Controller implements Updateable {
     public void update() {
         createBilanseData();
         createGainsLossData();
+        createRegularPayingsData();
         gainsLoss.setBarGap(1.0);
+    }
+
+    private void createRegularPayingsData() {
+        ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
+        RegularPayment[] payments = Project.PROJECT.REGULAR_PAYMENTS.toArray(new RegularPayment[0]);
+        Series<String, Double>[] series = new Series[payments.length];
+        for (int i = 0; i < payments.length; i++) {
+            series[i] = new Series<>();
+            for (Map.Entry<Month, Amount> entry : payments[i].getEntriesByMonth().entrySet()) {
+                series[i].getData().add(new Data(entry.getKey().toString(), entry.getValue().toDouble()));
+            }
+        }
+        result.addAll(series);
+        regularPayings.setData(result);
     }
 
     private void createBilanseData() {

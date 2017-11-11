@@ -1,12 +1,15 @@
 package st.finanse.modules.regular;
 
 import st.finanse.Project;
+import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.modules.finanse.MonthEntry;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RegularPayment {
     public RegularPayment(String name) {
@@ -52,6 +55,17 @@ public class RegularPayment {
 
     public PaymentEntry[] getPayments() {
         return payments.toArray(new PaymentEntry[0]);
+    }
+
+    public Map<Month, Amount> getEntriesByMonth() {
+        Map<Month, Amount> map = new HashMap<>();
+        payments.stream()
+                .filter(e -> e.isPayed())
+                .forEach(e -> map.put(
+                        new Month(e.getPaymentDate()),
+                        map.getOrDefault(new Month(e.getPaymentDate()), new Amount(0.0)).add(e.getAmount())
+                ));
+        return map;
     }
 
     private final List<PaymentEntry> payments = new ArrayList<>();
