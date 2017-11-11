@@ -25,10 +25,6 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
         this("", amount, entryDate, paymentDate);
     }
 
-    public PaymentEntry(String title, PaymentEntry pe) {
-        this(title, pe.amount, pe.entryDate, pe.paymentDate);
-    }
-
     public Amount getAmount() {
         return amount;
     }

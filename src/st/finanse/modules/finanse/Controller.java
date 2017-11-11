@@ -85,11 +85,6 @@ public class Controller implements Updateable {
     }
 
     @FXML
-    private void tableClicked(MouseEvent event) {
-
-    }
-
-    @FXML
     private void initialize() {
         MainWindowController.UPDATEABLES.add(this);
         currentEntry.addListener(e -> reloadForm());
