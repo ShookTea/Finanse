@@ -49,15 +49,19 @@ public class Project {
     }
 
     public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
+    public File file = null;
 
     public static Project PROJECT = new Project();
 
     public static void loadProject(File f) throws IOException {
+        if (f == null) throw new IOException("Nie podano pliku do wczytania");
         PROJECT = Format.loadProject(f);
         if (PROJECT == null) createNewProject();
+        else PROJECT.file = f;
     }
 
     public static void saveProject(File f) throws IOException {
+        if (f == null) throw new IOException("Nie podano pliku do zapisania");
         Format.saveProject(PROJECT, f);
     }
 

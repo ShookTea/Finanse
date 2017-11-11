@@ -3,16 +3,17 @@ package st.finanse;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import st.finanse.gui.MainWindowController;
 
 import java.io.File;
-import java.util.Optional;
-import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.*;
 
 public class Start extends Application {
 
@@ -89,12 +90,45 @@ public class Start extends Application {
         FileChooser fc = new FileChooser();
         fc.setTitle("Wybierz plik");
         fc.setInitialDirectory(new File(System.getProperty("user.home")));
+        List<String> combination = new ArrayList<>();
+        combination.addAll(fnsExt);
+        combination.addAll(fnsxExt);
         fc.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Wszystkie pliki programu Finanse", "*.fns", "*.fnsx"),
-                new FileChooser.ExtensionFilter("Pliki FNS programu Finanse", "*.fns"),
-                new FileChooser.ExtensionFilter("Pliki FNSX programu Finanse", "*.fnsx")
+                new FileChooser.ExtensionFilter("Wszystkie pliki programu Finanse", combination),
+                new FileChooser.ExtensionFilter("Pliki FNS programu Finanse", fnsExt),
+                new FileChooser.ExtensionFilter("Pliki FNSX programu Finanse", fnsxExt)
         );
         return fc;
+    }
+
+    private static final List<String> fnsExt = Arrays.asList("*.fns", "*.fnS", "*.fNs", "*.fNS", "*.Fns", "*.FnS", "*.FNs", "*.FNS");
+    private static final List<String> fnsxExt = Arrays.asList("*.fnsx", "*.fnSx", "*.fNsx", "*.fNSx", "*.Fnsx", "*.FnSx", "*.FNsx", "*.FNSx",
+                                                                  "*.fnsX", "*.fnSX", "*.fNsX", "*.fNSX", "*.FnsX", "*.FnSX", "*.FNsX", "*.FNSX");
+
+
+    public static void showExceptionAlert(Exception ex) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Błąd");
+        alert.setHeaderText("Wystąpił błąd");
+        alert.setContentText("Skopiuj treść poniżej i wyślij ją twórcy programu.");
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        ex.printStackTrace(pw);
+        String exceptionText = sw.toString();
+        Label label = new Label("Stos wyjątku:");
+        TextArea textArea = new TextArea(exceptionText);
+        textArea.setEditable(false);
+        textArea.setWrapText(true);
+        textArea.setMaxWidth(Double.MAX_VALUE);
+        textArea.setMaxHeight(Double.MAX_VALUE);
+        GridPane.setVgrow(textArea, Priority.ALWAYS);
+        GridPane.setHgrow(textArea, Priority.ALWAYS);
+        GridPane expContent = new GridPane();
+        expContent.setMaxWidth(Double.MAX_VALUE);
+        expContent.add(label, 0, 0);
+        expContent.add(textArea, 0, 1);
+        alert.getDialogPane().setExpandableContent(expContent);
+        alert.showAndWait();
     }
 
     private static String version = "";
