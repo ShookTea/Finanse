@@ -95,6 +95,7 @@ public class Controller implements Updateable {
         MainWindowController.UPDATEABLES.add(this);
         currentEntry.addListener(e -> reloadForm());
         reloadTree();
+        table.setFixedCellSize(25.0);
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -244,6 +245,7 @@ public class Controller implements Updateable {
                                 currentEntry.get().getEntries().remove(person);
                                 update();
                             });
+                            btn.setPrefHeight(USE_COMPUTED_SIZE);
                             setGraphic(btn);
                             setText(null);
                         }
