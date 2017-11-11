@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
+import st.finanse.modules.regular.PaymentEntry;
 
 public class MonthEntry {
     public MonthEntry(Month month, Amount startAmount, boolean isClosed) {
@@ -55,6 +56,14 @@ public class MonthEntry {
 
     public ObservableList<Entry> getEntries() {
         return entries;
+    }
+
+    public void addPayment(String title, PaymentEntry pe) {
+        int day = pe.getPaymentDate().getDayOfMonth();
+        boolean isHoliday = month.isSunday(day);
+        Amount amount = pe.getAmount().switchSign();
+        Entry entry = new Entry(title, day, amount, isHoliday, this);
+        entries.add(entry);
     }
 
     public final Month month;

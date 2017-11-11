@@ -3,13 +3,11 @@ package st.finanse.modules.regular;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Controller implements Updateable {
@@ -74,6 +72,11 @@ public class Controller implements Updateable {
         String item = regularList.getSelectionModel().getSelectedItem();
         toDisplay = Project.PROJECT.getRegularPaymentByName(item);
         updateRightPart();
+    }
+
+    @FXML
+    private void selectedEntry() {
+
     }
 
     @Override

@@ -33,7 +33,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <TableView fx:id="entryTable" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="entryTable" onMouseClicked="#selectedEntry" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="entryDateColumn" prefWidth="75.0" text="Data otrzymania" />
                 <TableColumn fx:id="paymentDateColumn" prefWidth="75.0" text="Data opłacenia" />

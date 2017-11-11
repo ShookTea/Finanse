@@ -57,23 +57,11 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
         return isPayed;
     }
 
-    public boolean setPayed(LocalDate payedDate) {
+    public void setPayed(LocalDate payedDate) {
         if (!isPayed) {
             isPayed = true;
             this.paymentDate = payedDate;
-            Month m = new Month(paymentDate);
-            MonthEntry monthEntry = Project.PROJECT.getEntryByMonth(m);
-            if (monthEntry == null) {
-                return false;
-            }
-            boolean holiday = paymentDate.getDayOfWeek() == DayOfWeek.SUNDAY;
-            int day = paymentDate.getDayOfMonth();
-            Entry financeEntry = new Entry(title, day, amount.switchSign(), holiday, monthEntry);
-            monthEntry.getEntries().add(financeEntry);
-            MainWindowController.updateAll();
-            return true;
         }
-        return false;
     }
 
     @Override
