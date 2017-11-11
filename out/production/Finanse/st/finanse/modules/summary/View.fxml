@@ -7,7 +7,10 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.chart.BarChart?>
 
-<TabPane prefHeight="305.0" prefWidth="531.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.summary.Controller">
+<TabPane prefHeight="305.0" prefWidth="531.0" side="LEFT" tabClosingPolicy="UNAVAILABLE"
+         xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="st.finanse.modules.summary.Controller"
+        onMouseClicked="#update">
   <tabs>
     <Tab text="Stan konta">
          <content>
