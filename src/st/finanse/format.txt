@@ -38,57 +38,63 @@ FNSX
 Plik zaczyna się nagłówkiem:
 UTF |FNSX
 INT |kolejny numer wersji nagłówka
+Poniżej kolejne moduły.
 
-=== MODUŁ FINANSE (wersja FNSX_1, FNSX_2) ===
+=== MODUŁ FINANSE (wersja FNSX_1) ===
 
-Nagłówek modułu Finanse:
 UTF |MOD_FINANCE.START
+    (dla każdego miesiąca)
+    UTF |TABLE.START
+    INT |numer miesiąca (0-11)
+    INT |rok
+    UTF |wartość początkowa
+    BOOL|czy miesiąc jest zamknięty?
+        (dla każdego wpisu do tabeli)
+        UTF |ENTRY
+        UTF |tytuł
+        INT |dzień
+        UTF |kwota
+        BOOL|czy dany dzień jest świętem?
+    UTF | TABLE.STOP
+UTF |MOD_FINANCE.STOP
 
-Nagłówek tabeli miesiąca w module Finanse:
-UTF |TABLE.START
-INT |numer miesiąca (styczeń - 0, luty - 1, ..., grudzień - 11)
-INT |rok
-UTF |wartość początkowa
-BOOL|czy miesiąc jest zamknięty?
+=== MODUŁ FINANSE (wersja FNSX_2) ===
 
-następnie dla każdego wpisu do tabeli:
-UTF |ENTRY
-UTF |tytuł
-INT |dzień
-UTF |kwota
-BOOL|czy dany dzień jest świętem?
-
-Mesiąc kończy się stopką:
-UTF |TABLE.STOP
-
-Zaś moduł Finanse:
+UTF |MOD_FINANCE.START
+    (dla każdego miesiąca)
+    UTF |TABLE.START
+    INT |numer miesiąca (1-12)
+    INT |rok
+    UTF |wartość początkowa
+    BOOL|czy miesiąc jest zamknięty?
+        (dla każdego wpisu do tabeli)
+        UTF |ENTRY
+        UTF |tytuł
+        INT |dzień
+        UTF |kwota
+        BOOL|czy dany dzień jest świętem?
+    UTF | TABLE.STOP
 UTF |MOD_FINANCE.STOP
 
 === MODUŁ PŁATNOŚCI REGULARNYCH (wersja FNSX_2) ===
 
-Nagłówek modułu Regular:
 UTF | MOD_REGULAR.START
-
-Nagłówek każdej płatności regularnej:
-UTF | REGULAR.START
-UTF | tytuł
-
-Następnie dla każdego wpisu do płatności regularnej:
-
-UTF | ENTRY
-UTF | kwota
-    (czas wejścia rachunku)
-INT | dzień (1-31)
-INT | miesiąc (1-12)
-INT | rok
-BOOL| czy rachunek został opłacony?
-    (jeśli tak, czas opłacenia)
-INT | dzień (1-31)
-INT | miesiąc (1-12)
-INT | rok
-
-Płatność regularna kończy się stopką:
-UTF | REGULAR.STOP
-
-Zaś moduł Regular:
+    (dla każdej płatności regularnej)
+    UTF | REGULAR.START
+    UTF | tytuł
+        (dla każdego wpisu do płatności regularnej)
+        UTF | ENTRY
+        UTF | kwota
+        (czas wejścia rachunku) {
+            INT | dzień (1-31)
+            INT | miesiąc (1-12)
+            INT | rok
+        }
+        BOOL| czy rachunek został opłacony?
+        (jeśli tak, czas opłacenia) {
+            INT | dzień (1-31)
+            INT | miesiąc (1-12)
+            INT | rok
+        }
+    UTF | REGULAR.STOP
 UTF | MOD_REGULAR.STOP
