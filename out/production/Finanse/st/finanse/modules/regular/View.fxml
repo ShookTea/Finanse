@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.regular.Controller">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.regular.Controller">
    <children>
       <VBox prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -23,7 +23,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <ListView fx:id="regularList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" onMouseClicked="#selectPayment"/>
+            <ListView fx:id="regularList" onMouseClicked="#selectPayment" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
          </children>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
@@ -55,12 +55,13 @@
                         <Insets left="2.0" right="5.0" />
                      </HBox.margin>
                   </DatePicker>
-                  <Label prefHeight="40.0" text="Kwota:" HBox.hgrow="NEVER" />
-                  <TextField fx:id="amount" prefHeight="26.0" prefWidth="146.0" HBox.hgrow="SOMETIMES">
+                  <Label prefHeight="26.0" text="Kwota:" HBox.hgrow="NEVER" />
+                  <TextField fx:id="amount" prefHeight="26.0" prefWidth="135.0" HBox.hgrow="SOMETIMES">
                      <HBox.margin>
                         <Insets left="2.0" />
                      </HBox.margin>
                   </TextField>
+                  <Separator prefWidth="200.0" HBox.hgrow="SOMETIMES" />
                </children>
                <VBox.margin>
                   <Insets />
@@ -74,12 +75,12 @@
                   <CheckBox fx:id="isPayed" mnemonicParsing="false" prefHeight="39.0" prefWidth="86.0" text="Opłacono" HBox.hgrow="NEVER" />
                   <Label prefHeight="32.0" text="Data opłacenia:" HBox.hgrow="NEVER">
                      <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="20.0" />
                      </HBox.margin>
                   </Label>
                   <DatePicker fx:id="paymentDate" prefHeight="26.0" prefWidth="166.0" promptText="Data opłacenia" showWeekNumbers="true" HBox.hgrow="SOMETIMES" />
                   <Separator HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" onAction="#createEntry" prefHeight="26.0" text="Dodaj" HBox.hgrow="SOMETIMES">
+                  <Button fx:id="createEntry" mnemonicParsing="false" onAction="#createEntry" prefHeight="26.0" text="Dodaj" HBox.hgrow="SOMETIMES">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>

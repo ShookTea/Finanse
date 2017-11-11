@@ -50,6 +50,14 @@ public class Project {
         return ret;
     }
 
+    public RegularPayment getRegularPaymentByName(String item) {
+        RegularPayment[] rp = REGULAR_PAYMENTS.stream()
+                .filter(e -> e.name.equals(item))
+                .toArray(RegularPayment[]::new);
+        if (rp.length == 1) return rp[0];
+        return null;
+    }
+
     public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
     public final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;
@@ -73,4 +81,5 @@ public class Project {
         Month month = new Month();
         PROJECT.FINANSE_MONTHS.add(new MonthEntry(month, new Amount(0), false));
     }
+
 }

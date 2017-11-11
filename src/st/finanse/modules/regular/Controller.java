@@ -16,6 +16,9 @@ public class Controller implements Updateable {
     @FXML private TextField amount;
     @FXML private CheckBox isPayed;
     @FXML private DatePicker paymentDate;
+    @FXML private Button createEntry;
+
+    private RegularPayment toDisplay = null;
 
     @FXML
     private void initialize() {
@@ -43,16 +46,37 @@ public class Controller implements Updateable {
 
     @FXML
     private void selectPayment() {
-
+        String item = regularList.getSelectionModel().getSelectedItem();
+        toDisplay = Project.PROJECT.getRegularPaymentByName(item);
+        updateTable();
     }
 
     @Override
     public void update() {
         updateList();
+        updateTable();
     }
 
     private void updateList() {
         regularList.getItems().clear();
         Project.PROJECT.REGULAR_PAYMENTS.stream().forEach(r -> regularList.getItems().add(r.name));
+    }
+
+    private void updateTable() {
+        if (toDisplay == null) {
+            setBlockedForm(true);
+            title.setText("Rachunki");
+            return;
+        }
+        setBlockedForm(false);
+        title.setText(toDisplay.name);
+    }
+
+    private void setBlockedForm(boolean isBlocked) {
+        entryDate.setDisable(isBlocked);
+        paymentDate.setDisable(isBlocked);
+        amount.setDisable(isBlocked);
+        isPayed.setDisable(isBlocked);
+        createEntry.setDisable(isBlocked);
     }
 }
