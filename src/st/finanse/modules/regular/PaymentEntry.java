@@ -1,9 +1,13 @@
 package st.finanse.modules.regular;
 
+import st.finanse.Project;
 import st.finanse.data.Amount;
+import st.finanse.data.Month;
+import st.finanse.modules.finanse.Entry;
+import st.finanse.modules.finanse.MonthEntry;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.Comparator;
 
 public class PaymentEntry implements Comparable<PaymentEntry> {
     private PaymentEntry(Amount amount, LocalDate entryDate, LocalDate paymentDate, boolean isPayed) {
@@ -37,11 +41,22 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
         return isPayed;
     }
 
-    public void setPayed(LocalDate payedDate) {
+    public boolean setPayed(LocalDate payedDate) {
         if (!isPayed) {
             isPayed = true;
             this.paymentDate = payedDate;
+            Month m = new Month(paymentDate);
+            MonthEntry monthEntry = Project.PROJECT.getEntryByMonth(m);
+            if (monthEntry == null) {
+                return false;
+            }
+            boolean holiday = paymentDate.getDayOfWeek() == DayOfWeek.SUNDAY;
+            int day = paymentDate.getDayOfMonth();
+            Entry financeEntry = new Entry(title, day, amount, holiday, monthEntry);
+            monthEntry.getEntries().addAll(financeEntry);
+            return true;
         }
+        return false;
     }
 
     @Override
@@ -63,7 +78,8 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             return amount.equals(pe.amount)
                     && entryDate.equals(pe.entryDate)
                     && paymentDate.equals(pe.paymentDate)
-                    && isPayed == pe.isPayed;
+                    && isPayed == pe.isPayed
+                    && title.equals(pe.title);
         }
         return false;
     }
@@ -71,7 +87,9 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("PaymentEntry [amount = ");
+        sb.append("PaymentEntry(");
+        sb.append(title);
+        sb.append(") [amount = ");
         sb.append(amount.toFormattedString());
         sb.append("; entryDate = ");
         sb.append(entryDate.toString());
@@ -86,9 +104,14 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
         return sb.toString();
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     private final Amount amount;
     private final LocalDate entryDate;
     private LocalDate paymentDate;
     private boolean isPayed;
+    private String title = "";
 
 }

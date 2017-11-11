@@ -19,10 +19,12 @@ public class Month implements Comparable<Month> {
         this.month = res;
     }
 
+    public Month(LocalDate ld) {
+        this(ld.getYear(), ld.getMonthValue());
+    }
+
     public Month() {
-        LocalDate ld = LocalDate.now();
-        this.year = ld.getYear();
-        this.month = ld.getMonthValue();
+        this(LocalDate.now());
     }
 
     public int getYear() {

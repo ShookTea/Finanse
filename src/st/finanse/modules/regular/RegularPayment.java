@@ -8,6 +8,11 @@ public class RegularPayment {
         this.name = name;
     }
 
-    public final List<PaymentEntry> payments = new ArrayList<>();
+    public void addPayment(PaymentEntry entry) {
+        payments.add(entry);
+        entry.setTitle(name);
+    }
+
+    private final List<PaymentEntry> payments = new ArrayList<>();
     public final String name;
 }
