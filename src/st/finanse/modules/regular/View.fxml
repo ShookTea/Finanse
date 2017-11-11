@@ -23,7 +23,7 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <ListView fx:id="regularList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <ListView fx:id="regularList" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" onMouseClicked="#selectPayment"/>
          </children>
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
