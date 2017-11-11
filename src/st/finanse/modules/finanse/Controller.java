@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Callback;
 import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
 import st.finanse.data.Amount;
@@ -86,12 +87,7 @@ public class Controller implements Updateable {
 
     @FXML
     private void tableClicked(MouseEvent event) {
-        TablePosition cell = table.getFocusModel().getFocusedCell();
-        if (cell.getColumn() != -1 && cell.getTableColumn().equals(deleteColumn)) {
-            int row = cell.getRow();
-            Entry e = table.getItems().remove(row);
-            currentEntry.get().getEntries().remove(e);
-        }
+
     }
 
     @FXML
@@ -102,7 +98,7 @@ public class Controller implements Updateable {
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-        deleteColumn.setCellValueFactory(e -> new SimpleStringProperty("Usuń"));
+        deleteColumn.setCellFactory(createRemoveButton());
         entryDay.valueProperty().addListener((a, b, c) -> checkHoliday(c));
         entryAmount.setTextFormatter(new TextFormatter<>(new BigDecimalStringConverter() {
             public BigDecimal fromString(String value) {
@@ -228,5 +224,34 @@ public class Controller implements Updateable {
         }
 
         public final MonthEntry monthEntry;
+    }
+
+    private Callback<TableColumn<Entry, String>, TableCell<Entry, String>> createRemoveButton() {
+        Callback<TableColumn<Entry, String>, TableCell<Entry, String>> ret = new Callback<TableColumn<Entry, String>, TableCell<Entry, String>>() {
+            @Override
+            public TableCell call(final TableColumn<Entry, String> param) {
+                final TableCell<Entry, String> cell = new TableCell<Entry, String>() {
+                    final Button btn = new Button("Usuń");
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty) {
+                            setGraphic(null);
+                            setText(null);
+                        } else {
+                            btn.setOnAction(event -> {
+                                Entry person = getTableView().getItems().get(getIndex());
+                                currentEntry.get().getEntries().remove(person);
+                                update();
+                            });
+                            setGraphic(btn);
+                            setText(null);
+                        }
+                    }
+                };
+                return cell;
+            }
+        };
+        return ret;
     }
 }
