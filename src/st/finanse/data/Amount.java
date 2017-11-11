@@ -52,6 +52,10 @@ public class Amount implements Comparable<Amount> {
         return new Amount(0).subtract(this);
     }
 
+    public Amount absolute() {
+        return sign() < 0 ? switchSign() : copy();
+    }
+
     public double toDouble() {
         return cash.doubleValue();
     }
@@ -67,6 +71,10 @@ public class Amount implements Comparable<Amount> {
             return ((Amount) ob).compareTo(this) == 0;
         }
         return false;
+    }
+
+    public Amount copy() {
+        return new Amount(this.cash);
     }
 
     private final BigDecimal cash;

@@ -13,7 +13,7 @@ import java.time.LocalDate;
 public class PaymentEntry implements Comparable<PaymentEntry> {
     public PaymentEntry(String name, Amount amount, LocalDate entryDate, LocalDate paymentDate) {
         this.title = name;
-        this.amount = amount;
+        this.amount = amount.absolute();
         this.entryDate = entryDate;
         this.isPayed = false;
         if (paymentDate != null) {
