@@ -22,6 +22,10 @@ public class RegularPayment {
         return ret;
     }
 
+    public PaymentEntry[] getPayments() {
+        return payments.toArray(new PaymentEntry[0]);
+    }
+
     private final List<PaymentEntry> payments = new ArrayList<>();
     public final String name;
 }

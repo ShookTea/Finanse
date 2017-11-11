@@ -3,8 +3,11 @@ package st.finanse.format;
 import st.finanse.Project;
 import st.finanse.modules.finanse.Entry;
 import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.regular.PaymentEntry;
+import st.finanse.modules.regular.RegularPayment;
 
 import java.io.*;
+import java.time.LocalDate;
 
 public class FNSX implements Format {
     @Override
@@ -40,6 +43,7 @@ public class FNSX implements Format {
         dos.writeInt(NEWEST_VERSION);
 
         writeFinanceModule(project, dos);
+        writeRegularModule(project, dos);
 
         dos.close();
         fos.close();
@@ -65,6 +69,31 @@ public class FNSX implements Format {
             dos.writeUTF("TABLE.STOP");
         }
         dos.writeUTF("MOD_FINANCE.STOP");
+    }
+
+    private void writeRegularModule(Project project, DataOutputStream dos) throws IOException {
+        dos.writeUTF("MOD_REGULAR.START");
+        for (RegularPayment payment : project.REGULAR_PAYMENTS) {
+            dos.writeUTF("REGULAR.START");
+            dos.writeUTF(payment.name);
+            for (PaymentEntry entry : payment.getPayments()) {
+                dos.writeUTF("ENTRY");
+                dos.writeUTF(entry.getAmount().toUnformattedString());
+                writeDate(entry.getEntryDate(), dos);
+                dos.writeBoolean(entry.isPayed());
+                if (entry.isPayed()) {
+                    writeDate(entry.getPaymentDate(), dos);
+                }
+            }
+            dos.writeUTF("REGULAR.STOP");
+        }
+        dos.writeUTF("MOD_REGULAR.STOP");
+    }
+
+    private void writeDate(LocalDate date, DataOutputStream dos) throws IOException {
+        dos.writeInt(date.getDayOfMonth());
+        dos.writeInt(date.getMonthValue());
+        dos.writeInt(date.getYear());
     }
 
     public static interface FnsxVersion {
