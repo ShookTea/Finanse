@@ -9,6 +9,7 @@ public class Controller implements Updateable {
 
     @FXML private ListView<String> regularList;
     @FXML private TableView<String> entryTable;
+    @FXML private Label title;
 
     @FXML private DatePicker entryDate;
     @FXML private TextField amount;
