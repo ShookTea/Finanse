@@ -76,6 +76,16 @@ public class Controller implements Updateable {
 
     @FXML
     private void selectedEntry() {
+        int row = entryTable.getSelectionModel().getFocusedIndex();
+        if (toDisplay == null || row < 0 || row >= toDisplay.getPayments().length) return;
+
+        PaymentEntry entry = toDisplay.getPayments()[row];
+        if (!entry.isPayed()) {
+            entryDate.setValue(entry.getEntryDate());
+            amount.setText(entry.getAmount().toUnformattedString());
+            isPayed.setSelected(true);
+            paymentDate.setValue(LocalDate.now());
+        }
 
     }
 

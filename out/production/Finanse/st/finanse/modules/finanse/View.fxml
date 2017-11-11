@@ -36,7 +36,7 @@
                   </Button>
                </children>
             </HBox>
-            <TableView fx:id="table" onMouseClicked="#tableClicked" prefHeight="467.0" prefWidth="668.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="table" prefHeight="467.0" prefWidth="668.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="dateColumn" prefWidth="91.0" text="Data" />
                 <TableColumn fx:id="titleColumn" prefWidth="165.0" text="Tytuł" />
