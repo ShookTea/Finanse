@@ -83,7 +83,9 @@ public class Start extends Application {
     }
 
     public static File displaySaveDialogFileChooser() {
-        return createFileChooser().showSaveDialog(STAGE);
+        FileChooser fc = createFileChooser();
+        fc.setInitialFileName("*.fnsx");
+        return fc.showSaveDialog(STAGE);
     }
 
     private static FileChooser createFileChooser() {
