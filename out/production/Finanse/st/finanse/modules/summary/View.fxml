@@ -5,24 +5,19 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.layout.VBox?>
 
 <TabPane prefHeight="305.0" prefWidth="531.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.summary.Controller">
   <tabs>
     <Tab fx:id="stateOfAccount" text="Stan konta">
          <content>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <LineChart fx:id="accountBilanse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Stan konta" VBox.vgrow="ALWAYS">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-               </children>
-            </VBox>
+            <LineChart fx:id="accountBilanse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Stan konta">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
          </content>
       </Tab>
   </tabs>
