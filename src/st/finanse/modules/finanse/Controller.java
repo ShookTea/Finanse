@@ -57,7 +57,7 @@ public class Controller implements Updateable {
         entryAmount.setText("");
         Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
         currentEntry.get().getEntries().add(entry);
-        reloadForm();
+        MainWindowController.updateAll();
         entryTitle.requestFocus();
     }
 
@@ -70,8 +70,7 @@ public class Controller implements Updateable {
         MonthEntry newEntry = new MonthEntry(nextMonth, endingAmount, false);
         Project.PROJECT.FINANSE_MONTHS.add(newEntry);
         currentEntry.set(newEntry);
-        reloadTree();
-        reloadForm();
+        MainWindowController.updateAll();
     }
 
     private void monthChosen(Observable observable) {
@@ -243,7 +242,7 @@ public class Controller implements Updateable {
                             btn.setOnAction(event -> {
                                 Entry person = getTableView().getItems().get(getIndex());
                                 currentEntry.get().getEntries().remove(person);
-                                update();
+                                MainWindowController.updateAll();
                             });
                             btn.setPrefHeight(USE_COMPUTED_SIZE);
                             setGraphic(btn);

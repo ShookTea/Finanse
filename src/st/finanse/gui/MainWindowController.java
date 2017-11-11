@@ -17,9 +17,13 @@ public class MainWindowController implements Updateable {
 
     public static final List<Updateable> UPDATEABLES = new ArrayList<>();
 
+    public static void updateAll() {
+        for (Updateable up : UPDATEABLES) up.update();
+    }
+
     @Override
     public void update() {
-        for (Updateable up : UPDATEABLES) up.update();
+        updateAll();
     }
 
     @FXML
