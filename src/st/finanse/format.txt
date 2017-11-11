@@ -39,8 +39,7 @@ Plik zaczyna się nagłówkiem:
 UTF |FNSX
 INT |kolejny numer wersji nagłówka
 
-W wersji FNSX_1 wszystkie tabele jednego modułu (np. tabele miesięczne modułu
-Finanse) są zapisywane jako jeden moduł, a nie jako oddzielne tabele.
+=== MODUŁ FINANSE (wersja FNSX_1, FNSX_2) ===
 
 Nagłówek modułu Finanse:
 UTF |MOD_FINANCE.START
@@ -65,5 +64,31 @@ UTF |TABLE.STOP
 Zaś moduł Finanse:
 UTF |MOD_FINANCE.STOP
 
-Baza najczęściej używanych tytułów wpisów została usunięta, jest wyliczana
-na bieżąco oraz przy wczytywaniu na podstawie tabeli.
+=== MODUŁ PŁATNOŚCI REGULARNYCH (wersja FNSX_2) ===
+
+Nagłówek modułu Regular:
+UTF | MOD_REGULAR.START
+
+Nagłówek każdej płatności regularnej:
+UTF | REGULAR.START
+UTF | tytuł
+
+Następnie dla każdego wpisu do płatności regularnej:
+
+UTF | ENTRY
+UTF | kwota
+    (czas wejścia rachunku)
+INT | dzień (1-31)
+INT | miesiąc (1-12)
+INT | rok
+BOOL| czy rachunek został opłacony?
+    (jeśli tak, czas opłacenia)
+INT | dzień (1-31)
+INT | miesiąc (1-12)
+INT | rok
+
+Płatność regularna kończy się stopką:
+UTF | REGULAR.STOP
+
+Zaś moduł Regular:
+UTF | MOD_REGULAR.STOP
