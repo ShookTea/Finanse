@@ -10,7 +10,6 @@ public class RegularPayment {
 
     public void addPayment(PaymentEntry entry) {
         payments.add(entry);
-        entry.setTitle(name);
     }
 
     @Override

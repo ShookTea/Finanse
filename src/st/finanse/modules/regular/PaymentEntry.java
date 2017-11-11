@@ -3,6 +3,7 @@ package st.finanse.modules.regular;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
+import st.finanse.gui.MainWindowController;
 import st.finanse.modules.finanse.Entry;
 import st.finanse.modules.finanse.MonthEntry;
 
@@ -10,19 +11,22 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class PaymentEntry implements Comparable<PaymentEntry> {
-    private PaymentEntry(Amount amount, LocalDate entryDate, LocalDate paymentDate, boolean isPayed) {
+    public PaymentEntry(String name, Amount amount, LocalDate entryDate, LocalDate paymentDate) {
+        this.title = name;
         this.amount = amount;
         this.entryDate = entryDate;
-        this.paymentDate = paymentDate;
-        this.isPayed = isPayed;
+        this.isPayed = false;
+        if (paymentDate != null) {
+            setPayed(paymentDate);
+        }
     }
 
     public PaymentEntry(Amount amount, LocalDate entryDate, LocalDate paymentDate) {
-        this(amount, entryDate, paymentDate, paymentDate != null);
+        this("", amount, entryDate, paymentDate);
     }
 
-    public PaymentEntry(Amount amount, LocalDate entryDate) {
-        this(amount, entryDate, null);
+    public PaymentEntry(String title, PaymentEntry pe) {
+        this(title, pe.amount, pe.entryDate, pe.paymentDate);
     }
 
     public Amount getAmount() {
@@ -65,7 +69,8 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             boolean holiday = paymentDate.getDayOfWeek() == DayOfWeek.SUNDAY;
             int day = paymentDate.getDayOfMonth();
             Entry financeEntry = new Entry(title, day, amount.switchSign(), holiday, monthEntry);
-            monthEntry.getEntries().addAll(financeEntry);
+            monthEntry.getEntries().add(financeEntry);
+            MainWindowController.updateAll();
             return true;
         }
         return false;

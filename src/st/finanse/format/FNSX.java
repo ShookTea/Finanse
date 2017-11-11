@@ -53,7 +53,7 @@ public class FNSX implements Format {
         dos.writeUTF("MOD_FINANCE.START");
         for (MonthEntry monthEntry : project.FINANSE_MONTHS) {
             dos.writeUTF("TABLE.START");
-            dos.writeInt(monthEntry.month.getMonth() - 1);
+            dos.writeInt(monthEntry.month.getMonth());
             dos.writeInt(monthEntry.month.getYear());
             dos.writeUTF(monthEntry.startingAmount.toUnformattedString());
             dos.writeBoolean(monthEntry.isClosed());

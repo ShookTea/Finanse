@@ -45,7 +45,13 @@ public class Controller implements Updateable {
         LocalDate entry = entryDate.getValue();
         LocalDate payment = paymentDate.getValue();
         Amount pay = new Amount(amount.getText());
-        PaymentEntry pe = new PaymentEntry(pay, entry, payment);
+
+        entryDate.setValue(null);
+        paymentDate.setValue(null);
+        amount.setText("");
+        isPayed.setSelected(false);
+
+        PaymentEntry pe = new PaymentEntry(toDisplay.name, pay, entry, payment);
         toDisplay.addPayment(pe);
         updateTable();
     }

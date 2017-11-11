@@ -80,6 +80,8 @@ public class FNSX_2 implements FNSX.FnsxVersion {
                 }
                 PaymentEntry entry = new PaymentEntry(cash, entryDate, payDate);
                 regular.addPayment(entry);
+
+                entryTag = dis.readUTF(); //ENTRY lub REGULAR.STOP
             }
             project.REGULAR_PAYMENTS.add(regular);
             tag = dis.readUTF(); //MOD_REGULAR.STOP lub REGULAR.START
