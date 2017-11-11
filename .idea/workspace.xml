@@ -7,6 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/Controller.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/View.fxml" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/View.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,33 +24,28 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+            <state relative-caret-position="127">
+              <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#744#745#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="View.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="View.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml">
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+          <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="216" lean-forward="true" selection-start-line="8" selection-start-column="216" selection-end-line="8" selection-end-column="216" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding>
-                <marker date="1510404134486" expanded="true" signature="879:899" ph="..." />
-                <marker date="1510404134486" expanded="true" signature="879:912" ph="..." />
-                <marker date="1510404134486" expanded="true" signature="879:922" ph="..." />
-                <marker date="1510404134486" expanded="true" signature="879:933" ph="..." />
+                <marker date="1510404463952" expanded="true" signature="895:1391" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,8 +100,8 @@
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/st/finanse/data/Amount.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml" />
+        <option value="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
       </list>
     </option>
   </component>
@@ -300,7 +299,7 @@
       </extension>
       <option name="MAIN_CLASS_NAME" value="st.finanse.Start" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="Test.FNSX" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -729,12 +728,12 @@
       <workItem from="1509571211190" duration="1268000" />
       <workItem from="1510328183320" duration="6532000" />
       <workItem from="1510394634903" duration="79000" />
-      <workItem from="1510395724243" duration="8428000" />
+      <workItem from="1510395724243" duration="9417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44532000" />
+    <option name="totallyTimeSpent" value="45521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="47" y="-772" width="1319" height="772" extended-state="6" />
@@ -1112,18 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="32" column="54" lean-forward="false" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#744#745#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1133,17 +1120,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+      <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="216" lean-forward="true" selection-start-line="8" selection-start-column="216" selection-end-line="8" selection-end-column="216" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <marker date="1510404134486" expanded="true" signature="879:899" ph="..." />
-            <marker date="1510404134486" expanded="true" signature="879:912" ph="..." />
-            <marker date="1510404134486" expanded="true" signature="879:922" ph="..." />
-            <marker date="1510404134486" expanded="true" signature="879:933" ph="..." />
+            <marker date="1510404463952" expanded="true" signature="895:1391" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

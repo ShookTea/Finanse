@@ -5,10 +5,11 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.chart.BarChart?>
 
 <TabPane prefHeight="305.0" prefWidth="531.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.summary.Controller">
   <tabs>
-    <Tab fx:id="stateOfAccount" text="Stan konta">
+    <Tab text="Stan konta">
          <content>
             <LineChart fx:id="accountBilanse" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Stan konta">
               <xAxis>
@@ -19,6 +20,18 @@
               </yAxis>
             </LineChart>
          </content>
+      </Tab>
+      <Tab text="Zyski/Straty">
+          <content>
+              <BarChart fx:id="gainsLoss" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Zyski/Straty">
+                  <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                  </xAxis>
+                  <yAxis>
+                      <NumberAxis side="LEFT" />
+                  </yAxis>
+              </BarChart>
+          </content>
       </Tab>
   </tabs>
 </TabPane>
