@@ -9,6 +9,10 @@ import st.finanse.modules.finanse.MonthEntry;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Project {
@@ -29,6 +33,19 @@ public class Project {
                 .toArray(MonthEntry[]::new);
         if (me.length == 1) return me[0];
         return null;
+    }
+
+    public List<String> getTitleTip(String part) {
+        List<String> ret = new ArrayList<>();
+        FINANSE_MONTHS.stream()
+                .forEach(month -> month.getEntries()
+                        .filtered(entry -> entry.getTitle().contains(part))
+                        .forEach(entry -> {
+                            if (!ret.contains(entry.getTitle())) {
+                                ret.add(entry.getTitle());
+                            }
+                        }));
+        return ret;
     }
 
     public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();

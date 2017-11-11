@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import st.finanse.gui.AutocompletionTextField?>
 
 <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
    <children>
@@ -76,11 +77,11 @@
             <HBox prefHeight="0.0" prefWidth="430.0" VBox.vgrow="NEVER">
                <children>
                   <Label prefHeight="38.0" prefWidth="38.0" text="Tytuł:" HBox.hgrow="SOMETIMES" />
-                  <TextField fx:id="entryTitle" HBox.hgrow="ALWAYS">
+                  <AutocompletionTextField fx:id="entryTitle" HBox.hgrow="ALWAYS">
                      <HBox.margin>
                         <Insets left="2.0" right="10.0" />
                      </HBox.margin>
-                  </TextField>
+                  </AutocompletionTextField>
                   <Label prefHeight="44.0" text="Kwota:" />
                   <TextField fx:id="entryAmount" prefHeight="25.0" prefWidth="55.0">
                      <HBox.margin>
