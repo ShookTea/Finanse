@@ -13,6 +13,15 @@ public class RegularPayment {
         entry.setTitle(name);
     }
 
+    @Override
+    public String toString() {
+        String ret = "RegularPayment " + name;
+        for (PaymentEntry pe : payments) {
+            ret += "\n\t" + pe.toString();
+        }
+        return ret;
+    }
+
     private final List<PaymentEntry> payments = new ArrayList<>();
     public final String name;
 }

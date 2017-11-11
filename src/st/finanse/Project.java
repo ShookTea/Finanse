@@ -6,14 +6,12 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.format.Format;
 import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.regular.RegularPayment;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Project {
     public Project() {}
@@ -22,6 +20,10 @@ public class Project {
     public String toString() {
         String ret = "MODULE FINANCE";
         for (MonthEntry entry : FINANSE_MONTHS) {
+            ret = ret + "\n" + entry.toString();
+        }
+        ret += "MODULE REGULAR";
+        for (RegularPayment entry : REGULAR_PAYMENTS) {
             ret = ret + "\n" + entry.toString();
         }
         return ret;
@@ -49,6 +51,7 @@ public class Project {
     }
 
     public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
+    public final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;
 
     public static Project PROJECT = new Project();
