@@ -43,6 +43,7 @@ public class Controller implements Updateable {
         Series<String, Double>[] series = new Series[payments.length];
         for (int i = 0; i < payments.length; i++) {
             series[i] = new Series<>();
+            series[i].setName(payments[i].name);
             for (Map.Entry<Month, Amount> entry : payments[i].getEntriesByMonth().entrySet()) {
                 series[i].getData().add(new Data(entry.getKey().toString(), entry.getValue().toDouble()));
             }

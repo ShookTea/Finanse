@@ -61,10 +61,10 @@ public class RegularPayment {
         Map<Month, Amount> map = new HashMap<>();
         payments.stream()
                 .filter(e -> e.isPayed())
-                .forEach(e -> map.put(
-                        new Month(e.getPaymentDate()),
-                        map.getOrDefault(new Month(e.getPaymentDate()), new Amount(0.0)).add(e.getAmount())
-                ));
+                .forEach(e -> {
+                    Month m = new Month(e.getPaymentDate());
+                    map.put(m, map.getOrDefault(m, new Amount(0.0)).add(e.getAmount()));
+                });
         return map;
     }
 
