@@ -132,6 +132,11 @@ public class Month implements Comparable<Month> {
         return ld.getDayOfWeek() == DayOfWeek.SUNDAY;
     }
 
+    @Override
+    public int hashCode() {
+        return year * 120 + month;
+    }
+
     public Month getNextMonth() {
         return month == 12 ? new Month(year + 1, 1) : new Month(year, month + 1);
     }

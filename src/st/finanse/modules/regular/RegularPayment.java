@@ -63,7 +63,9 @@ public class RegularPayment {
                 .filter(e -> e.isPayed())
                 .forEach(e -> {
                     Month m = new Month(e.getPaymentDate());
-                    map.put(m, map.getOrDefault(m, new Amount(0.0)).add(e.getAmount()));
+                    Amount base = map.getOrDefault(m, new Amount(0.0));
+                    base = base.add(e.getAmount());
+                    map.put(m, base);
                 });
         return map;
     }
