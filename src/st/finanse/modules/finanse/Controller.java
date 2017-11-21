@@ -26,6 +26,7 @@ public class Controller implements Updateable {
     @FXML private Label monthTitle;
     @FXML private Label monthTitleInForm;
     @FXML private Label bilance;
+    @FXML private Label startAmount;
     @FXML private TableView<Entry> table;
     @FXML private Spinner<Integer> entryDay;
     @FXML private CheckBox isHoliday;
@@ -90,6 +91,7 @@ public class Controller implements Updateable {
         currentEntry.addListener(e -> reloadForm());
         reloadTree();
         table.setFixedCellSize(25.0);
+        table.setPlaceholder(new Label("Brak danych w tabeli"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
         amountColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -126,11 +128,13 @@ public class Controller implements Updateable {
                 defaultDay = monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
-            bilance.setText("Aktualny stan: " + monthEntry.getCurrentAmount().toFormattedString());
+            startAmount.setText("Kwota początkowa: " + monthEntry.startingAmount.toFormattedString());
+            bilance.setText("Kwota " + (monthEntry.isClosed() ? "końcowa" : "aktualna") + ": " + monthEntry.getCurrentAmount().toFormattedString());
         }
         else {
             table.getItems().clear();
-            bilance.setText("Aktualny stan: ---");
+            bilance.setText("Kwota aktualna: ---");
+            startAmount.setText("Kwota początkowa: ---");
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
         reloadTable();
