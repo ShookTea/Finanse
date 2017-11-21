@@ -19,10 +19,12 @@ public class Month implements Comparable<Month> {
         this.month = res;
     }
 
+    public Month(LocalDate ld) {
+        this(ld.getYear(), ld.getMonthValue());
+    }
+
     public Month() {
-        LocalDate ld = LocalDate.now();
-        this.year = ld.getYear();
-        this.month = ld.getMonthValue();
+        this(LocalDate.now());
     }
 
     public int getYear() {
@@ -128,6 +130,11 @@ public class Month implements Comparable<Month> {
     public boolean isSunday(int day) {
         LocalDate ld = LocalDate.of(year, month, day);
         return ld.getDayOfWeek() == DayOfWeek.SUNDAY;
+    }
+
+    @Override
+    public int hashCode() {
+        return year * 120 + month;
     }
 
     public Month getNextMonth() {

@@ -14,14 +14,14 @@
 <?import javafx.scene.text.Font?>
 <?import st.finanse.gui.AutocompletionTextField?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
    <children>
       <TreeView fx:id="monthTree" prefHeight="200.0" prefWidth="200.0" showRoot="false" />
       <VBox prefHeight="400.0" prefWidth="459.0" HBox.hgrow="ALWAYS">
          <children>
             <HBox prefHeight="20.0" prefWidth="400.0" VBox.vgrow="NEVER">
                <children>
-                  <Label fx:id="monthTitle" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="57.0" prefWidth="149.0" text="Listopad 2017" HBox.hgrow="ALWAYS">
+                  <Label fx:id="monthTitle" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="30.0" text="Listopad 2017" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -29,14 +29,20 @@
                         <Insets right="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Button fx:id="closeMonth" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#monthClosed" prefHeight="56.0" prefWidth="251.0" text="Zamknij miesiąc" HBox.hgrow="SOMETIMES">
+                  <Label fx:id="startAmount" prefHeight="51.0" text="Kwota początkowa: 300.00 zł" HBox.hgrow="NEVER" />
+                  <Label fx:id="endingAmount" prefHeight="30.0" text="Aktualny stan: 300.00 zł" HBox.hgrow="NEVER">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="closeMonth" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#monthClosed" prefHeight="30.0" text="Zamknij miesiąc" HBox.hgrow="NEVER">
                      <HBox.margin>
                         <Insets left="25.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <TableView fx:id="table" onMouseClicked="#tableClicked" prefHeight="467.0" prefWidth="668.0" VBox.vgrow="ALWAYS">
+            <TableView fx:id="table" prefHeight="467.0" prefWidth="668.0" VBox.vgrow="ALWAYS">
               <columns>
                 <TableColumn fx:id="dateColumn" prefWidth="91.0" text="Data" />
                 <TableColumn fx:id="titleColumn" prefWidth="165.0" text="Tytuł" />
@@ -64,7 +70,17 @@
                         <Insets left="10.0" right="2.0" />
                      </HBox.margin>
                   </CheckBox>
-                  <Label fx:id="bilance" prefHeight="36.0" text="Bilans: 300.00 zł">
+                  <Label fx:id="monthGains" prefHeight="39.0" text="Przychody: 500.00 zł" textFill="#007f00">
+                     <HBox.margin>
+                        <Insets left="15.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="monthLoses" prefHeight="69.0" text="Wydatki: 500.00 zł" textFill="#7f0000">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="bilanse" prefHeight="33.0" text="Bilans: 500.00 zł">
                      <HBox.margin>
                         <Insets left="15.0" />
                      </HBox.margin>

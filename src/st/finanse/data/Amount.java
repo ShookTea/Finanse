@@ -1,5 +1,8 @@
 package st.finanse.data;
 
+import javafx.scene.control.TextFormatter;
+import javafx.util.converter.BigDecimalStringConverter;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
@@ -42,11 +45,18 @@ public class Amount implements Comparable<Amount> {
     }
 
     public int sign() {
-        return cash.signum();
+        int sgn = cash.signum();
+        if (sgn < 0) return -1;
+        if (sgn > 0) return 1;
+        return 0;
     }
 
     public Amount switchSign() {
         return new Amount(0).subtract(this);
+    }
+
+    public Amount absolute() {
+        return sign() < 0 ? switchSign() : copy();
     }
 
     public double toDouble() {
@@ -66,5 +76,30 @@ public class Amount implements Comparable<Amount> {
         return false;
     }
 
+    public Amount copy() {
+        return new Amount(this.cash);
+    }
+
     private final BigDecimal cash;
+
+    public static TextFormatter createAmountFormatter() {
+        return new TextFormatter<>(new BigDecimalStringConverter() {
+            public BigDecimal fromString(String value) {
+                if (value == null) {
+                    return null;
+                }
+                value = value.trim().replace(",", ".");
+                if (value.length() < 1) {
+                    return null;
+                }
+                return new BigDecimal(value);
+            }
+            public String toString(BigDecimal value) {
+                if (value == null) {
+                    return "";
+                }
+                return value.toString();
+            }
+        });
+    }
 }
