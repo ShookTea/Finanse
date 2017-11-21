@@ -4,29 +4,29 @@ import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import javafx.util.Callback;
-import javafx.util.converter.BigDecimalStringConverter;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 public class Controller implements Updateable {
     @FXML private TreeView<String> monthTree;
     @FXML private Label monthTitle;
     @FXML private Label monthTitleInForm;
-    @FXML private Label bilance;
+    @FXML private Label endingAmount;
     @FXML private Label startAmount;
+    @FXML private Label monthGains;
+    @FXML private Label monthLoses;
+    @FXML private Label bilanse;
     @FXML private TableView<Entry> table;
     @FXML private Spinner<Integer> entryDay;
     @FXML private CheckBox isHoliday;
@@ -129,12 +129,24 @@ public class Controller implements Updateable {
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
             startAmount.setText("Kwota początkowa: " + monthEntry.startingAmount.toFormattedString());
-            bilance.setText("Kwota " + (monthEntry.isClosed() ? "końcowa" : "aktualna") + ": " + monthEntry.getCurrentAmount().toFormattedString());
+            endingAmount.setText("Kwota " + (monthEntry.isClosed() ? "końcowa" : "aktualna") + ": " + monthEntry.getCurrentAmount().toFormattedString());
+            monthGains.setText("Przychody: " + monthEntry.getEarnedAmount().toFormattedString());
+            monthLoses.setText("Wydatki: " + monthEntry.getLostAmount().toFormattedString());
+            Amount bilanseAmount = monthEntry.getEarnedAmount().subtract(monthEntry.getLostAmount());
+            bilanse.setText("Bilans: " + bilanseAmount.toFormattedString());
+            switch (bilanseAmount.sign()) {
+                case -1: bilanse.setTextFill(monthLoses.getTextFill()); break;
+                case 1:  bilanse.setTextFill(monthGains.getTextFill()); break;
+                default: bilanse.setTextFill(Paint.valueOf("#000000"));
+            }
         }
         else {
             table.getItems().clear();
-            bilance.setText("Kwota aktualna: ---");
+            endingAmount.setText("Kwota aktualna: ---");
             startAmount.setText("Kwota początkowa: ---");
+            monthGains.setText("Przychody: ---");
+            monthLoses.setText("Wydatki: ---");
+            bilanse.setText("Bilans: ---");
         }
         entryDay.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, maxDays, defaultDay));
         reloadTable();

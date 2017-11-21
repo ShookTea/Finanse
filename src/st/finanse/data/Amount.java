@@ -45,7 +45,10 @@ public class Amount implements Comparable<Amount> {
     }
 
     public int sign() {
-        return cash.signum();
+        int sgn = cash.signum();
+        if (sgn < 0) return -1;
+        if (sgn > 0) return 1;
+        return 0;
     }
 
     public Amount switchSign() {

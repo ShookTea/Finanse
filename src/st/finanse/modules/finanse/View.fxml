@@ -30,7 +30,7 @@
                      </HBox.margin>
                   </Label>
                   <Label fx:id="startAmount" prefHeight="51.0" text="Kwota początkowa: 300.00 zł" HBox.hgrow="NEVER" />
-                  <Label fx:id="bilance" prefHeight="30.0" text="Aktualny stan: 300.00 zł" HBox.hgrow="NEVER">
+                  <Label fx:id="endingAmount" prefHeight="30.0" text="Aktualny stan: 300.00 zł" HBox.hgrow="NEVER">
                      <HBox.margin>
                         <Insets left="15.0" />
                      </HBox.margin>
@@ -70,6 +70,21 @@
                         <Insets left="10.0" right="2.0" />
                      </HBox.margin>
                   </CheckBox>
+                  <Label fx:id="monthGains" prefHeight="39.0" text="Przychody: 500.00 zł" textFill="#007f00">
+                     <HBox.margin>
+                        <Insets left="15.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="monthLoses" prefHeight="69.0" text="Wydatki: 500.00 zł" textFill="#7f0000">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="bilanse" prefHeight="33.0" text="Bilans: 500.00 zł">
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </Label>
                </children>
                <VBox.margin>
                   <Insets bottom="1.0" top="3.0" />
