@@ -70,6 +70,16 @@ public class RegularPayment {
         return map;
     }
 
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof RegularPayment) {
+            RegularPayment rp = (RegularPayment)ob;
+            return name.equals(rp.name)
+                    && payments.equals(rp.payments);
+        }
+        return false;
+    }
+
     private final List<PaymentEntry> payments = new ArrayList<>();
     public final String name;
 }

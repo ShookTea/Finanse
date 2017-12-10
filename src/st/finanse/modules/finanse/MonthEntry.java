@@ -66,6 +66,18 @@ public class MonthEntry {
         entries.add(entry);
     }
 
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof MonthEntry) {
+            MonthEntry me = (MonthEntry)ob;
+            return month.equals(me.month)
+                    && startingAmount.equals(me.startingAmount)
+                    && (isClosed == me.isClosed)
+                    && entries.equals(me.entries);
+        }
+        return false;
+    }
+
     public final Month month;
     public final Amount startingAmount;
     private boolean isClosed;

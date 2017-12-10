@@ -33,6 +33,15 @@ public class Project {
         return ret;
     }
 
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof Project) {
+            Project p = (Project)ob;
+            return FINANSE_MONTHS.equals(p.FINANSE_MONTHS) && REGULAR_PAYMENTS.equals(p.REGULAR_PAYMENTS);
+        }
+        return false;
+    }
+
     public MonthEntry getEntryByMonth(Month m) {
         MonthEntry[] me = FINANSE_MONTHS.stream()
                 .filter(e -> e.month.equals(m))
