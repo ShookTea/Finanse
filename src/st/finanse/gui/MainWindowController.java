@@ -71,30 +71,11 @@ public class MainWindowController implements Updateable {
 
     @FXML
     private void saveFile() {
-        if (Project.PROJECT.file == null) {
-            chooseFileToSave();
-        }
-        trySave();
+        Project.trySavingProject(false);
     }
 
     @FXML
     private void saveFileAs() {
-        chooseFileToSave();
-        trySave();
-    }
-
-    private void chooseFileToSave() {
-        File toSave = Start.displaySaveDialogFileChooser();
-        if (toSave != null) {
-            Project.PROJECT.file = toSave;
-        }
-    }
-
-    private void trySave() {
-        try {
-            Project.saveProject(Project.PROJECT.file);
-        } catch (IOException e) {
-            Start.showExceptionAlert(e);
-        }
+        Project.trySavingProject(true);
     }
 }

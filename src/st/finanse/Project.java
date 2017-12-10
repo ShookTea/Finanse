@@ -93,4 +93,26 @@ public class Project {
             MainWindowController.updateAll();
         }
     }
+
+    public static void trySavingProject(boolean saveAs) {
+        if (saveAs || Project.PROJECT.file == null) {
+            chooseFileToSave();
+        }
+        doSave();
+    }
+
+    private static void chooseFileToSave() {
+        File toSave = Start.displaySaveDialogFileChooser();
+        if (toSave != null) {
+            Project.PROJECT.file = toSave;
+        }
+    }
+
+    private static void doSave() {
+        try {
+            Project.saveProject(Project.PROJECT.file);
+        } catch (IOException e) {
+            Start.showExceptionAlert(e);
+        }
+    }
 }
