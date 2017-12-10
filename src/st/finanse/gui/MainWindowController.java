@@ -66,11 +66,7 @@ public class MainWindowController implements Updateable {
 
     @FXML
     private void newFile() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            Project.createNewProject();
-            update();
-        }
+        Project.tryCreatingNewProject();
     }
 
     @FXML

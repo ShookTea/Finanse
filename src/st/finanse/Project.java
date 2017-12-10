@@ -2,9 +2,12 @@ package st.finanse;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.format.Format;
+import st.finanse.gui.MainWindowController;
 import st.finanse.modules.finanse.MonthEntry;
 import st.finanse.modules.regular.RegularPayment;
 
@@ -12,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Project {
     public Project() {}
@@ -82,4 +86,11 @@ public class Project {
         PROJECT.FINANSE_MONTHS.add(new MonthEntry(month, new Amount(0), false));
     }
 
+    public static void tryCreatingNewProject() {
+        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
+        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+            Project.createNewProject();
+            MainWindowController.updateAll();
+        }
+    }
 }

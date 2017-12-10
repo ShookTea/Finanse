@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/repository.strep" afterPath="$PROJECT_DIR$/out/production/Finanse/repository.strep" />
-      <change beforePath="$PROJECT_DIR$/src/repository.strep" afterPath="$PROJECT_DIR$/src/repository.strep" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/Project.java" afterPath="$PROJECT_DIR$/src/st/finanse/Project.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" afterPath="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +20,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="repository.strep" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/repository.strep">
+      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+            <state relative-caret-position="198">
+              <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="94" column="5" lean-forward="false" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,9 +81,7 @@
         <option value="/CSS Fragment (Controller.java:2467).css" />
         <option value="$PROJECT_DIR$/src/st/finanse/format.txt" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/View.fxml" />
@@ -90,6 +96,8 @@
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" />
         <option value="$PROJECT_DIR$/src/repository.strep" />
+        <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
       </list>
     </option>
   </component>
@@ -136,6 +144,19 @@
               <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
               <item name="Finanse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Finanse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="finanse" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Finanse" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="finanse" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -619,7 +640,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63341000" />
+    <option name="totallyTimeSpent" value="63408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
@@ -804,13 +825,6 @@
     </entry>
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/MultipleSelectionModel.java" />
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/javafx-src.zip!/javafx/collections/ObservableList.java" />
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="57" column="20" lean-forward="false" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/src.zip!/java/util/Comparator.java" />
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/SelectionModel.java" />
     <entry file="jar://$USER_HOME$/.java/jdk1.8.0_131/javafx-src.zip!/javafx/scene/control/TableColumn.java" />
@@ -899,18 +913,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/data/Amount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="50" column="17" lean-forward="false" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,6 +943,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="68" column="40" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="94" column="5" lean-forward="false" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
           <folding />
         </state>
       </provider>
