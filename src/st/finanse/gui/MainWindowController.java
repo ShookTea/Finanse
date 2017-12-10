@@ -45,23 +45,7 @@ public class MainWindowController implements Updateable {
 
     @FXML
     private void loadFile() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Wczytywanie", "Czy chcesz zapisać dane przed wczytaniem pliku?");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            saveFile();
-        }
-        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
-            return;
-        }
-
-        File toOpen = Start.displayOpenDialogFileChooser();
-        if (toOpen != null) {
-            try {
-                Project.loadProject(toOpen);
-                update();
-            } catch (IOException e) {
-                Start.showExceptionAlert(e);
-            }
-        }
+        Project.tryLoadingProject();
     }
 
     @FXML

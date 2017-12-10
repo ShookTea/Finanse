@@ -94,6 +94,26 @@ public class Project {
         }
     }
 
+    public static void tryLoadingProject() {
+        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Wczytywanie", "Czy chcesz zapisać dane przed wczytaniem pliku?");
+        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+            trySavingProject(true);
+        }
+        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
+            return;
+        }
+
+        File toOpen = Start.displayOpenDialogFileChooser();
+        if (toOpen != null && toOpen.exists()) {
+            try {
+                Project.loadProject(toOpen);
+                MainWindowController.updateAll();
+            } catch (IOException e) {
+                Start.showExceptionAlert(e);
+            }
+        }
+    }
+
     public static void trySavingProject(boolean saveAs) {
         if (saveAs || Project.PROJECT.file == null) {
             chooseFileToSave();
