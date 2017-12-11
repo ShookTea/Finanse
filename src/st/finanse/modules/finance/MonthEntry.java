@@ -1,7 +1,8 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.modules.regular.PaymentEntry;
@@ -52,10 +53,7 @@ public class MonthEntry {
 
     public void close() {
         isClosed = true;
-    }
-
-    public ObservableList<Entry> getEntries() {
-        return entries;
+        Project.PROJECT.requestSaving();
     }
 
     public void addPayment(String title, PaymentEntry pe) {
@@ -64,6 +62,37 @@ public class MonthEntry {
         Amount amount = pe.getAmount().switchSign();
         Entry entry = new Entry(title, day, amount, isHoliday, this);
         entries.add(entry);
+        Project.PROJECT.requestSaving();
+    }
+
+    public Entry[] getEntries() {
+        return entries.toArray(new Entry[0]);
+    }
+
+    public boolean removeEntry(Entry e) {
+        Project.PROJECT.requestSaving();
+        return entries.remove(e);
+    }
+
+    public int getEntriesCount() {
+        return entries.size();
+    }
+
+    public void addEntry(Entry e) {
+        entries.add(e);
+        Project.PROJECT.requestSaving();
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof MonthEntry) {
+            MonthEntry me = (MonthEntry)ob;
+            return month.equals(me.month)
+                    && startingAmount.equals(me.startingAmount)
+                    && (isClosed == me.isClosed)
+                    && entries.equals(me.entries);
+        }
+        return false;
     }
 
     public final Month month;

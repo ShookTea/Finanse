@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import st.finanse.data.Amount;
 
@@ -48,6 +48,18 @@ public class Entry {
         String r = "" + d;
         while (r.length() < 2) r = "0" + r;
         return r;
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof Entry) {
+            Entry e = (Entry)ob;
+            return day == e.day
+                    && title.equals(e.title)
+                    && amount.equals(e.amount)
+                    && color.equals(e.color);
+        }
+        return false;
     }
 
     private final int day;

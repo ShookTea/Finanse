@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
@@ -17,6 +17,7 @@ import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Controller implements Updateable {
     @FXML private TreeView<String> monthTree;
@@ -40,9 +41,11 @@ public class Controller implements Updateable {
     @FXML private TableColumn<Entry, String> deleteColumn;
 
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
+    private FinanceData finance = Project.PROJECT.finance;
 
     @Override
     public void update() {
+        finance = Project.PROJECT.finance;
         reloadTree();
         reloadForm();
     }
@@ -57,7 +60,7 @@ public class Controller implements Updateable {
         entryTitle.setText("");
         entryAmount.setText("");
         Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
-        currentEntry.get().getEntries().add(entry);
+        currentEntry.get().addEntry(entry);
         MainWindowController.updateAll();
         entryTitle.requestFocus();
     }
@@ -69,7 +72,7 @@ public class Controller implements Updateable {
         Month nextMonth = me.month.getNextMonth();
         me.close();
         MonthEntry newEntry = new MonthEntry(nextMonth, endingAmount, false);
-        Project.PROJECT.FINANSE_MONTHS.add(newEntry);
+        finance.addMonthEntry(newEntry);
         currentEntry.set(newEntry);
         MainWindowController.updateAll();
     }
@@ -81,7 +84,7 @@ public class Controller implements Updateable {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
             Month m = new Month(year, monthName);
-            currentEntry.set(Project.PROJECT.getEntryByMonth(m));
+            currentEntry.set(finance.getEntryByMonth(m));
         }
     }
 
@@ -119,13 +122,15 @@ public class Controller implements Updateable {
         int maxDays = 30;
         int defaultDay = 1;
         if (monthEntry != null) {
-            table.getItems().addAll(monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay)));
+            table.getItems().addAll(Arrays.stream(monthEntry.getEntries()).sorted(Comparator.comparingInt(Entry::getDay)).collect(Collectors.toList()));
             maxDays = month.getMaxDays();
-            if (monthEntry.getEntries().size() == 0) {
+            if (monthEntry.getEntriesCount() == 0) {
                 defaultDay = 1;
             }
             else {
-                defaultDay = monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
+                defaultDay = Arrays.stream(monthEntry.getEntries())
+                        .sorted(Comparator.comparingInt(Entry::getDay).reversed())
+                        .findFirst().get().getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
             startAmount.setText("Kwota początkowa: " + monthEntry.startingAmount.toFormattedString());
@@ -189,7 +194,7 @@ public class Controller implements Updateable {
         TreeItem<String> root = new TreeItem<>();
         root.setExpanded(true);
         Map<Integer, List<MonthEntry>> map = new HashMap<>();
-        for (MonthEntry me : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry me : finance.getMonthEntries()) {
             int year = me.month.getYear();
             if (!map.containsKey(year)) map.put(year, new ArrayList<>());
             map.get(year).add(me);
@@ -201,11 +206,13 @@ public class Controller implements Updateable {
             }
             root.getChildren().add(yearItem);
         }
-        if (Project.PROJECT.FINANSE_MONTHS.size() == 0) {
+        if (finance.getMonthEntryCount() == 0) {
             currentEntry.set(null);
         }
         else {
-            currentEntry.set(Project.PROJECT.FINANSE_MONTHS.sorted((a, b) -> -a.month.compareTo(b.month)).get(0));
+            MonthEntry[] entries = finance.getMonthEntries();
+            Arrays.sort(entries, (a, b) -> -a.month.compareTo(b.month));
+            currentEntry.set(entries[0]);
         }
         monthTree.setRoot(root);
         monthTree.getSelectionModel().selectedItemProperty().addListener(e -> monthChosen(e));
@@ -235,7 +242,7 @@ public class Controller implements Updateable {
                         } else {
                             btn.setOnAction(event -> {
                                 Entry person = getTableView().getItems().get(getIndex());
-                                currentEntry.get().getEntries().remove(person);
+                                currentEntry.get().removeEntry(person);
                                 MainWindowController.updateAll();
                             });
                             btn.setPrefHeight(USE_COMPUTED_SIZE);

@@ -3,8 +3,8 @@ package st.finanse.format;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.Entry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.io.*;
 
@@ -18,7 +18,7 @@ public class FNS implements Format {
 
         MonthEntry entry = readEntry(dis);
         while (entry != null) {
-            proj.FINANSE_MONTHS.add(entry);
+            proj.finance.addMonthEntry(entry);
             entry = readEntry(dis);
         }
 
@@ -48,7 +48,7 @@ public class FNS implements Format {
                 dis.readUTF();
             }
             Entry e = new Entry(title, day, cash, holiday, monthEntry);
-            monthEntry.getEntries().add(e);
+            monthEntry.addEntry(e);
         }
         return monthEntry;
     }

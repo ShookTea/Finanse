@@ -12,8 +12,8 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
-import st.finanse.modules.finanse.MonthEntry;
-import st.finanse.modules.regular.PaymentEntry;
+import st.finanse.modules.finance.FinanceData;
+import st.finanse.modules.finance.MonthEntry;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.util.Map;
@@ -23,6 +23,8 @@ public class Controller implements Updateable {
     @FXML private LineChart<String, Double> regularPayings;
     @FXML private BarChart<String, Double> gainsLoss;
 
+    private FinanceData finance;
+
     @FXML
     private void initialize() {
         MainWindowController.UPDATEABLES.add(this);
@@ -31,6 +33,7 @@ public class Controller implements Updateable {
 
     @Override
     public void update() {
+        finance = Project.PROJECT.finance;
         createBilanseData();
         createGainsLossData();
         createRegularPayingsData();
@@ -39,7 +42,7 @@ public class Controller implements Updateable {
 
     private void createRegularPayingsData() {
         ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
-        RegularPayment[] payments = Project.PROJECT.REGULAR_PAYMENTS.toArray(new RegularPayment[0]);
+        RegularPayment[] payments = Project.PROJECT.regular.getRegularPayments();
         Series<String, Double>[] series = new Series[payments.length];
         for (int i = 0; i < payments.length; i++) {
             series[i] = new Series<>();
@@ -56,7 +59,7 @@ public class Controller implements Updateable {
         ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
         Series<String, Double> bilanse = new Series<>();
         bilanse.setName("Stan konta na koniec miesiąca");
-        for (MonthEntry monthEntry : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : finance.getMonthEntries()) {
             bilanse.getData().add(new Data(monthEntry.month.toString(), monthEntry.getCurrentAmount().toDouble()));
         }
         result.addAll(bilanse);
@@ -71,7 +74,7 @@ public class Controller implements Updateable {
         losses.setName("Wydatki");
         Series<String, Double> bilanse = new Series<>();
         bilanse.setName("Bilans");
-        for (MonthEntry monthEntry : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : finance.getMonthEntries()) {
             Amount gained = monthEntry.getEarnedAmount();
             Amount lost = monthEntry.getLostAmount();
             Amount diff = gained.subtract(lost);

@@ -27,78 +27,46 @@ public class MainWindowController implements Updateable {
     }
 
     @FXML
-    private void initialize() {
-
-    }
+    private void initialize() {}
 
     @FXML
     public void exit() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Zamykanie", "Czy chcesz zapisać dane przed zamknięciem programu?");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            saveFile();
+        boolean reallyExit = !Project.PROJECT.isSaveRequired();
+        if (!reallyExit) {
+            Optional<ButtonType> buttonType = Start.showConfirmationAlert("Zamykanie", "Czy chcesz zapisać dane przed zamknięciem programu?");
+            if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+                saveFile();
+                reallyExit = true;
+            }
+            else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.NO) {
+                reallyExit = true;
+            }
+            else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
+                return;
+            }
         }
-        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
-            return;
+        if (reallyExit) {
+            System.exit(0);
         }
-        System.exit(0);
     }
 
     @FXML
     private void loadFile() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Wczytywanie", "Czy chcesz zapisać dane przed wczytaniem pliku?");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            saveFile();
-        }
-        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
-            return;
-        }
-
-        File toOpen = Start.displayOpenDialogFileChooser();
-        if (toOpen != null) {
-            try {
-                Project.loadProject(toOpen);
-                update();
-            } catch (IOException e) {
-                Start.showExceptionAlert(e);
-            }
-        }
+        Project.tryLoadingProject();
     }
 
     @FXML
     private void newFile() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            Project.createNewProject();
-            update();
-        }
+        Project.tryCreatingNewProject();
     }
 
     @FXML
     private void saveFile() {
-        if (Project.PROJECT.file == null) {
-            chooseFileToSave();
-        }
-        trySave();
+        Project.trySavingProject(false);
     }
 
     @FXML
     private void saveFileAs() {
-        chooseFileToSave();
-        trySave();
-    }
-
-    private void chooseFileToSave() {
-        File toSave = Start.displaySaveDialogFileChooser();
-        if (toSave != null) {
-            Project.PROJECT.file = toSave;
-        }
-    }
-
-    private void trySave() {
-        try {
-            Project.saveProject(Project.PROJECT.file);
-        } catch (IOException e) {
-            Start.showExceptionAlert(e);
-        }
+        Project.trySavingProject(true);
     }
 }

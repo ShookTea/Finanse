@@ -4,7 +4,7 @@ import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,11 +37,12 @@ public class RegularPayment {
             }
         }
         Month m = new Month(entry.getPaymentDate());
-        MonthEntry me = Project.PROJECT.getEntryByMonth(m);
+        MonthEntry me = Project.PROJECT.finance.getEntryByMonth(m);
         if (me != null) {
             me.addPayment(name, entry);
             MainWindowController.updateAll();
         }
+        Project.PROJECT.requestSaving();
     }
 
     @Override
@@ -68,6 +69,16 @@ public class RegularPayment {
                     map.put(m, base);
                 });
         return map;
+    }
+
+    @Override
+    public boolean equals(Object ob) {
+        if (ob instanceof RegularPayment) {
+            RegularPayment rp = (RegularPayment)ob;
+            return name.equals(rp.name)
+                    && payments.equals(rp.payments);
+        }
+        return false;
     }
 
     private final List<PaymentEntry> payments = new ArrayList<>();

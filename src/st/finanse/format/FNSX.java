@@ -1,8 +1,8 @@
 package st.finanse.format;
 
 import st.finanse.Project;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.Entry;
+import st.finanse.modules.finance.MonthEntry;
 import st.finanse.modules.regular.PaymentEntry;
 import st.finanse.modules.regular.RegularPayment;
 
@@ -51,7 +51,7 @@ public class FNSX implements Format {
 
     private void writeFinanceModule(Project project, DataOutputStream dos) throws IOException {
         dos.writeUTF("MOD_FINANCE.START");
-        for (MonthEntry monthEntry : project.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : project.finance.getMonthEntries()) {
             dos.writeUTF("TABLE.START");
             dos.writeInt(monthEntry.month.getMonth());
             dos.writeInt(monthEntry.month.getYear());
@@ -73,7 +73,7 @@ public class FNSX implements Format {
 
     private void writeRegularModule(Project project, DataOutputStream dos) throws IOException {
         dos.writeUTF("MOD_REGULAR.START");
-        for (RegularPayment payment : project.REGULAR_PAYMENTS) {
+        for (RegularPayment payment : project.regular.getRegularPayments()) {
             dos.writeUTF("REGULAR.START");
             dos.writeUTF(payment.name);
             for (PaymentEntry entry : payment.getPayments()) {

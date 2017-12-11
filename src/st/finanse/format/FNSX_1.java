@@ -3,8 +3,8 @@ package st.finanse.format;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.Entry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.io.DataInputStream;
 import java.io.EOFException;
@@ -49,10 +49,10 @@ public class FNSX_1 implements FNSX.FnsxVersion {
                 Amount cash = new Amount(dis.readUTF());
                 boolean isHoliday = dis.readBoolean();
                 Entry entry = new Entry(title, day, cash, isHoliday, monthEntry);
-                monthEntry.getEntries().add(entry);
+                monthEntry.addEntry(entry);
                 entryTag = dis.readUTF(); //ENTRY lub TABLE.STOP
             }
-            project.FINANSE_MONTHS.add(monthEntry);
+            project.finance.addMonthEntry(monthEntry);
             tag = dis.readUTF(); //MOD_FINANCE.STOP lub TABLE.START
         }
     }

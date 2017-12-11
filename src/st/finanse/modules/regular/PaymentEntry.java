@@ -3,11 +3,7 @@ package st.finanse.modules.regular;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
-import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class PaymentEntry implements Comparable<PaymentEntry> {
@@ -58,6 +54,7 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             isPayed = true;
             this.paymentDate = payedDate;
         }
+        Project.PROJECT.requestSaving();
     }
 
     @Override
