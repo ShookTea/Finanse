@@ -173,11 +173,16 @@ public class Start extends Application {
         Month usedMonth = currentMonth;
         Amount usedAmount = new Amount(0);
 
+        if (alert.showAndWait().get().getButtonData() == cancel.getButtonData()) {
+            return null;
+        }
+
         if (alert.showAndWait().get().getButtonData() == create.getButtonData()) {
             int usedYear = year.getValue();
             usedMonth = new Month(usedYear, month.getValue());
             usedAmount = new Amount(startAmount.getText());
         }
+
         
         return new MonthEntry(usedMonth, usedAmount, false);
     }

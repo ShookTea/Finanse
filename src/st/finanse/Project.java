@@ -130,11 +130,7 @@ public class Project {
     public static void createNewProject() {
         Month currentMonth = new Month();
         Amount startAmount = new Amount(0);
-        createNewProject(currentMonth, startAmount);
-    }
-
-    public static void createNewProject(Month firstMonth, Amount startAmount) {
-        createNewProject(new MonthEntry(firstMonth, startAmount, false));
+        createNewProject(new MonthEntry(currentMonth, startAmount, false));
     }
 
     public static void createNewProject(MonthEntry me) {
@@ -150,8 +146,10 @@ public class Project {
         }
         if (reallyTry) {
             MonthEntry startMonth = Start.showMonthEntryDialog();
-            Project.createNewProject(startMonth);
-            MainWindowController.updateAll();
+            if (startMonth != null) {
+                Project.createNewProject(startMonth);
+                MainWindowController.updateAll();
+            }
         }
     }
 
