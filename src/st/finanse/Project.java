@@ -142,8 +142,12 @@ public class Project {
     }
 
     public static void tryCreatingNewProject() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+        boolean reallyTry = !Project.PROJECT.needSave;
+        if (!reallyTry) {
+            Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
+            reallyTry = buttonType.get().getButtonData() == ButtonBar.ButtonData.YES;
+        }
+        if (reallyTry) {
             MonthEntry startMonth = Start.showMonthEntryDialog();
             Project.createNewProject(startMonth);
             MainWindowController.updateAll();
