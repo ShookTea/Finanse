@@ -18,7 +18,7 @@ public class FNS implements Format {
 
         MonthEntry entry = readEntry(dis);
         while (entry != null) {
-            proj.addMonthEntry(entry);
+            proj.finance.addMonthEntry(entry);
             entry = readEntry(dis);
         }
 

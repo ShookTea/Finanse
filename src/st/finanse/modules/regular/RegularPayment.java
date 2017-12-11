@@ -37,7 +37,7 @@ public class RegularPayment {
             }
         }
         Month m = new Month(entry.getPaymentDate());
-        MonthEntry me = Project.PROJECT.getEntryByMonth(m);
+        MonthEntry me = Project.PROJECT.finance.getEntryByMonth(m);
         if (me != null) {
             me.addPayment(name, entry);
             MainWindowController.updateAll();

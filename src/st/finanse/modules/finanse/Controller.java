@@ -41,9 +41,11 @@ public class Controller implements Updateable {
     @FXML private TableColumn<Entry, String> deleteColumn;
 
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
+    private Finance finance = Project.PROJECT.finance;
 
     @Override
     public void update() {
+        finance = Project.PROJECT.finance;
         reloadTree();
         reloadForm();
     }
@@ -70,7 +72,7 @@ public class Controller implements Updateable {
         Month nextMonth = me.month.getNextMonth();
         me.close();
         MonthEntry newEntry = new MonthEntry(nextMonth, endingAmount, false);
-        Project.PROJECT.addMonthEntry(newEntry);
+        finance.addMonthEntry(newEntry);
         currentEntry.set(newEntry);
         MainWindowController.updateAll();
     }
@@ -82,7 +84,7 @@ public class Controller implements Updateable {
             String monthName = selected.getValue().toString();
             int year = Integer.parseInt(selected.getParent().getValue().toString().substring(4));
             Month m = new Month(year, monthName);
-            currentEntry.set(Project.PROJECT.getEntryByMonth(m));
+            currentEntry.set(finance.getEntryByMonth(m));
         }
     }
 
@@ -192,7 +194,7 @@ public class Controller implements Updateable {
         TreeItem<String> root = new TreeItem<>();
         root.setExpanded(true);
         Map<Integer, List<MonthEntry>> map = new HashMap<>();
-        for (MonthEntry me : Project.PROJECT.getMonthEntries()) {
+        for (MonthEntry me : finance.getMonthEntries()) {
             int year = me.month.getYear();
             if (!map.containsKey(year)) map.put(year, new ArrayList<>());
             map.get(year).add(me);
@@ -204,11 +206,11 @@ public class Controller implements Updateable {
             }
             root.getChildren().add(yearItem);
         }
-        if (Project.PROJECT.getMonthEntryCount() == 0) {
+        if (finance.getMonthEntryCount() == 0) {
             currentEntry.set(null);
         }
         else {
-            MonthEntry[] entries = Project.PROJECT.getMonthEntries();
+            MonthEntry[] entries = finance.getMonthEntries();
             Arrays.sort(entries, (a, b) -> -a.month.compareTo(b.month));
             currentEntry.set(entries[0]);
         }

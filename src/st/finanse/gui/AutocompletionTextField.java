@@ -35,7 +35,7 @@ public class AutocompletionTextField extends TextField {
             if (enteredText == null || enteredText.isEmpty()) {
                 entriesPopup.hide();
             } else {
-                List<String> filteredEntries = Project.PROJECT.getTitleTip(enteredText);
+                List<String> filteredEntries = Project.PROJECT.finance.getTitleTip(enteredText);
                 if (!filteredEntries.isEmpty()) {
                     populatePopup(filteredEntries, enteredText);
                     if (!entriesPopup.isShowing()) {

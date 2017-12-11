@@ -21,7 +21,6 @@ public class ErrorControl {
     }
 
     private static void handle(Thread thread, Throwable throwable, boolean displayExceptionAlert) {
-        System.out.println("Handled " + throwable.toString());
         if (displayExceptionAlert) {
             showExceptionAlert(thread, throwable);
         }
