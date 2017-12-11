@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Project {
     public Project() {}
@@ -84,8 +85,21 @@ public class Project {
         return FINANSE_MONTHS.size();
     }
 
+    public RegularPayment[] getRegularPayments() {
+        return REGULAR_PAYMENTS.toArray(new RegularPayment[0]);
+    }
+
+    public void addRegularPayment(RegularPayment rp) {
+        REGULAR_PAYMENTS.add(rp);
+        needSave = true;
+    }
+
+    public Stream<RegularPayment> regularPaymentStream() {
+        return REGULAR_PAYMENTS.stream();
+    }
+
     private final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
-    public final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
+    private final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;
     private boolean needSave = false;
 

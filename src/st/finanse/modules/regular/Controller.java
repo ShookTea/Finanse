@@ -62,7 +62,7 @@ public class Controller implements Updateable {
         tid.setContentText("Nazwa płatności:");
         tid.showAndWait().ifPresent(name -> {
             RegularPayment rp = new RegularPayment(name);
-            Project.PROJECT.REGULAR_PAYMENTS.addAll(rp);
+            Project.PROJECT.addRegularPayment(rp);
             updateList();
         });
     }
@@ -97,7 +97,7 @@ public class Controller implements Updateable {
 
     private void updateList() {
         regularList.getItems().clear();
-        Project.PROJECT.REGULAR_PAYMENTS.stream().forEach(r -> regularList.getItems().add(r.name));
+        Project.PROJECT.regularPaymentStream().forEach(r -> regularList.getItems().add(r.name));
     }
 
     private void updateRightPart() {

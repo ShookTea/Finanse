@@ -83,7 +83,7 @@ public class FNSX_2 implements FNSX.FnsxVersion {
 
                 entryTag = dis.readUTF(); //ENTRY lub REGULAR.STOP
             }
-            project.REGULAR_PAYMENTS.add(regular);
+            project.addRegularPayment(regular);
             tag = dis.readUTF(); //MOD_REGULAR.STOP lub REGULAR.START
         }
     }
