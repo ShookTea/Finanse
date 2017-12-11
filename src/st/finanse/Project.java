@@ -96,14 +96,19 @@ public class Project {
     }
 
     public static void createNewProject(Month firstMonth, Amount startAmount) {
+        createNewProject(new MonthEntry(firstMonth, startAmount, false));
+    }
+
+    public static void createNewProject(MonthEntry me) {
         PROJECT = new Project();
-        PROJECT.FINANSE_MONTHS.add(new MonthEntry(firstMonth, startAmount, false));
+        PROJECT.FINANSE_MONTHS.add(me);
     }
 
     public static void tryCreatingNewProject() {
         Optional<ButtonType> buttonType = Start.showConfirmationAlert("Tworzenie nowego projektu", "Czy na pewno chcesz utworzyć nowy projekt? Stracisz wszystkie niezapisane zmiany.");
         if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            Project.createNewProject();
+            MonthEntry startMonth = Start.showMonthEntryDialog();
+            Project.createNewProject(startMonth);
             MainWindowController.updateAll();
         }
     }

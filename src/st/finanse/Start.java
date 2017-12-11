@@ -6,9 +6,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import st.finanse.data.Amount;
+import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
+import st.finanse.modules.finanse.MonthEntry;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -131,6 +135,51 @@ public class Start extends Application {
         expContent.add(textArea, 0, 1);
         alert.getDialogPane().setExpandableContent(expContent);
         alert.showAndWait();
+    }
+
+    public static MonthEntry showMonthEntryDialog() {
+        Alert alert = new Alert(Alert.AlertType.NONE);
+        alert.setTitle("Tworzenie nowego projektu");
+        alert.setHeaderText("Nowy projekt");
+        Month currentMonth = new Month();
+
+        Label monthLabel = new Label("Miesiąc:");
+        ChoiceBox<String> month = new ChoiceBox<>(Month.monthsNamesList);
+        month.getSelectionModel().select(currentMonth.getMonthName());
+
+        Label yearLabel = new Label("Rok:");
+        Spinner<Integer> year = new Spinner<>(2000, 5000, currentMonth.getYear());
+
+        Label startAmountLabel = new Label("Kwota początkowa:");
+        TextField startAmount = new TextField("0.0");
+        startAmount.setTextFormatter(Amount.createAmountFormatter());
+
+        GridPane pane = new GridPane();
+
+        pane.add(monthLabel, 0, 0);
+        pane.add(yearLabel, 0, 1);
+        pane.add(startAmountLabel, 0, 2);
+
+        pane.add(month, 1, 0);
+        pane.add(year, 1, 1);
+        pane.add(startAmount, 1, 2);
+
+        ButtonType create = new ButtonType("Utwórz", ButtonBar.ButtonData.OK_DONE);
+        ButtonType cancel = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(create, cancel);
+
+        alert.getDialogPane().setContent(pane);
+        Month usedMonth = currentMonth;
+        Amount usedAmount = new Amount(0);
+
+        if (alert.showAndWait().get().getButtonData() == create.getButtonData()) {
+            int usedYear = year.getValue();
+            usedMonth = new Month(usedYear, month.getValue());
+            usedAmount = new Amount(startAmount.getText());
+        }
+        
+        return new MonthEntry(usedMonth, usedAmount, false);
     }
 
     private static String version = "";

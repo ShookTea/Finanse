@@ -1,5 +1,8 @@
 package st.finanse.data;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
@@ -147,4 +150,8 @@ public class Month implements Comparable<Month> {
     private String monthNameAcc = null;
     private int maxDays = -1;
 
+    public static ObservableList<String> monthsNamesList = FXCollections.observableArrayList(
+            "Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec",
+            "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"
+    );
 }
