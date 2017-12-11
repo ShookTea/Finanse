@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;

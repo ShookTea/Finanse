@@ -7,10 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$2.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller$MonthTreeItem.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Controller.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Entry$Color.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/Entry.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/FinanceData.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/MonthEntry.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finanse/View.fxml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/Project.java" afterPath="$PROJECT_DIR$/src/st/finanse/Project.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/Start.java" afterPath="$PROJECT_DIR$/src/st/finanse/Start.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNS.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNS.java" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNSX_1.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNSX_1.java" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" afterPath="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/FinanceData.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1351">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -701,16 +721,15 @@
       <workItem from="1512920572415" duration="52000" />
       <workItem from="1512988040020" duration="1385000" />
       <workItem from="1512990297183" duration="834000" />
-      <workItem from="1513007969752" duration="4918000" />
+      <workItem from="1513007969752" duration="4957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71482000" />
+    <option name="totallyTimeSpent" value="71521000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -725,7 +744,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22744504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22744504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24943139" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,7 +819,7 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java</url>
+          <url>file://$PROJECT_DIR$/src/st/finanse/modules/finance/Controller.java</url>
           <line>196</line>
           <properties />
           <option name="timeStamp" value="5" />
@@ -934,7 +953,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finance/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
           <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
@@ -942,7 +961,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finance/MonthEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
           <caret line="72" column="40" lean-forward="true" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
@@ -1037,7 +1056,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finance/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
@@ -1056,7 +1075,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finance/View.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -1072,16 +1091,16 @@
         <state relative-caret-position="345">
           <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-            <element signature="e#355#356#0" expanded="true" />
-            <element signature="e#543#544#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#286#287#0" expanded="false" />
+            <element signature="e#355#356#0" expanded="false" />
+            <element signature="e#543#544#0" expanded="false" />
+            <element signature="e#590#591#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/FinanceData.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finance/FinanceData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
@@ -1094,10 +1113,10 @@
         <state relative-caret-position="162">
           <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding>
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1275#1276#0" expanded="true" />
-            <element signature="e#1314#1315#0" expanded="true" />
-            <element signature="e#1345#1346#0" expanded="true" />
+            <element signature="e#1071#1072#0" expanded="false" />
+            <element signature="e#1110#1111#0" expanded="false" />
+            <element signature="e#1149#1150#0" expanded="false" />
+            <element signature="e#1180#1181#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1113,7 +1132,7 @@
     <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1351">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>

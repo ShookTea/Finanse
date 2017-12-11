@@ -1,22 +1,18 @@
 package st.finanse;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.format.Format;
 import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.FinanceData;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.FinanceData;
+import st.finanse.modules.finance.MonthEntry;
 import st.finanse.modules.regular.RegularData;
-import st.finanse.modules.regular.RegularPayment;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class Project {
     public Project() {

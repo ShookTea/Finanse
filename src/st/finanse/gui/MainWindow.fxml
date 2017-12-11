@@ -52,7 +52,7 @@
                   <AnchorPane>
                      <children>
                          <StackPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
-                             <fx:include source="../modules/finanse/View.fxml" />
+                             <fx:include source="../modules/finance/View.fxml" />
                          </StackPane>
                      </children>
                   </AnchorPane>

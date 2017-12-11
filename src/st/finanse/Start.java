@@ -5,17 +5,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Priority;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.io.File;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.*;
 
 public class Start extends Application {

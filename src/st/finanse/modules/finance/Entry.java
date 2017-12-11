@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import st.finanse.data.Amount;
 

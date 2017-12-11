@@ -12,8 +12,8 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
-import st.finanse.modules.finanse.FinanceData;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.FinanceData;
+import st.finanse.modules.finance.MonthEntry;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.util.Map;

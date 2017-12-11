@@ -1,8 +1,8 @@
 package st.finanse.format;
 
 import st.finanse.Project;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.Entry;
+import st.finanse.modules.finance.MonthEntry;
 import st.finanse.modules.regular.PaymentEntry;
 import st.finanse.modules.regular.RegularPayment;
 

@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import st.finanse.gui.AutocompletionTextField?>
 
-<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finanse.Controller">
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="st.finanse.modules.finance.Controller">
    <children>
       <TreeView fx:id="monthTree" prefHeight="200.0" prefWidth="200.0" showRoot="false" />
       <VBox prefHeight="400.0" prefWidth="459.0" HBox.hgrow="ALWAYS">

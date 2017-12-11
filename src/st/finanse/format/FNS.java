@@ -3,8 +3,8 @@ package st.finanse.format;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
-import st.finanse.modules.finanse.Entry;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.Entry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.io.*;
 

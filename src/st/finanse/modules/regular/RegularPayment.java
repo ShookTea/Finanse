@@ -4,7 +4,7 @@ import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.finance.MonthEntry;
 
 import java.util.ArrayList;
 import java.util.HashMap;

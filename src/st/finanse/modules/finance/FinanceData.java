@@ -1,4 +1,4 @@
-package st.finanse.modules.finanse;
+package st.finanse.modules.finance;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
