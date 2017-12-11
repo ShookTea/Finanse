@@ -27,20 +27,27 @@ public class MainWindowController implements Updateable {
     }
 
     @FXML
-    private void initialize() {
-
-    }
+    private void initialize() {}
 
     @FXML
     public void exit() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Zamykanie", "Czy chcesz zapisać dane przed zamknięciem programu?");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            saveFile();
+        boolean reallyExit = !Project.PROJECT.isSaveRequired();
+        if (!reallyExit) {
+            Optional<ButtonType> buttonType = Start.showConfirmationAlert("Zamykanie", "Czy chcesz zapisać dane przed zamknięciem programu?");
+            if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+                saveFile();
+                reallyExit = true;
+            }
+            else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.NO) {
+                reallyExit = true;
+            }
+            else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
+                return;
+            }
         }
-        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
-            return;
+        if (reallyExit) {
+            System.exit(0);
         }
-        System.exit(0);
     }
 
     @FXML

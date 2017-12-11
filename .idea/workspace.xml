@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/st/finanse/Project.java" afterPath="$PROJECT_DIR$/src/st/finanse/Project.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" afterPath="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,12 +20,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
+      <file leaf-file-name="Project.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1764">
-              <caret line="131" column="63" lean-forward="true" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
-              <folding />
+            <state relative-caret-position="293">
+              <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+              <folding>
+                <element signature="e#2530#2531#0" expanded="true" />
+                <element signature="e#2594#2595#0" expanded="true" />
+                <element signature="e#2633#2634#0" expanded="true" />
+                <element signature="e#2677#2678#0" expanded="true" />
+                <element signature="e#2729#2730#0" expanded="true" />
+                <element signature="e#2799#2800#0" expanded="true" />
+                <element signature="e#2980#2981#0" expanded="true" />
+                <element signature="e#3028#3029#0" expanded="true" />
+                <element signature="e#3063#3064#0" expanded="true" />
+                <element signature="e#3094#3095#0" expanded="true" />
+                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#3164#3165#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindowController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="64" column="17" lean-forward="false" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+              <folding>
+                <element signature="e#1499#1500#0" expanded="true" />
+                <element signature="e#1542#1543#0" expanded="true" />
+                <element signature="e#1582#1583#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
+                <element signature="e#1670#1671#0" expanded="true" />
+                <element signature="e#1717#1718#0" expanded="true" />
+                <element signature="e#1760#1761#0" expanded="true" />
+                <element signature="e#1806#1807#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,7 +110,6 @@
         <option value="$PROJECT_DIR$/src/st/finanse/data/Amount.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" />
         <option value="$PROJECT_DIR$/src/repository.strep" />
-        <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/data/Month.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
@@ -91,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX_1.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
       </list>
     </option>
@@ -149,7 +182,7 @@
               <item name="Finanse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="finanse" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Finanse" type="b2602c69:ProjectViewProjectNode" />
@@ -157,7 +190,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="finanse" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="regular" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -640,12 +672,12 @@
       <workItem from="1512920572415" duration="52000" />
       <workItem from="1512988040020" duration="1385000" />
       <workItem from="1512990297183" duration="834000" />
-      <workItem from="1513007969752" duration="862000" />
+      <workItem from="1513007969752" duration="1231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67426000" />
+    <option name="totallyTimeSpent" value="67795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
@@ -660,7 +692,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.521021" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.521021" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -883,8 +915,8 @@
         <state relative-caret-position="233">
           <caret line="54" column="56" lean-forward="true" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
           <folding>
-            <element signature="e#728#729#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#728#729#0" expanded="false" />
+            <element signature="e#765#766#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -949,52 +981,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding>
-            <element signature="e#2530#2531#0" expanded="true" />
-            <element signature="e#2594#2595#0" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-            <element signature="e#2677#2678#0" expanded="true" />
-            <element signature="e#2729#2730#0" expanded="true" />
-            <element signature="e#2799#2800#0" expanded="true" />
-            <element signature="e#2980#2981#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
-            <element signature="e#3063#3064#0" expanded="true" />
-            <element signature="e#3094#3095#0" expanded="true" />
-            <element signature="e#3133#3134#0" expanded="true" />
-            <element signature="e#3164#3165#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding>
-            <element signature="e#1298#1299#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/data/Amount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,6 +1028,52 @@
         <state relative-caret-position="1764">
           <caret line="131" column="63" lean-forward="true" selection-start-line="131" selection-start-column="63" selection-end-line="131" selection-end-column="63" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="64" column="17" lean-forward="false" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
+          <folding>
+            <element signature="e#1499#1500#0" expanded="true" />
+            <element signature="e#1542#1543#0" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
+            <element signature="e#1670#1671#0" expanded="true" />
+            <element signature="e#1717#1718#0" expanded="true" />
+            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1806#1807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="121" column="8" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="8" />
+          <folding>
+            <element signature="e#2530#2531#0" expanded="true" />
+            <element signature="e#2594#2595#0" expanded="true" />
+            <element signature="e#2633#2634#0" expanded="true" />
+            <element signature="e#2677#2678#0" expanded="true" />
+            <element signature="e#2729#2730#0" expanded="true" />
+            <element signature="e#2799#2800#0" expanded="true" />
+            <element signature="e#2980#2981#0" expanded="true" />
+            <element signature="e#3028#3029#0" expanded="true" />
+            <element signature="e#3063#3064#0" expanded="true" />
+            <element signature="e#3094#3095#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3164#3165#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

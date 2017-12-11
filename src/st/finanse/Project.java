@@ -119,6 +119,7 @@ public class Project {
         PROJECT = Format.loadProject(f);
         if (PROJECT == null) createNewProject();
         else PROJECT.file = f;
+        PROJECT.needSave = false;
     }
 
     public static void saveProject(File f) throws IOException {
@@ -155,12 +156,14 @@ public class Project {
     }
 
     public static void tryLoadingProject() {
-        Optional<ButtonType> buttonType = Start.showConfirmationAlert("Wczytywanie", "Czy chcesz zapisać dane przed wczytaniem pliku?");
-        if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
-            trySavingProject(true);
-        }
-        else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
-            return;
+        if (Project.PROJECT.needSave) {
+            Optional<ButtonType> buttonType = Start.showConfirmationAlert("Wczytywanie", "Czy chcesz zapisać dane przed wczytaniem pliku?");
+            if (buttonType.get().getButtonData() == ButtonBar.ButtonData.YES) {
+                trySavingProject(true);
+            }
+            else if (buttonType.get().getButtonData() == ButtonBar.ButtonData.CANCEL_CLOSE) {
+                return;
+            }
         }
 
         File toOpen = Start.displayOpenDialogFileChooser();
@@ -191,6 +194,7 @@ public class Project {
     private static void doSave() {
         try {
             Project.saveProject(Project.PROJECT.file);
+            Project.PROJECT.needSave = false;
         } catch (IOException e) {
             Start.showExceptionAlert(e);
         }
