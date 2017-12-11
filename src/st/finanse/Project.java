@@ -98,6 +98,14 @@ public class Project {
         return REGULAR_PAYMENTS.stream();
     }
 
+    public void requestSaving() {
+        needSave = true;
+    }
+
+    public boolean isSaveRequired() {
+        return needSave;
+    }
+
     private final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
     private final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;

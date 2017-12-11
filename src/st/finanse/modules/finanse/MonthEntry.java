@@ -2,6 +2,7 @@ package st.finanse.modules.finanse;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.modules.regular.PaymentEntry;
@@ -52,6 +53,7 @@ public class MonthEntry {
 
     public void close() {
         isClosed = true;
+        Project.PROJECT.requestSaving();
     }
 
     public ObservableList<Entry> getEntries() {
@@ -64,6 +66,7 @@ public class MonthEntry {
         Amount amount = pe.getAmount().switchSign();
         Entry entry = new Entry(title, day, amount, isHoliday, this);
         entries.add(entry);
+        Project.PROJECT.requestSaving();
     }
 
     @Override

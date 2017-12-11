@@ -58,6 +58,7 @@ public class PaymentEntry implements Comparable<PaymentEntry> {
             isPayed = true;
             this.paymentDate = payedDate;
         }
+        Project.PROJECT.requestSaving();
     }
 
     @Override

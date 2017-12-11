@@ -7,21 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Project.class" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/Project.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/FNS.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/FNSX$FnsxVersion.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/FNSX.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/FNSX_1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/FNSX_2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/format/Format.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/regular/Controller.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/Controller.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/Project.java" afterPath="$PROJECT_DIR$/src/st/finanse/Project.java" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" afterPath="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" afterPath="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +25,8 @@
       <file leaf-file-name="Project.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
+            <state relative-caret-position="395">
+              <caret line="104" column="24" lean-forward="true" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
               <folding>
                 <element signature="e#2492#2493#0" expanded="true" />
                 <element signature="e#2556#2557#0" expanded="true" />
@@ -47,46 +36,40 @@
                 <element signature="e#2761#2762#0" expanded="true" />
                 <element signature="e#2942#2943#0" expanded="true" />
                 <element signature="e#2990#2991#0" expanded="true" />
+                <element signature="e#3025#3026#0" expanded="true" />
+                <element signature="e#3056#3057#0" expanded="true" />
+                <element signature="e#3095#3096#0" expanded="true" />
+                <element signature="e#3126#3127#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
+      <file leaf-file-name="MonthEntry.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+            <state relative-caret-position="234">
+              <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="99" column="46" lean-forward="false" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
+            <state relative-caret-position="212">
+              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FNSX_2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java">
+      <file leaf-file-name="RegularPayment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FNSX.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/st/finanse/format/FNSX.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="75" column="66" lean-forward="false" selection-start-line="75" selection-start-column="66" selection-end-line="75" selection-end-column="66" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,25 +119,25 @@
         <option value="$PROJECT_DIR$/src/st/finanse/format.txt" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/View.fxml" />
-        <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml" />
         <option value="$PROJECT_DIR$/src/st/finanse/data/Amount.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/View.fxml" />
         <option value="$PROJECT_DIR$/src/repository.strep" />
         <option value="$PROJECT_DIR$/src/st/finanse/gui/MainWindowController.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/data/Month.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/Start.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNS.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX_1.java" />
-        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/Controller.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/format/FNSX.java" />
         <option value="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/Project.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java" />
+        <option value="$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java" />
       </list>
     </option>
   </component>
@@ -219,7 +202,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="finanse" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="finanse" type="462c0819:PsiDirectoryNode" />
+              <item name="regular" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -702,12 +685,12 @@
       <workItem from="1511280588365" duration="1350000" />
       <workItem from="1512920572415" duration="52000" />
       <workItem from="1512988040020" duration="1385000" />
-      <workItem from="1512990297183" duration="621000" />
+      <workItem from="1512990297183" duration="807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66351000" />
+    <option name="totallyTimeSpent" value="66537000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-779" width="1321" height="780" extended-state="6" />
@@ -722,7 +705,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.521021" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.521021" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -932,33 +915,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="81" column="20" lean-forward="false" selection-start-line="81" selection-start-column="20" selection-end-line="81" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/data/Amount.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-414">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-523">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -974,14 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="70" column="22" lean-forward="false" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="82" column="54" lean-forward="false" selection-start-line="82" selection-start-column="54" selection-end-line="82" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,28 +990,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="210" column="9" lean-forward="true" selection-start-line="210" selection-start-column="9" selection-end-line="210" selection-end-column="9" />
+        <state relative-caret-position="130">
+          <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
-          <folding>
-            <element signature="e#2492#2493#0" expanded="true" />
-            <element signature="e#2556#2557#0" expanded="true" />
-            <element signature="e#2595#2596#0" expanded="true" />
-            <element signature="e#2639#2640#0" expanded="true" />
-            <element signature="e#2691#2692#0" expanded="true" />
-            <element signature="e#2761#2762#0" expanded="true" />
-            <element signature="e#2942#2943#0" expanded="true" />
-            <element signature="e#2990#2991#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +1008,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/st/finanse/format/FNSX_2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
+        <state relative-caret-position="269">
           <caret line="85" column="38" lean-forward="false" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
           <folding />
         </state>
@@ -1087,10 +1022,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Entry.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="41" column="73" lean-forward="false" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
+        <state relative-caret-position="489">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/PaymentEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="13" column="40" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/regular/RegularPayment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="104" column="24" lean-forward="true" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
+          <folding>
+            <element signature="e#2492#2493#0" expanded="true" />
+            <element signature="e#2556#2557#0" expanded="true" />
+            <element signature="e#2595#2596#0" expanded="true" />
+            <element signature="e#2639#2640#0" expanded="true" />
+            <element signature="e#2691#2692#0" expanded="true" />
+            <element signature="e#2761#2762#0" expanded="true" />
+            <element signature="e#2942#2943#0" expanded="true" />
+            <element signature="e#2990#2991#0" expanded="true" />
+            <element signature="e#3025#3026#0" expanded="true" />
+            <element signature="e#3056#3057#0" expanded="true" />
+            <element signature="e#3095#3096#0" expanded="true" />
+            <element signature="e#3126#3127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/st/finanse/modules/finanse/MonthEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding />
         </state>
       </provider>

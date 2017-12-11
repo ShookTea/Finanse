@@ -42,6 +42,7 @@ public class RegularPayment {
             me.addPayment(name, entry);
             MainWindowController.updateAll();
         }
+        Project.PROJECT.requestSaving();
     }
 
     @Override
