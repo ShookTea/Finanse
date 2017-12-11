@@ -56,16 +56,30 @@ public class MonthEntry {
         Project.PROJECT.requestSaving();
     }
 
-    public ObservableList<Entry> getEntries() {
-        return entries;
-    }
-
     public void addPayment(String title, PaymentEntry pe) {
         int day = pe.getPaymentDate().getDayOfMonth();
         boolean isHoliday = month.isSunday(day);
         Amount amount = pe.getAmount().switchSign();
         Entry entry = new Entry(title, day, amount, isHoliday, this);
         entries.add(entry);
+        Project.PROJECT.requestSaving();
+    }
+
+    public Entry[] getEntries() {
+        return entries.toArray(new Entry[0]);
+    }
+
+    public boolean removeEntry(Entry e) {
+        Project.PROJECT.requestSaving();
+        return entries.remove(e);
+    }
+
+    public int getEntriesCount() {
+        return entries.size();
+    }
+
+    public void addEntry(Entry e) {
+        entries.add(e);
         Project.PROJECT.requestSaving();
     }
 

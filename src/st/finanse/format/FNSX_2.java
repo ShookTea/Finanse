@@ -55,7 +55,7 @@ public class FNSX_2 implements FNSX.FnsxVersion {
                 Amount cash = new Amount(dis.readUTF());
                 boolean isHoliday = dis.readBoolean();
                 Entry entry = new Entry(title, day, cash, isHoliday, monthEntry);
-                monthEntry.getEntries().add(entry);
+                monthEntry.addEntry(entry);
                 entryTag = dis.readUTF(); //ENTRY lub TABLE.STOP
             }
             project.addMonthEntry(monthEntry);

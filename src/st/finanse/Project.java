@@ -14,6 +14,7 @@ import st.finanse.modules.regular.RegularPayment;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -54,8 +55,8 @@ public class Project {
     public List<String> getTitleTip(String part) {
         List<String> ret = new ArrayList<>();
         FINANSE_MONTHS.stream()
-                .forEach(month -> month.getEntries()
-                        .filtered(entry -> entry.getTitle().contains(part))
+                .forEach(month -> Arrays.stream(month.getEntries())
+                        .filter(entry -> entry.getTitle().contains(part))
                         .forEach(entry -> {
                             if (!ret.contains(entry.getTitle())) {
                                 ret.add(entry.getTitle());

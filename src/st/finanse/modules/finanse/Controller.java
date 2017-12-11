@@ -17,6 +17,7 @@ import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Controller implements Updateable {
     @FXML private TreeView<String> monthTree;
@@ -57,7 +58,7 @@ public class Controller implements Updateable {
         entryTitle.setText("");
         entryAmount.setText("");
         Entry entry = new Entry(title, day, amount, markRed, currentEntry.get());
-        currentEntry.get().getEntries().add(entry);
+        currentEntry.get().addEntry(entry);
         MainWindowController.updateAll();
         entryTitle.requestFocus();
     }
@@ -119,13 +120,15 @@ public class Controller implements Updateable {
         int maxDays = 30;
         int defaultDay = 1;
         if (monthEntry != null) {
-            table.getItems().addAll(monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay)));
+            table.getItems().addAll(Arrays.stream(monthEntry.getEntries()).sorted(Comparator.comparingInt(Entry::getDay)).collect(Collectors.toList()));
             maxDays = month.getMaxDays();
-            if (monthEntry.getEntries().size() == 0) {
+            if (monthEntry.getEntriesCount() == 0) {
                 defaultDay = 1;
             }
             else {
-                defaultDay = monthEntry.getEntries().sorted(Comparator.comparingInt(Entry::getDay).reversed()).get(0).getDay();
+                defaultDay = Arrays.stream(monthEntry.getEntries())
+                        .sorted(Comparator.comparingInt(Entry::getDay).reversed())
+                        .findFirst().get().getDay();
                 if (defaultDay > maxDays) defaultDay = maxDays;
             }
             startAmount.setText("Kwota początkowa: " + monthEntry.startingAmount.toFormattedString());
@@ -237,7 +240,7 @@ public class Controller implements Updateable {
                         } else {
                             btn.setOnAction(event -> {
                                 Entry person = getTableView().getItems().get(getIndex());
-                                currentEntry.get().getEntries().remove(person);
+                                currentEntry.get().removeEntry(person);
                                 MainWindowController.updateAll();
                             });
                             btn.setPrefHeight(USE_COMPUTED_SIZE);
