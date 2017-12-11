@@ -71,9 +71,23 @@ public class Project {
         return null;
     }
 
-    public final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
+    public void addMonthEntry(MonthEntry entry) {
+        FINANSE_MONTHS.add(entry);
+        needSave = true;
+    }
+
+    public MonthEntry[] getMonthEntries() {
+        return FINANSE_MONTHS.toArray(new MonthEntry[0]);
+    }
+
+    public int getMonthEntryCount() {
+        return FINANSE_MONTHS.size();
+    }
+
+    private final ObservableList<MonthEntry> FINANSE_MONTHS = FXCollections.observableArrayList();
     public final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;
+    private boolean needSave = false;
 
     public static Project PROJECT = new Project();
 

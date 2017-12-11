@@ -51,7 +51,7 @@ public class FNSX implements Format {
 
     private void writeFinanceModule(Project project, DataOutputStream dos) throws IOException {
         dos.writeUTF("MOD_FINANCE.START");
-        for (MonthEntry monthEntry : project.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : project.getMonthEntries()) {
             dos.writeUTF("TABLE.START");
             dos.writeInt(monthEntry.month.getMonth());
             dos.writeInt(monthEntry.month.getYear());

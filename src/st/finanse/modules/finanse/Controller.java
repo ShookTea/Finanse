@@ -69,7 +69,7 @@ public class Controller implements Updateable {
         Month nextMonth = me.month.getNextMonth();
         me.close();
         MonthEntry newEntry = new MonthEntry(nextMonth, endingAmount, false);
-        Project.PROJECT.FINANSE_MONTHS.add(newEntry);
+        Project.PROJECT.addMonthEntry(newEntry);
         currentEntry.set(newEntry);
         MainWindowController.updateAll();
     }
@@ -189,7 +189,7 @@ public class Controller implements Updateable {
         TreeItem<String> root = new TreeItem<>();
         root.setExpanded(true);
         Map<Integer, List<MonthEntry>> map = new HashMap<>();
-        for (MonthEntry me : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry me : Project.PROJECT.getMonthEntries()) {
             int year = me.month.getYear();
             if (!map.containsKey(year)) map.put(year, new ArrayList<>());
             map.get(year).add(me);
@@ -201,11 +201,13 @@ public class Controller implements Updateable {
             }
             root.getChildren().add(yearItem);
         }
-        if (Project.PROJECT.FINANSE_MONTHS.size() == 0) {
+        if (Project.PROJECT.getMonthEntryCount() == 0) {
             currentEntry.set(null);
         }
         else {
-            currentEntry.set(Project.PROJECT.FINANSE_MONTHS.sorted((a, b) -> -a.month.compareTo(b.month)).get(0));
+            MonthEntry[] entries = Project.PROJECT.getMonthEntries();
+            Arrays.sort(entries, (a, b) -> -a.month.compareTo(b.month));
+            currentEntry.set(entries[0]);
         }
         monthTree.setRoot(root);
         monthTree.getSelectionModel().selectedItemProperty().addListener(e -> monthChosen(e));

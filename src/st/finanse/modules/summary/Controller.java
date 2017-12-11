@@ -56,7 +56,7 @@ public class Controller implements Updateable {
         ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
         Series<String, Double> bilanse = new Series<>();
         bilanse.setName("Stan konta na koniec miesiąca");
-        for (MonthEntry monthEntry : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : Project.PROJECT.getMonthEntries()) {
             bilanse.getData().add(new Data(monthEntry.month.toString(), monthEntry.getCurrentAmount().toDouble()));
         }
         result.addAll(bilanse);
@@ -71,7 +71,7 @@ public class Controller implements Updateable {
         losses.setName("Wydatki");
         Series<String, Double> bilanse = new Series<>();
         bilanse.setName("Bilans");
-        for (MonthEntry monthEntry : Project.PROJECT.FINANSE_MONTHS) {
+        for (MonthEntry monthEntry : Project.PROJECT.getMonthEntries()) {
             Amount gained = monthEntry.getEarnedAmount();
             Amount lost = monthEntry.getLostAmount();
             Amount diff = gained.subtract(lost);

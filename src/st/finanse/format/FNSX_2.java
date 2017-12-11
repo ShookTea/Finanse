@@ -58,7 +58,7 @@ public class FNSX_2 implements FNSX.FnsxVersion {
                 monthEntry.getEntries().add(entry);
                 entryTag = dis.readUTF(); //ENTRY lub TABLE.STOP
             }
-            project.FINANSE_MONTHS.add(monthEntry);
+            project.addMonthEntry(monthEntry);
             tag = dis.readUTF(); //MOD_FINANCE.STOP lub TABLE.START
         }
     }
