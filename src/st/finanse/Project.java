@@ -90,9 +90,14 @@ public class Project {
     }
 
     public static void createNewProject() {
+        Month currentMonth = new Month();
+        Amount startAmount = new Amount(0);
+        createNewProject(currentMonth, startAmount);
+    }
+
+    public static void createNewProject(Month firstMonth, Amount startAmount) {
         PROJECT = new Project();
-        Month month = new Month();
-        PROJECT.FINANSE_MONTHS.add(new MonthEntry(month, new Amount(0), false));
+        PROJECT.FINANSE_MONTHS.add(new MonthEntry(firstMonth, startAmount, false));
     }
 
     public static void tryCreatingNewProject() {
