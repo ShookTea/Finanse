@@ -27,6 +27,7 @@ public class Controller implements Updateable {
     @FXML private TableColumn<PaymentEntry, String> amountColumn;
 
     private RegularPayment toDisplay = null;
+    private RegularData regular = Project.PROJECT.regular;
 
     @FXML
     private void initialize() {
@@ -62,7 +63,7 @@ public class Controller implements Updateable {
         tid.setContentText("Nazwa płatności:");
         tid.showAndWait().ifPresent(name -> {
             RegularPayment rp = new RegularPayment(name);
-            Project.PROJECT.addRegularPayment(rp);
+            regular.addRegularPayment(rp);
             updateList();
         });
     }
@@ -70,7 +71,7 @@ public class Controller implements Updateable {
     @FXML
     private void selectPayment() {
         String item = regularList.getSelectionModel().getSelectedItem();
-        toDisplay = Project.PROJECT.getRegularPaymentByName(item);
+        toDisplay = regular.getRegularPaymentByName(item);
         updateRightPart();
     }
 
@@ -97,7 +98,7 @@ public class Controller implements Updateable {
 
     private void updateList() {
         regularList.getItems().clear();
-        Project.PROJECT.regularPaymentStream().forEach(r -> regularList.getItems().add(r.name));
+        regular.regularPaymentStream().forEach(r -> regularList.getItems().add(r.name));
     }
 
     private void updateRightPart() {

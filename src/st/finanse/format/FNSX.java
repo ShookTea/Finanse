@@ -73,7 +73,7 @@ public class FNSX implements Format {
 
     private void writeRegularModule(Project project, DataOutputStream dos) throws IOException {
         dos.writeUTF("MOD_REGULAR.START");
-        for (RegularPayment payment : project.getRegularPayments()) {
+        for (RegularPayment payment : project.regular.getRegularPayments()) {
             dos.writeUTF("REGULAR.START");
             dos.writeUTF(payment.name);
             for (PaymentEntry entry : payment.getPayments()) {

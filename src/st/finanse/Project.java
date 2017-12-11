@@ -10,6 +10,7 @@ import st.finanse.format.Format;
 import st.finanse.gui.MainWindowController;
 import st.finanse.modules.finanse.FinanceData;
 import st.finanse.modules.finanse.MonthEntry;
+import st.finanse.modules.regular.RegularData;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.io.File;
@@ -20,47 +21,24 @@ import java.util.stream.Stream;
 public class Project {
     public Project() {
         finance = new FinanceData();
+        regular = new RegularData();
     }
 
     @Override
     public String toString() {
-        String ret = finance.toString();
-        ret += "MODULE REGULAR";
-        for (RegularPayment entry : REGULAR_PAYMENTS) {
-            ret = ret + "\n" + entry.toString();
-        }
-        return ret;
+        StringBuilder sb = new StringBuilder();
+        sb.append(finance.toString());
+        sb.append(regular.toString());
+        return sb.toString();
     }
 
     @Override
     public boolean equals(Object ob) {
         if (ob instanceof Project) {
             Project p = (Project)ob;
-            return finance.equals(p.finance) && REGULAR_PAYMENTS.equals(p.REGULAR_PAYMENTS);
+            return finance.equals(p.finance) && regular.equals(p.regular);
         }
         return false;
-    }
-
-    public RegularPayment getRegularPaymentByName(String item) {
-        RegularPayment[] rp = REGULAR_PAYMENTS.stream()
-                .filter(e -> e.name.equals(item))
-                .toArray(RegularPayment[]::new);
-        if (rp.length == 1) return rp[0];
-        return null;
-    }
-
-
-    public RegularPayment[] getRegularPayments() {
-        return REGULAR_PAYMENTS.toArray(new RegularPayment[0]);
-    }
-
-    public void addRegularPayment(RegularPayment rp) {
-        REGULAR_PAYMENTS.add(rp);
-        needSave = true;
-    }
-
-    public Stream<RegularPayment> regularPaymentStream() {
-        return REGULAR_PAYMENTS.stream();
     }
 
     public static void requestSaving() {
@@ -72,7 +50,7 @@ public class Project {
     }
 
     public final FinanceData finance;
-    private final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
+    public final RegularData regular;
     public File file = null;
     private boolean needSave = false;
 

@@ -42,7 +42,7 @@ public class Controller implements Updateable {
 
     private void createRegularPayingsData() {
         ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
-        RegularPayment[] payments = Project.PROJECT.getRegularPayments();
+        RegularPayment[] payments = Project.PROJECT.regular.getRegularPayments();
         Series<String, Double>[] series = new Series[payments.length];
         for (int i = 0; i < payments.length; i++) {
             series[i] = new Series<>();
