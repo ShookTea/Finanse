@@ -170,7 +170,7 @@ public class Project {
                 Project.loadProject(toOpen);
                 MainWindowController.updateAll();
             } catch (IOException e) {
-                Start.showExceptionAlert(e);
+                ErrorControl.handle(e);
             }
         }
     }
@@ -194,7 +194,7 @@ public class Project {
             Project.saveProject(Project.PROJECT.file);
             Project.PROJECT.needSave = false;
         } catch (IOException e) {
-            Start.showExceptionAlert(e);
+            ErrorControl.handle(e);
         }
     }
 }
