@@ -12,9 +12,8 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
-import st.finanse.modules.finanse.Finance;
+import st.finanse.modules.finanse.FinanceData;
 import st.finanse.modules.finanse.MonthEntry;
-import st.finanse.modules.regular.PaymentEntry;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.util.Map;
@@ -24,7 +23,7 @@ public class Controller implements Updateable {
     @FXML private LineChart<String, Double> regularPayings;
     @FXML private BarChart<String, Double> gainsLoss;
 
-    private Finance finance;
+    private FinanceData finance;
 
     @FXML
     private void initialize() {

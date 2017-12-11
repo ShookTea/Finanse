@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Finance {
-    public Finance() {}
+public class FinanceData {
+    public FinanceData() {}
 
     public void addMonthEntry(MonthEntry entry) {
         months.add(entry);
@@ -57,8 +57,8 @@ public class Finance {
 
     @Override
     public boolean equals(Object ob) {
-        if (ob instanceof Finance) {
-            return months.equals(((Finance) ob).months);
+        if (ob instanceof FinanceData) {
+            return months.equals(((FinanceData) ob).months);
         }
         return false;
     }

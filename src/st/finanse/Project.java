@@ -8,21 +8,18 @@ import st.finanse.data.Amount;
 import st.finanse.data.Month;
 import st.finanse.format.Format;
 import st.finanse.gui.MainWindowController;
-import st.finanse.modules.finanse.Finance;
+import st.finanse.modules.finanse.FinanceData;
 import st.finanse.modules.finanse.MonthEntry;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
 public class Project {
     public Project() {
-        finance = new Finance();
+        finance = new FinanceData();
     }
 
     @Override
@@ -74,7 +71,7 @@ public class Project {
         return needSave;
     }
 
-    public final Finance finance;
+    public final FinanceData finance;
     private final ObservableList<RegularPayment> REGULAR_PAYMENTS = FXCollections.observableArrayList();
     public File file = null;
     private boolean needSave = false;

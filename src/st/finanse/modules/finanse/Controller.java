@@ -41,7 +41,7 @@ public class Controller implements Updateable {
     @FXML private TableColumn<Entry, String> deleteColumn;
 
     private ObjectProperty<MonthEntry> currentEntry = new SimpleObjectProperty<>();
-    private Finance finance = Project.PROJECT.finance;
+    private FinanceData finance = Project.PROJECT.finance;
 
     @Override
     public void update() {
