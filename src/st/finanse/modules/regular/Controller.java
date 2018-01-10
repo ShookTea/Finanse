@@ -92,6 +92,7 @@ public class Controller implements Updateable {
 
     @Override
     public void update() {
+        regular = Project.PROJECT.regular;
         updateList();
         updateRightPart();
     }
