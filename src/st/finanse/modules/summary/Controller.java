@@ -14,9 +14,10 @@ import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 import st.finanse.modules.finance.FinanceData;
 import st.finanse.modules.finance.MonthEntry;
+import st.finanse.modules.regular.PaymentEntry;
 import st.finanse.modules.regular.RegularPayment;
 
-import java.util.Map;
+import java.util.*;
 
 public class Controller implements Updateable {
     @FXML private LineChart<String, Double> accountBilanse;
@@ -44,11 +45,26 @@ public class Controller implements Updateable {
         ObservableList<Series<String, Double>> result = FXCollections.observableArrayList();
         RegularPayment[] payments = Project.PROJECT.regular.getRegularPayments();
         Series<String, Double>[] series = new Series[payments.length];
+        List<Month> months = new ArrayList<>();
+        Arrays.stream(payments)
+                .map(p -> p.getPayments())
+                .forEach(pes -> Arrays.stream(pes)
+                    .forEach(pe -> months.add(new Month(pe.getPaymentDate())))
+                );
+        months.sort(Month::compareTo);
+
         for (int i = 0; i < payments.length; i++) {
             series[i] = new Series<>();
             series[i].setName(payments[i].name);
-            for (Map.Entry<Month, Amount> entry : payments[i].getEntriesByMonth().entrySet()) {
-                series[i].getData().add(new Data(entry.getKey().toString(), entry.getValue().toDouble()));
+        }
+
+        for (Month month : months) {
+            for (int i = 0; i < payments.length; i++) {
+                RegularPayment payment = payments[i];
+                Map<Month, Amount> entries = payment.getEntriesByMonth();
+                if (entries.containsKey(month)) {
+                    series[i].getData().add(new Data(month.toString(), entries.get(month).toDouble()));
+                }
             }
         }
         result.addAll(series);

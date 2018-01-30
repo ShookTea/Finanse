@@ -6,10 +6,7 @@ import st.finanse.data.Month;
 import st.finanse.gui.MainWindowController;
 import st.finanse.modules.finance.MonthEntry;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RegularPayment {
     public RegularPayment(String name) {
