@@ -5,9 +5,11 @@ import javafx.collections.ObservableList;
 import st.finanse.Project;
 import st.finanse.data.Month;
 
+import java.security.KeyStore;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FinanceData {
     public FinanceData() {}
@@ -34,16 +36,12 @@ public class FinanceData {
     }
 
     public List<String> getTitleTip(String part) {
-        List<String> ret = new ArrayList<>();
-        months.stream()
-                .forEach(month -> Arrays.stream(month.getEntries())
-                        .filter(entry -> entry.getTitle().contains(part))
-                        .forEach(entry -> {
-                            if (!ret.contains(entry.getTitle())) {
-                                ret.add(entry.getTitle());
-                            }
-                        }));
-        return ret;
+        return months.stream()
+                .flatMap(month -> Arrays.stream(month.getEntries()))
+                .map(Entry::getTitle)
+                .distinct()
+                .filter(title -> title.contains(part))
+                .collect(Collectors.toList());
     }
 
     @Override

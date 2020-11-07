@@ -22,14 +22,14 @@ public class AutocompletionTextField extends TextField {
         super();
         this.entriesPopup = new ContextMenu();
 
-        setListner();
+        setListener();
     }
 
     public AutocompletionTextField(int lengthLimit) {
         this();
     }
 
-    private void setListner() {
+    private void setListener() {
         textProperty().addListener((observable, oldValue, newValue) -> {
             String enteredText = getText();
             if (enteredText == null || enteredText.isEmpty()) {
