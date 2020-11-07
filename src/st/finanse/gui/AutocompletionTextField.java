@@ -53,7 +53,8 @@ public class AutocompletionTextField extends TextField {
             if (!entriesPopup.isShowing() || entriesPopup.getItems().isEmpty()) {
                 return;
             }
-            System.out.println("I'm in, requesting focus");
+            positionCaret(getText().length());
+            entriesPopup.getSkin().getNode().requestFocus();
             entriesPopup.getSkin().getNode().lookup(".menu-item").requestFocus();
         });
     }
