@@ -1,10 +1,8 @@
 package st.finanse.gui;
 
 import javafx.geometry.Side;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.CustomMenuItem;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -16,20 +14,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class AutocompletionTextField extends TextField {
-    private ContextMenu entriesPopup;
+
+    private final ContextMenu entriesPopup;
 
     public AutocompletionTextField() {
         super();
         this.entriesPopup = new ContextMenu();
 
-        setListner();
+        setListener();
     }
 
-    public AutocompletionTextField(int lengthLimit) {
-        this();
-    }
-
-    private void setListner() {
+    private void setListener() {
         textProperty().addListener((observable, oldValue, newValue) -> {
             String enteredText = getText();
             if (enteredText == null || enteredText.isEmpty()) {
@@ -49,6 +44,18 @@ public class AutocompletionTextField extends TextField {
 
         focusedProperty().addListener((observableValue, oldValue, newValue) -> {
             entriesPopup.hide();
+        });
+
+        setOnKeyPressed((e) -> {
+            if (e.getCode() != KeyCode.UP && e.getCode() != KeyCode.DOWN) {
+                return;
+            }
+            if (!entriesPopup.isShowing() || entriesPopup.getItems().isEmpty()) {
+                return;
+            }
+            positionCaret(getText().length());
+            entriesPopup.getSkin().getNode().requestFocus();
+            entriesPopup.getSkin().getNode().lookup(".menu-item").requestFocus();
         });
     }
 
