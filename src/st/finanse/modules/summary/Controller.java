@@ -12,6 +12,8 @@ import st.finanse.gui.Updateable;
 import st.finanse.modules.finance.Entry;
 import st.finanse.modules.finance.MonthEntry;
 
+import java.util.Comparator;
+
 public class Controller implements Updateable {
     @FXML private TabPane tabPane;
 
@@ -38,6 +40,7 @@ public class Controller implements Updateable {
 
         TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
         entryNameColumn.setCellValueFactory(val -> val.getValue().nameProperty());
+        entryNameColumn.setComparator(getEntryComparator());
         tableView.getColumns().add(entryNameColumn);
 
         for (int i = 0; i < summaryGroup.getColumns().length; i++) {
@@ -52,6 +55,13 @@ public class Controller implements Updateable {
         tableView.getColumns().add(endingSum);
 
         return tableView;
+    }
+
+    private Comparator<String> getEntryComparator() {
+        return (s1, s2) ->
+                s1.replaceAll("[^A-Za-z0-9\\s]", "").compareToIgnoreCase(
+                        s2.replaceAll("[^A-Za-z0-9\\s]", "")
+                );
     }
 
     private SummaryGroupCollection getGroups() {
