@@ -1,5 +1,6 @@
 package st.finanse.modules.finance;
 
+import javafx.application.Platform;
 import javafx.beans.Observable;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
@@ -179,6 +180,7 @@ public class Controller implements Updateable {
                 }
             }
         });
+        Platform.runLater(table::refresh);
     }
 
     private void setFormDisabled(boolean locked) {
@@ -215,7 +217,7 @@ public class Controller implements Updateable {
             currentEntry.set(entries[0]);
         }
         monthTree.setRoot(root);
-        monthTree.getSelectionModel().selectedItemProperty().addListener(e -> monthChosen(e));
+        monthTree.getSelectionModel().selectedItemProperty().addListener(this::monthChosen);
     }
 
     private class MonthTreeItem extends TreeItem<String> {
