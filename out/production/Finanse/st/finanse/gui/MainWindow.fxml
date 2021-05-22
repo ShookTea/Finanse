@@ -80,6 +80,17 @@
               </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Podsumowanie">
+                <content>
+                    <AnchorPane>
+                        <children>
+                            <StackPane AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" >
+                                <fx:include source="../modules/summary/View.fxml" />
+                            </StackPane>
+                        </children>
+                    </AnchorPane>
+                </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

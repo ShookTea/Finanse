@@ -11,12 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Fixed bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/gui/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/summary/View.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/gui/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/charts/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/charts/View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -441,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604756902204</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Renamed &quot;summary&quot; to &quot;charts&quot;">
+      <created>1621668175115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621668175115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -479,7 +481,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug" />
+    <MESSAGE value="Renamed &quot;summary&quot; to &quot;charts&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed &quot;summary&quot; to &quot;charts&quot;" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
