@@ -45,6 +45,10 @@ public class Controller implements Updateable {
             tableView.getColumns().add(singleValueColumn);
         }
 
+        TableColumn<SummaryEntry, Amount> endingSum = new TableColumn<>("Razem");
+        endingSum.setCellValueFactory(val -> val.getValue().sumValueProperty());
+        tableView.getColumns().add(endingSum);
+
         tableView.getItems().addAll(summaryGroup.getEntries());
         return tableView;
     }

@@ -29,6 +29,10 @@ public class SummaryEntry {
         return new SimpleObjectProperty<>(amounts[index]);
     }
 
+    public ObservableValue<Amount> sumValueProperty() {
+        return new SimpleObjectProperty<>(amounts[amounts.length - 1]);
+    }
+
     public void addAmount(int column, Amount amount) {
         if (column < 0 || column >= (amounts.length - 1)) {
             throw new IndexOutOfBoundsException();
