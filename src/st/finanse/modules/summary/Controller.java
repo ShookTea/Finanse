@@ -1,10 +1,7 @@
 package st.finanse.modules.summary;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import st.finanse.Project;
 import st.finanse.data.Amount;
 import st.finanse.gui.MainWindowController;
@@ -36,6 +33,7 @@ public class Controller implements Updateable {
     private TableView<SummaryEntry> createTableView(SummaryGroup summaryGroup) {
         TableView<SummaryEntry> tableView = new TableView<>();
         tableView.getItems().addAll(summaryGroup.getEntries());
+        tableView.setPlaceholder(new Label("Brak danych"));
         tableView.setEditable(false);
 
         TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
