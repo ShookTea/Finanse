@@ -2,6 +2,7 @@ package st.finanse.modules.summary;
 
 import st.finanse.data.Month;
 
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeMap;
 
@@ -35,7 +36,7 @@ public class SummaryGroupCollection implements Iterable<SummaryGroup> {
         String[] years = summaryGroups
                 .values()
                 .stream()
-                .sorted()
+                .sorted(Comparator.reverseOrder()) // make newest on right side
                 .map(group -> group.getYear() + "")
                 .toArray(String[]::new);
 
