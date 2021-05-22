@@ -27,6 +27,26 @@ public class SummaryGroupCollection implements Iterable<SummaryGroup> {
         return summaryGroups.get(month.getYear());
     }
 
+    public void buildDefaultGroup() {
+        if (summaryGroups.containsKey(SummaryGroup.SUMMARY_YEAR)) {
+            return;
+        }
+
+        String[] years = summaryGroups
+                .values()
+                .stream()
+                .sorted()
+                .map(group -> group.getYear() + "")
+                .toArray(String[]::new);
+
+        SummaryGroup group = new SummaryGroup(
+                SummaryGroup.SUMMARY_YEAR,
+                years
+        );
+
+        summaryGroups.put(SummaryGroup.SUMMARY_YEAR, group);
+    }
+
     @Override
     public Iterator<SummaryGroup> iterator() {
         return summaryGroups.values().iterator();

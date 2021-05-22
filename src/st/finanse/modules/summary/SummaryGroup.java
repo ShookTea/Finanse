@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 public class SummaryGroup implements Comparable<SummaryGroup> {
+    public static final int SUMMARY_YEAR = -1;
+
     private final int year;
     private final String[] columns;
     private final List<SummaryEntry> entries;
@@ -23,7 +25,7 @@ public class SummaryGroup implements Comparable<SummaryGroup> {
     }
 
     public String getTabLabel() {
-        if (getYear() == -1) {
+        if (getYear() == SUMMARY_YEAR) {
             return "Razem";
         }
         return "" + getYear();

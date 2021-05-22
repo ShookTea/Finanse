@@ -76,6 +76,7 @@ public class Controller implements Updateable {
             }
         }
 
+        groups.buildDefaultGroup();
         return groups;
     }
 }
