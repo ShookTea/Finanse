@@ -55,6 +55,16 @@ public class SummaryGroup implements Comparable<SummaryGroup> {
 
     @Override
     public int compareTo(SummaryGroup o) {
-        return year - o.year;
+        // if equal, return zero (should never happen)
+        if (year == o.year) {
+            return 0;
+        }
+        // if one of years is a summary year (value = -1), sort ascending to make summary on the beginning
+        if (year == SUMMARY_YEAR || o.year == SUMMARY_YEAR) {
+            return year - o.year;
+        }
+
+        // if neither of years is a summary year (value = -1), sort descending to make newest year on top
+        return o.year - year;
     }
 }

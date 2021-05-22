@@ -49,6 +49,6 @@ public class SummaryGroupCollection implements Iterable<SummaryGroup> {
 
     @Override
     public Iterator<SummaryGroup> iterator() {
-        return summaryGroups.values().iterator();
+        return summaryGroups.values().stream().sorted().iterator();
     }
 }

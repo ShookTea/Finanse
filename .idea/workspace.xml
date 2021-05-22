@@ -10,10 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Fixed bug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroupCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroupCollection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621671796418</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Basics of summary group for all years">
+      <created>1621672049965</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1621672049965</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -548,7 +552,8 @@
     <MESSAGE value="Displaying sum column" />
     <MESSAGE value="Disable editables" />
     <MESSAGE value="Fixed sorting by entity name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed sorting by entity name" />
+    <MESSAGE value="Basics of summary group for all years" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basics of summary group for all years" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
