@@ -1,5 +1,7 @@
 package st.finanse.modules.summary;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import st.finanse.data.Amount;
 
 public class SummaryEntry {
@@ -16,6 +18,10 @@ public class SummaryEntry {
 
     public String getName() {
         return name;
+    }
+
+    public ObservableValue<String> nameProperty() {
+        return new SimpleStringProperty(name);
     }
 
     public void addAmount(int column, Amount amount) {

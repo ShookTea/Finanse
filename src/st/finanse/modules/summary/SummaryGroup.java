@@ -47,6 +47,10 @@ public class SummaryGroup implements Comparable<SummaryGroup> {
         return newVal;
     }
 
+    public List<SummaryEntry> getEntries() {
+        return entries;
+    }
+
     @Override
     public int compareTo(SummaryGroup o) {
         return year - o.year;

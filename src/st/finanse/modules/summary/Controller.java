@@ -3,6 +3,8 @@ package st.finanse.modules.summary;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import st.finanse.Project;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
@@ -23,9 +25,20 @@ public class Controller implements Updateable {
         tabPane.getTabs().clear();
 
         for (SummaryGroup group : getGroups()) {
-            Tab tab = new Tab(group.getTabLabel());
+            Tab tab = new Tab(group.getTabLabel(), createTableView(group));
             tabPane.getTabs().add(tab);
         }
+    }
+
+    private TableView<SummaryEntry> createTableView(SummaryGroup summaryGroup) {
+        TableView<SummaryEntry> tableView = new TableView<>();
+
+        TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
+        entryNameColumn.setCellValueFactory(val -> val.getValue().nameProperty());
+        tableView.getColumns().add(entryNameColumn);
+
+        tableView.getItems().addAll(summaryGroup.getEntries());
+        return tableView;
     }
 
     private SummaryGroupCollection getGroups() {
