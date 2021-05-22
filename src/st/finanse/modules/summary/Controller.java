@@ -33,6 +33,8 @@ public class Controller implements Updateable {
 
     private TableView<SummaryEntry> createTableView(SummaryGroup summaryGroup) {
         TableView<SummaryEntry> tableView = new TableView<>();
+        tableView.getItems().addAll(summaryGroup.getEntries());
+        tableView.setEditable(false);
 
         TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
         entryNameColumn.setCellValueFactory(val -> val.getValue().nameProperty());
@@ -49,7 +51,6 @@ public class Controller implements Updateable {
         endingSum.setCellValueFactory(val -> val.getValue().sumValueProperty());
         tableView.getColumns().add(endingSum);
 
-        tableView.getItems().addAll(summaryGroup.getEntries());
         return tableView;
     }
 
