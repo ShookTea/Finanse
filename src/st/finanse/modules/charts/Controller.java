@@ -1,4 +1,4 @@
-package st.finanse.modules.summary;
+package st.finanse.modules.charts;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,7 +14,6 @@ import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 import st.finanse.modules.finance.FinanceData;
 import st.finanse.modules.finance.MonthEntry;
-import st.finanse.modules.regular.PaymentEntry;
 import st.finanse.modules.regular.RegularPayment;
 
 import java.util.*;
