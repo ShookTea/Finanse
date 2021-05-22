@@ -6,6 +6,7 @@ import javafx.scene.control.TabPane;
 import st.finanse.Project;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
+import st.finanse.modules.finance.Entry;
 import st.finanse.modules.finance.MonthEntry;
 
 public class Controller implements Updateable {
@@ -30,8 +31,13 @@ public class Controller implements Updateable {
     private SummaryGroupCollection getGroups() {
         SummaryGroupCollection groups = new SummaryGroupCollection();
 
-        for (MonthEntry entry : Project.PROJECT.finance.getMonthEntries()) {
-            SummaryGroup group = groups.getByMonth(entry.month);
+        for (MonthEntry monthEntry : Project.PROJECT.finance.getMonthEntries()) {
+            SummaryGroup group = groups.getByMonth(monthEntry.month);
+
+            for (Entry entry : monthEntry.getEntries()) {
+                group.getEntryByName(entry.getTitle())
+                        .addAmount(monthEntry.month.getMonth() - 1, entry.getAmount());
+            }
         }
 
         return groups;

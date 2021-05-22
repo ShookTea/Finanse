@@ -1,12 +1,18 @@
 package st.finanse.modules.summary;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 public class SummaryGroup implements Comparable<SummaryGroup> {
     private final int year;
     private final String[] columns;
+    private final List<SummaryEntry> entries;
 
     public SummaryGroup(int year, String[] columns) {
         this.year = year;
         this.columns = columns;
+        this.entries = new ArrayList<>();
     }
 
     /**
@@ -25,6 +31,20 @@ public class SummaryGroup implements Comparable<SummaryGroup> {
 
     public String[] getColumns() {
         return columns;
+    }
+
+    public SummaryEntry getEntryByName(String name) {
+        Optional<SummaryEntry> found = entries.stream()
+                .filter(entry -> entry.getName().equals(name))
+                .findFirst();
+
+        if (found.isPresent()) {
+            return found.get();
+        }
+
+        SummaryEntry newVal = new SummaryEntry(name, this.getColumns().length);
+        entries.add(newVal);
+        return newVal;
     }
 
     @Override
