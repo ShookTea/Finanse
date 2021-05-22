@@ -11,8 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Fixed bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroupCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/SummaryGroupCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/summary/Controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -514,7 +513,28 @@
       <option name="project" value="LOCAL" />
       <updated>1621672251980</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Creating data for summary tab">
+      <created>1621672615018</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1621672615018</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Fixed column order in summary tab">
+      <created>1621672699123</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1621672699123</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added better placeholder">
+      <created>1621672807022</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1621672807022</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -563,7 +583,10 @@
     <MESSAGE value="Fixed sorting by entity name" />
     <MESSAGE value="Basics of summary group for all years" />
     <MESSAGE value="Sorting tabs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorting tabs" />
+    <MESSAGE value="Creating data for summary tab" />
+    <MESSAGE value="Fixed column order in summary tab" />
+    <MESSAGE value="Added better placeholder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added better placeholder" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />

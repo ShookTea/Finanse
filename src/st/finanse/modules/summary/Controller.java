@@ -35,6 +35,7 @@ public class Controller implements Updateable {
         tableView.getItems().addAll(summaryGroup.getEntries());
         tableView.setPlaceholder(new Label("Brak danych"));
         tableView.setEditable(false);
+        tableView.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
         entryNameColumn.setCellValueFactory(val -> val.getValue().nameProperty());
