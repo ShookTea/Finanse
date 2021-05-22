@@ -29,8 +29,12 @@ public class SummaryEntry {
         return new SimpleObjectProperty<>(amounts[index]);
     }
 
+    public Amount getSumValue() {
+        return amounts[amounts.length - 1];
+    }
+
     public ObservableValue<Amount> sumValueProperty() {
-        return new SimpleObjectProperty<>(amounts[amounts.length - 1]);
+        return new SimpleObjectProperty<>(getSumValue());
     }
 
     public void addAmount(int column, Amount amount) {

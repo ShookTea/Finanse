@@ -39,12 +39,29 @@ public class SummaryGroupCollection implements Iterable<SummaryGroup> {
                 .map(group -> group.getYear() + "")
                 .toArray(String[]::new);
 
-        SummaryGroup group = new SummaryGroup(
+        SummaryGroup summaryGroup = new SummaryGroup(
                 SummaryGroup.SUMMARY_YEAR,
                 years
         );
 
-        summaryGroups.put(SummaryGroup.SUMMARY_YEAR, group);
+        for (SummaryGroup group : summaryGroups.values()) {
+            int yearIndex = getYearIndex(years, group.getYear());
+            for (SummaryEntry entry : group.getEntries()) {
+                summaryGroup.getEntryByName(entry.getName())
+                        .addAmount(yearIndex, entry.getSumValue());
+            }
+        }
+
+        summaryGroups.put(SummaryGroup.SUMMARY_YEAR, summaryGroup);
+    }
+
+    private int getYearIndex(String[] years, int year) {
+        for (int i = 0; i < years.length; i++) {
+            if (years[i].equals("" + year)) {
+                return i;
+            }
+        }
+        throw new IndexOutOfBoundsException();
     }
 
     @Override
