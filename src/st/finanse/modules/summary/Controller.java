@@ -6,6 +6,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import st.finanse.Project;
+import st.finanse.data.Amount;
 import st.finanse.gui.MainWindowController;
 import st.finanse.gui.Updateable;
 import st.finanse.modules.finance.Entry;
@@ -36,6 +37,13 @@ public class Controller implements Updateable {
         TableColumn<SummaryEntry, String> entryNameColumn = new TableColumn<>("Wpis");
         entryNameColumn.setCellValueFactory(val -> val.getValue().nameProperty());
         tableView.getColumns().add(entryNameColumn);
+
+        for (int i = 0; i < summaryGroup.getColumns().length; i++) {
+            final int index = i;
+            TableColumn<SummaryEntry, Amount> singleValueColumn = new TableColumn<>(summaryGroup.getColumns()[index]);
+            singleValueColumn.setCellValueFactory(val -> val.getValue().valueOnIndexProperty(index));
+            tableView.getColumns().add(singleValueColumn);
+        }
 
         tableView.getItems().addAll(summaryGroup.getEntries());
         return tableView;
