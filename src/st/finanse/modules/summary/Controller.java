@@ -1,5 +1,6 @@
 package st.finanse.modules.summary;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import st.finanse.Project;
@@ -52,6 +53,7 @@ public class Controller implements Updateable {
         TableColumn<SummaryEntry, Amount> endingSum = new TableColumn<>("Razem");
         endingSum.setCellValueFactory(val -> val.getValue().sumValueProperty());
         tableView.getColumns().add(endingSum);
+        Platform.runLater(tableView::refresh);
 
         return tableView;
     }
