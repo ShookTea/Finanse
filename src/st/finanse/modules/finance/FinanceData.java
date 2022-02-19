@@ -32,11 +32,12 @@ public class FinanceData {
         return null;
     }
 
-    public List<String> getTitleTip(String part) {
+    public List<String> getTitleTip(final String part) {
+        final String upperCasePart = part.toUpperCase();
         return months.stream()
                 .flatMap(month -> Arrays.stream(month.getEntries()))
                 .map(Entry::getTitle)
-                .filter(title -> title.contains(part))
+                .filter(title -> title.toUpperCase().contains(upperCasePart))
                 .collect(Collectors.toMap(
                         v -> v,
                         v -> 1,
