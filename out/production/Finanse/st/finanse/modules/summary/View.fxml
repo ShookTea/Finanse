@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.control.*?>
-
-<TabPane prefHeight="305.0" prefWidth="531.0" side="LEFT" tabClosingPolicy="UNAVAILABLE"
-         xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="st.finanse.modules.summary.Controller"
-         fx:id="tabPane"/>

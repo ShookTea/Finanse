@@ -10,11 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Fixed bug">
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$MonthTreeItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller$MonthTreeItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/repository.strep" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/repository.strep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/FinanceData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Finanse/st/finanse/modules/finance/FinanceData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finance/FinanceData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finance/FinanceData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +55,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="47" />
@@ -76,7 +80,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/st/finanse/format" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -340,34 +344,6 @@
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
       <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -592,7 +568,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed bug" />
