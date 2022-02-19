@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Clean project">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/st/finanse/modules/finance/FinanceData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/st/finanse/modules/finance/FinanceData.java" afterDir="false" />
+    <list default="true" id="fd4336c7-53c1-497f-a5f7-7420a556c610" name="Default" comment="Ignore cases when searching">
+      <change beforePath="$PROJECT_DIR$/src/repository.strep" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository.strep" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -544,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645265502424</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ignore cases when searching">
+      <created>1645266297929</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1645266297929</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -600,7 +606,8 @@
     <MESSAGE value="Fixed display for table in finance module" />
     <MESSAGE value="Sorting entries" />
     <MESSAGE value="Clean project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean project" />
+    <MESSAGE value="Ignore cases when searching" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ignore cases when searching" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
