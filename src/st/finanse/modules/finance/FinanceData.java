@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import st.finanse.Project;
 import st.finanse.data.Month;
 
-import java.security.KeyStore;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class FinanceData {
@@ -39,8 +36,16 @@ public class FinanceData {
         return months.stream()
                 .flatMap(month -> Arrays.stream(month.getEntries()))
                 .map(Entry::getTitle)
-                .distinct()
                 .filter(title -> title.contains(part))
+                .collect(Collectors.toMap(
+                        v -> v,
+                        v -> 1,
+                        Math::addExact
+                ))
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
     }
 
